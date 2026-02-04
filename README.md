@@ -4,5 +4,5 @@ Repositorio da disciplina de Laboratorio de Programação do curso de redes de c
 # Comandos básicos: 
 
 # python3 nome_arquivo.py
-# git add nome_arquivo.py
+# git add nome_arquivo.nome_da_extensão
 # git status
