@@ -14,3 +14,5 @@ git status : Mostra o estado atual: quais arquivos foram modificados ou ainda n�
 git commit -m "Descreva aqui o que foi realizado" : Salva oficialmente as alterações no seu computador com uma etiqueta descrevendo o que foi feito.
 
 git push : Envia todos os seus salvamentos (commits) do computador para o servidor online (como o GitHub).
+
+git rm --cached nome_do_arquivo_antigo.extensao : Exclui um arquivo a força do repositório.
