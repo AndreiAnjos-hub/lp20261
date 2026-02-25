@@ -1,3 +1,5 @@
+import math
+
 # LISTA 1 - EXERCÍCIOS DE PYTHON
 
 # 1. Faça um programa que imprima o seu nome.
@@ -6,14 +8,10 @@ def questao_1():
     nome = input("Digite seu nome: ").title().strip()
     print (f"\n{nome}")
 
-# questao_1()
-
 # 2. Faça um programa que imprima o produto dos valores 30 e 27.
 
 def questao_2():
     print(f"Produto dos valores 30 e 27: {30*27}")
-
-# questao_2()
 
 # 3. Faça um programa que imprima a média aritmética entre os números 5, 8, 12.
 
@@ -23,15 +21,11 @@ def questao_3():
 
     print(f"Média entre 5, 8, 12: {media:.2f}")
 
-# questao_3()
-
 # 4. Faça um programa que leia e imprima um número inteiro.
 
 def questao_4():
     num = int(input("Digite um número inteiro: "))
     print(f"\nNúmero inteiro digitado: {num}")
-
-# questao_4()
 
 # 5. Faça um programa que leia dois números reais e os imprima.
 
@@ -41,16 +35,12 @@ def questao_5():
 
     print (f"\nNúmeros reais digitados: {num1} e {num2}")
 
-# questao_5()
-
 # 6. Faça um programa que leia um número inteiro e imprima o seu antecessor e o seu sucessor.
 
 def questao_6():
     num = int(input("Digite um número inteiro: "))
     print (f"\nAntecessor de {num}: {num - 1}")
     print (f"Sucessor de {num}: {num + 1}")
-
-# questao_6()
 
 # 7. Faça um programa que leia o nome o endereço e o telefone de um cliente e ao final, imprima esses dados.
 
@@ -61,8 +51,6 @@ def questao_7():
 
     print (f"\nNome: {nome}\nEndereço: {endereco}\nTelefone: {telefone}")
 
-# questao_7()
-
 # 8. Faça um programa que leia dois números inteiros e imprima a subtração deles.
 
 def questao_8():
@@ -71,16 +59,12 @@ def questao_8():
 
     print (f"\nSubtração de {num1} e {num2}: {num1 - num2}")
 
-# questao_8()
-
 # 9. Faça um programa que leia um número real e imprima ¼ deste número.
 
 def questao_9():
     num = float(input("Digite um número real: "))
     
     print (f"\n1/4 do número {num}: {num/4}")
-
-# questao_9()
 
 # 10. Faça um programa que leia três números reais e calcule a média aritmética destes números.
 # Ao final, o programa deve imprimir o resultado do cálculo.
@@ -95,8 +79,6 @@ def questao_10():
 
     print(f"\nMédia aritmética dos números {num1}, {num2}, {num3}: {media:.2f}")
 
-# questao_10()
-
 # 11. Faça um programa que leia dois números reais e calcule as quatro operações básicas entre estes dois números, adição,
 # subtração,multiplicação e divisão. Ao final, o programa deve imprimir os resultados dos cálculos.
 
@@ -106,16 +88,13 @@ def questao_11():
 
     print (f"\nAdição: {num1 + num2}\nSubtração: {num1 - num2}\nMultiplicação: {num1 * num2}\nDivisão: {num1 / num2:.2f}")
 
-# questao_11()
-
 # 12. Faça um programa que leia um número real e calcule o quadrado deste número. Ao final, o programa deve imprimir o resultado do cálculo.
 
 def questao_12():
     num = float(input("Digite um número real: "))
-
-    print(f"\nQuadrado do valor {num}: {num*num}")
-
-# questao_12()
+    print(f'{num}*{num} = {num*num}')  
+    print(f'math.pow({num},2) = {math.pow(num,2)}') # recomendado para float
+    print(f'{num}**2 = {num**2}')
 
 # 13. Faça um programa que leia o saldo de uma conta poupança e imprima o novo saldo, considerando um reajuste de 2%.
 
@@ -124,8 +103,6 @@ def questao_13():
     novo_saldo = saldo * 1.02
 
     print(f"\nNovo saldo com reajuste de 2%: {novo_saldo:.2f}")
-
-# questao_13()
 
 # 14. Faça um programa que leia a base e a altura de um retângulo e imprima o perímetro (base*2 + altura*2) e a área (base * altura).    
 
@@ -138,8 +115,6 @@ def questao_14():
 
     print(f"\nPerímetro do retângulo: {perimetro:.2f} m\nÁrea do retângulo: {area:.2f} m²")
 
-# questao_14()
-
 # 15. Faça um programa que leia o valor de um produto, o percentual do desconto desejado e imprima o valor do desconto e o valor do produto subtraindo o desconto.
 
 def questao_15():
@@ -151,8 +126,6 @@ def questao_15():
 
     print(f"\nValor do desconto: R${desconto:.2f}\nValor do final do produto: R${valor_final:.2f}")
 
-# questao_15()
-
 # 16. Faça um programa que calcule o reajuste do salário de um funcionário. Para isso, o programa deverá ler o salário atual do funcionário e ler o percentual de reajuste.
 # Ao final imprimir o valor do novo salário.
 
@@ -162,8 +135,6 @@ def questao_16():
 
     novo_salario = salario_atual + (salario_atual * (percentual_reajuste/100))
     print(f"\nNovo salário com o reajuste: R${novo_salario:.2f}")
-
-# questao_16()
 
 # 17. Faça um programa que calcule a conversão entre graus centígrados e Fahrenheit.
 # Para isso, leia o valor em centígrados e calcule com base na fórmula a seguir.
@@ -175,8 +146,6 @@ def questao_17():
     fahrenheit = (9 * centigrados + 160) / 5
 
     print(f"\nConversão de graus centígrados para Fahrenheit: {fahrenheit:.2f} °F")
-
-# questao_17()
 
 # 18. Faça um programa que calcule a quantidade de litros de combustível consumidos em uma viagem, sabendo-se que o carro tem autonomia de
 # 12 km por litro de combustível. O programa deverá ler o tempo decorrido na viagem e a velocidade média e aplicar as fórmulas: 
@@ -200,8 +169,6 @@ def questao_18():
 
     print(f"\nDistância percorrida na viagem: {d} m\nQuantidade de litros consumidos na viagem: {l:.2f} l")
 
-# questao_18()
-
 # 19. Faça um programa que calcule o valor de uma prestação em atraso.
 # Para isso, o programa deve ler o valor da prestação vencida, a taxa periódica de juros e o período de atraso.
 # Ao final, o programa deve imprimir o valor da prestação atrasada, o período
@@ -218,8 +185,6 @@ def questao_19():
 
     print(f"\nValor da prestação atrasada: R${prestacao_vencida:.2f}\nPeríodo de atraso: {periodo_atraso}\nJuros cobrados: R${juros:.2f}\nValor total da prestação com juros: R${valor_final:.2f}")
 
-# questao_19()
-
 # 20. Faça um programa que efetue a apresentação do valor da conversão em real (R$) de um valor lido em dólar (US$).
 # Para isso, será necessário também ler o valor da cotação do dólar.
 
@@ -229,4 +194,5 @@ def questao_20():
 
     print(f"\nDólar (US$) convertido para real (R$): R${real:.2f}")
 
-# questao_20()
+questao = input('Digite a questão a ser executada: ')
+eval(f'questao_{questao}()')
