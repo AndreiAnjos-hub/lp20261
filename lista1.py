@@ -24,23 +24,36 @@ def questao_3():
 # 4. Faça um programa que leia e imprima um número inteiro.
 
 def questao_4():
-    num = int(input("Digite um número inteiro: "))
-    print(f"\nNúmero inteiro digitado: {num}")
+    num = 0
+    try:
+        num = int(input("Digite um número inteiro: "))
+        print(f"\nNúmero inteiro digitado: {num}")
+    except ValueError:
+        print(f"\nO valor digitado é inválido! Apenas valores inteiros.\nTente novamente!")
+    except:
+        print(f"\nErro desconhecido! Contate o administrador do sistema.")
+
 
 # 5. Faça um programa que leia dois números reais e os imprima.
 
 def questao_5():
-    num1 = float(input("Digite o 1º número real: "))
-    num2 = float(input("Digite o 2º número real: "))
-
-    print (f"\nNúmeros reais digitados: {num1} e {num2}")
+    try:
+        num1 = float(input("Digite o 1º número real: "))
+        num2 = float(input("Digite o 2º número real: "))
+        print (f"\nNúmeros reais digitados: {num1} e {num2}")
+    except ValueError:
+        print (f"\nValor inserido inválido! Apenas valores reais.\nTente novamente!")
 
 # 6. Faça um programa que leia um número inteiro e imprima o seu antecessor e o seu sucessor.
 
 def questao_6():
-    num = int(input("Digite um número inteiro: "))
-    print (f"\nAntecessor de {num}: {num - 1}")
-    print (f"Sucessor de {num}: {num + 1}")
+    try:
+        num = int(input("Digite um número inteiro: "))
+        print (f"\nAntecessor de {num}: {num - 1}")
+        print (f"Sucessor de {num}: {num + 1}")
+    except ValueError:
+        print (f"\nValor inserido inválido! Apenas valor inteiro.\nTente novamente!")
+
 
 # 7. Faça um programa que leia o nome o endereço e o telefone de um cliente e ao final, imprima esses dados.
 
@@ -54,87 +67,123 @@ def questao_7():
 # 8. Faça um programa que leia dois números inteiros e imprima a subtração deles.
 
 def questao_8():
-    num1 = int(input("Digite o 1º número: "))
-    num2 = int(input("Digite o 2º número: "))
+    try:
+        num1 = int(input("Digite o 1º número: "))
+        num2 = int(input("Digite o 2º número: "))
+        
+        print (f"\nSubtração de {num1} e {num2}: {num1 - num2}")
 
-    print (f"\nSubtração de {num1} e {num2}: {num1 - num2}")
+    except ValueError:
+        print (f"\nValor inserido inválido! Apenas valores inteiros.\nTente novamente!")
 
 # 9. Faça um programa que leia um número real e imprima ¼ deste número.
 
 def questao_9():
-    num = float(input("Digite um número real: "))
+    try:
+        num = float(input("Digite um número real: "))
+        print (f"\n1/4 do número {num}: {num/4}")
     
-    print (f"\n1/4 do número {num}: {num/4}")
+    except ValueError:
+        print (f"\nValor inserido inválido! Apenas valor real.\nTente novamente!")
 
 # 10. Faça um programa que leia três números reais e calcule a média aritmética destes números.
 # Ao final, o programa deve imprimir o resultado do cálculo.
 
 def questao_10():
-    num1 = float(input("Digite o 1º número real: "))
-    num2 = float(input("Digite o 2º número real: "))
-    num3 = float(input("Digite o 3º número real: "))
+    try:
+        num1 = float(input("Digite o 1º número real: "))
+        num2 = float(input("Digite o 2º número real: "))
+        num3 = float(input("Digite o 3º número real: "))
+        
+        soma = num1 + num2 + num3
+        media = soma/3
+        
+        print(f"\nMédia aritmética dos números {num1}, {num2}, {num3}: {media:.2f}")
 
-    soma = num1 + num2 + num3
-    media = soma/3
+    except ValueError:
+        print (f"\nValor inserido inválido! Apenas valores reais.\nTente novamente!")
 
-    print(f"\nMédia aritmética dos números {num1}, {num2}, {num3}: {media:.2f}")
 
 # 11. Faça um programa que leia dois números reais e calcule as quatro operações básicas entre estes dois números, adição,
 # subtração,multiplicação e divisão. Ao final, o programa deve imprimir os resultados dos cálculos.
 
 def questao_11():
-    num1 = float(input("Digite o 1º número real: "))
-    num2 = float(input("Digite o 2º número real: "))
+    try:
+        num1 = float(input("Digite o 1º número real: "))
+        num2 = float(input("Digite o 2º número real: "))
+        
+        print (f"\nAdição: {num1 + num2}\nSubtração: {num1 - num2}\nMultiplicação: {num1 * num2}\nDivisão: {num1 / num2:.2f}")
 
-    print (f"\nAdição: {num1 + num2}\nSubtração: {num1 - num2}\nMultiplicação: {num1 * num2}\nDivisão: {num1 / num2:.2f}")
+    except ValueError:
+        print (f"\nValor inserido inválido! Apenas valores reais.\nTente novamente!")
+
 
 # 12. Faça um programa que leia um número real e calcule o quadrado deste número. Ao final, o programa deve imprimir o resultado do cálculo.
 
 def questao_12():
-    num = float(input("Digite um número real: "))
-    print(f'{num}*{num} = {num*num}')  
-    print(f'math.pow({num},2) = {math.pow(num,2)}') # recomendado para float
-    print(f'{num}**2 = {num**2}')
+    try:
+        num = float(input("Digite um número real: "))
+        print(f'{num}*{num} = {num*num}')  
+        print(f'math.pow({num},2) = {math.pow(num,2)}') # recomendado para float
+        print(f'{num}**2 = {num**2}')
+    
+    except ValueError:
+        print (f"\nValor inserido inválido! Apenas valores reais.\nTente novamente!")
 
 # 13. Faça um programa que leia o saldo de uma conta poupança e imprima o novo saldo, considerando um reajuste de 2%.
 
 def questao_13():
-    saldo = float(input("Informe o saldo da conta poupança: "))
-    novo_saldo = saldo * 1.02
+    try:
+        saldo = float(input("Informe o saldo da conta poupança: "))
+        novo_saldo = saldo * 1.02
+        print(f"\nNovo saldo com reajuste de 2%: {novo_saldo:.2f}")
 
-    print(f"\nNovo saldo com reajuste de 2%: {novo_saldo:.2f}")
+    except ValueError:
+        print (f"\nValor inserido inválido! Apenas valores reais.\nTente novamente!")
+
 
 # 14. Faça um programa que leia a base e a altura de um retângulo e imprima o perímetro (base*2 + altura*2) e a área (base * altura).    
 
 def questao_14():
-    base = float(input("Informe a base do retãngulo: "))
-    altura = float(input("Informe a altura do retângulo: "))
+    try:
+        base = float(input("Informe a base do retãngulo: "))
+        altura = float(input("Informe a altura do retângulo: "))
+        
+        perimetro = (base*2 + altura*2)
+        area = (base * altura)
+        print(f"\nPerímetro do retângulo: {perimetro:.2f} m\nÁrea do retângulo: {area:.2f} m²")
 
-    perimetro = (base*2 + altura*2)
-    area = (base * altura)
-
-    print(f"\nPerímetro do retângulo: {perimetro:.2f} m\nÁrea do retângulo: {area:.2f} m²")
+    except ValueError:
+        print (f"\nValor inserido inválido! Apenas valores reais.\nTente novamente!")
 
 # 15. Faça um programa que leia o valor de um produto, o percentual do desconto desejado e imprima o valor do desconto e o valor do produto subtraindo o desconto.
 
 def questao_15():
-    produto = float(input("Informe o valor do produto: "))
-    percentual = float(input("Informe o percentual do desconto desejado: "))
+    try:
+        produto = float(input("Informe o valor do produto: "))
+        percentual = float(input("Informe o percentual do desconto desejado: "))
+        
+        desconto = produto * (percentual/100)
+        valor_final = produto - desconto
+        
+        print(f"\nValor do desconto: R${desconto:.2f}\nValor do final do produto: R${valor_final:.2f}")
 
-    desconto = produto * (percentual/100)
-    valor_final = produto - desconto
-
-    print(f"\nValor do desconto: R${desconto:.2f}\nValor do final do produto: R${valor_final:.2f}")
+    except ValueError:
+        print (f"\nValor inserido inválido! Apenas valores reais.\nTente novamente!")
 
 # 16. Faça um programa que calcule o reajuste do salário de um funcionário. Para isso, o programa deverá ler o salário atual do funcionário e ler o percentual de reajuste.
 # Ao final imprimir o valor do novo salário.
 
 def questao_16():
-    salario_atual = float(input("Informe o salário atual: "))
-    percentual_reajuste = float(input("Informe o percentual de reajuste: "))
+    try:
+        salario_atual = float(input("Informe o salário atual: "))
+        percentual_reajuste = float(input("Informe o percentual de reajuste: "))
+        
+        novo_salario = salario_atual + (salario_atual * (percentual_reajuste/100))
+        print(f"\nNovo salário com o reajuste: R${novo_salario:.2f}")
 
-    novo_salario = salario_atual + (salario_atual * (percentual_reajuste/100))
-    print(f"\nNovo salário com o reajuste: R${novo_salario:.2f}")
+    except ValueError:
+        print (f"\nValor inserido inválido! Apenas valores reais.\nTente novamente!")
 
 # 17. Faça um programa que calcule a conversão entre graus centígrados e Fahrenheit.
 # Para isso, leia o valor em centígrados e calcule com base na fórmula a seguir.
@@ -142,10 +191,14 @@ def questao_16():
 # F = (9 x C + 160) / 5
 
 def questao_17():
-    centigrados = float(input("Informe a temperatura em graus centígrados: "))
-    fahrenheit = (9 * centigrados + 160) / 5
+    try:
+        centigrados = float(input("Informe a temperatura em graus centígrados: "))
+        fahrenheit = (9 * centigrados + 160) / 5
+        
+        print(f"\nConversão de graus centígrados para Fahrenheit: {fahrenheit:.2f} °F")
 
-    print(f"\nConversão de graus centígrados para Fahrenheit: {fahrenheit:.2f} °F")
+    except ValueError:
+        print (f"\nValor inserido inválido! Apenas valor real.\nTente novamente!")
 
 # 18. Faça um programa que calcule a quantidade de litros de combustível consumidos em uma viagem, sabendo-se que o carro tem autonomia de
 # 12 km por litro de combustível. O programa deverá ler o tempo decorrido na viagem e a velocidade média e aplicar as fórmulas: 
@@ -161,13 +214,17 @@ def questao_17():
 # Ao final, o programa deverá imprimir a distância percorrida e a quantidade de litros consumidos na viagem.
 
 def questao_18():
-    t = float(input("Informe o tempo decorrido na viagem: "))
-    v = float(input("Informe a velocidade média: "))
+    try:
+        t = float(input("Informe o tempo decorrido na viagem: "))
+        v = float(input("Informe a velocidade média: "))
+        
+        d = t * v
+        l = d / 12
+        
+        print(f"\nDistância percorrida na viagem: {d} m\nQuantidade de litros consumidos na viagem: {l:.2f} l")
 
-    d = t * v
-    l = d / 12
-
-    print(f"\nDistância percorrida na viagem: {d} m\nQuantidade de litros consumidos na viagem: {l:.2f} l")
+    except ValueError:
+        print (f"\nValor inserido inválido! Apenas valor real.\nTente novamente!")
 
 # 19. Faça um programa que calcule o valor de uma prestação em atraso.
 # Para isso, o programa deve ler o valor da prestação vencida, a taxa periódica de juros e o período de atraso.
@@ -176,23 +233,31 @@ def questao_18():
 # valor da prestação acrescido dos juros. Considere juros simples.
 
 def questao_19():
-    prestacao_vencida = float(input("Informe o valor da prestação em atraso: "))
-    taxa_periodica_juros = float(input("Informe a taxa periódica de juros: "))
-    periodo_atraso = float(input("Informe o período de atraso: "))
+    try:
+        prestacao_vencida = float(input("Informe o valor da prestação em atraso: "))
+        taxa_periodica_juros = float(input("Informe a taxa periódica de juros: "))
+        periodo_atraso = float(input("Informe o período de atraso: "))
+        
+        juros = prestacao_vencida * (taxa_periodica_juros/100) * periodo_atraso
+        valor_final = prestacao_vencida + juros
+        
+        print(f"\nValor da prestação atrasada: R${prestacao_vencida:.2f}\nPeríodo de atraso: {periodo_atraso}\nJuros cobrados: R${juros:.2f}\nValor total da prestação com juros: R${valor_final:.2f}")
 
-    juros = prestacao_vencida * (taxa_periodica_juros/100) * periodo_atraso
-    valor_final = prestacao_vencida + juros
-
-    print(f"\nValor da prestação atrasada: R${prestacao_vencida:.2f}\nPeríodo de atraso: {periodo_atraso}\nJuros cobrados: R${juros:.2f}\nValor total da prestação com juros: R${valor_final:.2f}")
+    except ValueError:
+        print (f"\nValor inserido inválido! Apenas valor real.\nTente novamente!")
 
 # 20. Faça um programa que efetue a apresentação do valor da conversão em real (R$) de um valor lido em dólar (US$).
 # Para isso, será necessário também ler o valor da cotação do dólar.
 
 def questao_20():
-    dolar = float(input("Informe o valor em dólar (US$): "))
-    real = dolar * 5.20
-
-    print(f"\nDólar (US$) convertido para real (R$): R${real:.2f}")
+    try:
+        dolar = float(input("Informe o valor em dólar (US$): "))
+        real = dolar * 5.20
+        
+        print(f"\nDólar (US$) convertido para real (R$): R${real:.2f}")
+    
+    except ValueError:
+        print (f"\nValor inserido inválido! Apenas valor real.\nTente novamente!")
 
 questao = input('Digite a questão a ser executada: ')
 eval(f'questao_{questao}()')
