@@ -210,6 +210,26 @@ def questao_12():
 #"Reprovado"ou "em Prova Final"(a média é 7 para aprovação, menor que 3 para
 #reprovação e as demais em prova final).
 
+def questao_13():
+    try:
+        nome = input("\nInforme o seu nome: ").title().strip()
+        n_1 = float(input("Informe sua 1ª nota: "))
+        n_2 = float(input("Informe sua 1ª nota: "))
+
+        mf = n_1 + n_2 / 2
+
+        if (mf > 10) or (mf < 0):
+            print(f"Erro! Nota 1 ou 2 inválida")
+        else:
+            if (mf >= 7):
+                print(f"\nAluno: {nome}\nNota 1: {n_1}\nNota 2: {n_2}\nMédia Final: {mf}\nAPROVADO!!!")
+            elif (mf < 3):
+                print(f"\nAluno: {nome}\nNota 1: {n_1}\nNota 2: {n_2}\nMédia Final: {mf}\nREPROVADO!!!")
+            else:
+                print(f"\nAluno: {nome}\nNota 1: {n_1}\nNota 2: {n_2}\nMédia Final: {mf}\nPROVA FINAL!!!")
+    except ValueError:
+        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
+            
 #14. Faça um programa que permita entrar com o salário de uma pessoa e imprima o
 #desconto do INSS segundo a tabela seguir:
 #Salário Faixa de Desconto
