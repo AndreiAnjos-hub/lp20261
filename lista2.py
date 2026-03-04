@@ -3,41 +3,173 @@ import math
 #1. Faça um programa que leia dois valores numéricos inteiros e efetue
 #   a adição, caso o resultado seja maior que 10, apresentá-lo.
 
-
 def questao_1():
-    print("oi")
+    try:
+        num1 = int(input("\nInforme o 1º número: "))
+        num2 = int(input("Informe o 2º número: "))
+
+        soma = num1 + num2
+
+        if (soma > 10):
+            print(f"\nSoma entre {num1} + {num2}: {soma}")
+    except ValueError:
+        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
 
 #2. Faça um programa que leia dois valores inteiros e efetue a adição.
 #   Caso o valor somado seja maior que 20, este deverá ser apresentado
 #   somando-se a ele mais 8, caso o valor somado seja menor ou igual a
 #   20, este deverá ser apresentado subtraindo-se 5.
 
+def questao_2():
+    try:
+        num1 = int(input("\nInforme o 1º número: "))
+        num2 = int(input("Informe o 2º número: "))
+
+        soma = num1 + num2
+
+        if (soma > 20):
+            print(f"\nSoma entre {num1} + {num2} + 8: {soma + 8}")
+        else:
+            print(f"\nSoma entre {num1} + {num2} - 5: {soma - 5}")
+    except ValueError:
+        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
+
 #3. Faça um programa que leia um número e imprima uma das duas mensagens:
 #   "É múltiplo de 3"ou "Não é múltiplo de 3".
 
+def questao_3():
+    try:
+        num = int(input("\nInforme um número: "))
+
+        multiplo = num % 3
+
+        if (multiplo == 0):
+            print(f"\nO número {num} é múltiplo de 3")
+        else:
+            print(f"\nO número {num} não é múltiplo de 3")
+    except ValueError:
+        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
+
 #4. Faça um programa que leia um número e informe se ele é ou não divisível por 5.
 
+def questao_4():
+    try:
+        num = int(input("\nInforme um número: "))
+
+        divisivel = num % 5
+
+        if (divisivel == 0):
+            print(f"\nO número {num} é divisível por 5")
+        else:
+            print(f"\nO número {num} não é divisível por 5")
+    except ValueError:
+        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
+
 #5. Faça um programa que leia um número e informe se ele é divisível por 3 e por 7.
+
+def questao_5():
+    try:
+        num = int(input("\nInforme um número: "))
+
+        div_3 = num % 3
+        div_7 = num % 7
+
+        if (div_3 == 0) and (div_7 == 0):
+            print(f"\nO número {num} é divisível por 3 e por 7")
+        elif (div_3 == 0):
+            print(f"\nO número {num} é divisível por 3")
+        elif (div_7 == 0):
+            print(f"\nO número {num} é divisível por 7")
+        else:
+            print(f"\nO número {num} não é divisível por 3 e por 7")
+    except ValueError:
+        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
 
 #6. A prefeitura do Rio de Janeiro abriu uma linha de crédito para os funcionários
 #   estatutários. O valor máximo da prestação não poderá ultrapassar 30% do salário
 #   bruto. Faça um programa que permita entrar com o salário bruto
 #   e o valor da prestação e informar se o empréstimo pode ou não ser concedido.
 
+def questao_6():
+    print("depois")
+
+
 #7. Faça um programa que leia um número e indique se o número está compreendido
 #   entre 20 e 50 ou não.
 
+def questao_7():
+    try:
+        num = int(input("\nInforme um número: "))
+
+        if (num >= 20) and (num <= 50):
+            print(f"\nO número {num} está entre 20 e 50")
+        else:
+            print(f"\nO número {num} não está entre 20 e 50")
+    except ValueError:
+        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
+
 #8. Faça um programa que leia um número e imprima uma das mensagens:
 #   "Maior do que 20", "Igual a 20"ou "Menor do que 20".
+
+def questao_8():
+    try:
+        num = int(input("\nInforme um número: "))
+
+        if (num > 20):
+            print(f"\nO número {num} é maior do que 20")
+        elif (num == 20):
+            print(f"\nO número é igual a 20")
+        else:   
+            print(f"\nO número {num} é menor do que 20")
+    except ValueError:
+        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
 
 #9. Faça um programa que permita entrar com o ano de nascimento da pessoa e com o
 #   ano atual. O programa deve imprimir a idade da pessoa. Não se esqueça de
 #   verificar se o ano de nascimento informado é válido.
 
+def questao_9():
+    try:
+        ano_nasc = int(input("\nInforme o seu ano de nascimento: "))
+        ano_atual = int(input("Informe o ano atual: "))
+
+        if (ano_nasc > 0) and (ano_nasc < ano_atual):
+            idade = ano_atual - ano_nasc
+            print(f"\nVocê tem {idade} anos de idade")
+        else:
+            print(f"\nAno de nascimento inválido!")
+    except ValueError:
+        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
+
 #10. Faça um programa que leia três números inteiros e imprima os três em ordem
 #crescente.
 
+def questao_10(): # Analisar depois
+    try:
+        num1 = int(input("\nInforme o 1º número: "))
+        num2 = int(input("\nInforme o 2º número: "))
+        num3 = int(input("\nInforme o 3º número: "))
+
+        if (num1 > num2) and (num1 > num3) and (num2 >= num3):
+            print(f"\nOrdem crescente:\n{num1}\n{num2}\n{num3}")
+        elif (num1 > num2) and (num1 > num3) and (num3 >= num2):
+            print(f"\nOrdem crescente:\n{num1}\n{num3}\n{num2}")
+        elif (num2 > num1) and (num2 > num3) and (num1 >= num3):
+            print(f"\nOrdem crescente:\n{num2}\n{num1}\n{num3}")
+        elif (num2 > num1) and (num2 > num3) and (num3 >= num1):
+            print(f"\nOrdem crescente:\n{num2}\n{num3}\n{num1}")
+        elif (num3 > num1) and (num3 > num2) and (num1 >= num2):
+            print(f"\nOrdem crescente:\n{num3}\n{num1}\n{num2}")
+        elif (num3 > num1) and (num3 > num2) and (num2 >= num1):
+            print(f"\nOrdem crescente:\n{num3}\n{num2}\n{num1}")
+        else:
+            print(f"\nTodos os números são iguais")
+    except ValueError:
+        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
+
 #11. Faça um programa que leia 3 números e imprima o maior deles.
+
+
 
 #12. Faça um programa que leia a idade de uma pessoa e informe:
 #• Se é maior de idade
