@@ -147,8 +147,8 @@ def questao_9():
 def questao_10(): # Analisar depois
     try:
         num1 = int(input("\nInforme o 1º número: "))
-        num2 = int(input("\nInforme o 2º número: "))
-        num3 = int(input("\nInforme o 3º número: "))
+        num2 = int(input("Informe o 2º número: "))
+        num3 = int(input("Informe o 3º número: "))
 
         if (num1 > num2) and (num1 > num3) and (num2 >= num3):
             print(f"\nOrdem crescente:\n{num1}\n{num2}\n{num3}")
@@ -169,13 +169,41 @@ def questao_10(): # Analisar depois
 
 #11. Faça um programa que leia 3 números e imprima o maior deles.
 
+def questao_11(): # Analisar depois
+    try:
+        num1 = int(input("\nInforme o 1º número: "))
+        num2 = int(input("Informe o 2º número: "))
+        num3 = int(input("Informe o 3º número: "))
 
+        if (num1 > num2) and (num1 > num3):
+            print(f"\nO maior número é {num1}")
+        elif (num2 > num1) and (num2 > num3):
+            print(f"\nO maior número é {num2}")
+        elif (num3 > num1) and (num3 > num2):
+            print(f"\nO maior número é {num3}")
+        else:
+            print(f"\nTodos os números são iguais")
+    except ValueError:
+        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
 
 #12. Faça um programa que leia a idade de uma pessoa e informe:
 #• Se é maior de idade
 #• Se é menor de idade
 #• Se é maior de 65 anos
 
+def questao_12():
+    try:
+        idade = int(input("\nInforme sua idade: "))
+
+        if (idade >= 18):
+            print(f"\nMaior de idade")
+            if (idade > 65):
+                print(f"Maior de 65 anos")
+        if (idade < 18):
+            print(f"\nMenor de idade")
+    except ValueError:
+        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
+        
 #13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota
 #da prova 2 de um aluno. O programa deve imprimir o nome, a nota da prova 1,
 #a nota da prova 2, a média das notas e uma das mensagens: "Aprovado",
