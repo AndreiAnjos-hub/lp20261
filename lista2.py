@@ -363,6 +363,40 @@ def questao_17():
 #correspondente. Caso o usuário digite um número fora desse intervalo, deverá
 #aparecer uma mensagem informando que não existe mês com este número.
 
+def questao_18():
+    try:
+        mes = int(input("\nInforme um número inteiro entre 1 e 12: "))
+
+        if (mes <= 0) or (mes >= 13):
+            print(f"\nNão exite mês com este número: {mes}")
+        else:
+            if (mes == 1):
+                print(f"\nMês {mes}: janeiro")
+            elif (mes == 2):
+                print(f"\nMês {mes}: fevereiro")
+            elif (mes == 3):
+                print(f"\nMês {mes}: março")
+            elif (mes == 4):
+                print(f"\nMês {mes}: abril")
+            elif (mes == 5):
+                print(f"\nMês {mes}: maio")
+            elif (mes == 6):
+                print(f"\nMês {mes}: junho")
+            elif (mes == 7):
+                print(f"\nMês {mes}: julho")
+            elif (mes == 8):
+                print(f"\nMês {mes}: agosto")
+            elif (mes == 9):
+                print(f"\nMês {mes}: setembro")
+            elif (mes == 10):
+                print(f"\nMês {mes}: outubro")
+            elif (mes == 11):
+                print(f"\nMês {mes}: novembro")
+            else:
+                print(f"\nMês {mes}: dezembro")
+    except ValueError:
+        print("\nValor inserido inválido! Apenas valor númerico inteiro.")
+
 #19. Em um campeonato nacional de arco-e-flecha, tem-se equipes de três jogadores
 #para cada estado. Sabendo-se que os arqueiros de uma equipe não obtiveram o
 #mesmo número de pontos, criar um programa que informe se uma equipe foi
@@ -428,6 +462,6 @@ try:
         raise Exception("Questão inválida! Valores devem ser entre 1 e 25.")
     eval(f"questao_{questao}()")
 except ValueError:
-    print("Valor inválido! Apenas valores numéricos inteiros.")
+    print("Valor inválido! Apenas valor numérico inteiro.")
 except Exception as erro:
     print(erro)
