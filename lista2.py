@@ -406,6 +406,44 @@ def questao_18():
 #• Se a soma dos pontos for maior do que 100, imprimir a média aritmética entre eles,
 #  caso contrário, imprimir a mensagem "Equipe desclassificada".
 
+def questao_19():
+    try:
+        pontos_j1 = int(input("\nInforme os pontos obtidos do jogador 1: "))
+        pontos_j2 = int(input("Informe os pontos obtidos do jogador 2: "))
+        pontos_j3 = int(input("Informe os pontos obtidos do jogador 3: "))
+
+        if (pontos_j1 > pontos_j2) and (pontos_j1 > pontos_j3) and (pontos_j2 >= pontos_j3):
+            print(f"\n1º Lugar: Jogador 1 com {pontos_j1} pontos\n2º Lugar: Jogador 2 com {pontos_j2} pontos\n3º Lugar: Jogador 3 com {pontos_j3} pontos")
+        elif (pontos_j1 > pontos_j2) and (pontos_j1 > pontos_j3) and (pontos_j3 >= pontos_j2):
+            print(f"\n1º Lugar: Jogador 1 com {pontos_j1} pontos\n2º Lugar: Jogador 3 com {pontos_j3} pontos\n3º Lugar: Jogador 2 com {pontos_j2} pontos")
+        elif (pontos_j1 == pontos_j2) and (pontos_j1 > pontos_j3):
+            print(f"\n1º Lugar: Jogador 1 com {pontos_j1} pontos\n2º Lugar: Jogador 2 com {pontos_j2} pontos\n3º Lugar: Jogador 3 com {pontos_j3} pontos")
+        elif (pontos_j2 > pontos_j1) and (pontos_j2 > pontos_j3) and (pontos_j1 >= pontos_j3):
+            print(f"\n1º Lugar: Jogador 2 com {pontos_j2} pontos\n2º Lugar: Jogador 1 com {pontos_j1} pontos\n3º Lugar: Jogador 3 com {pontos_j3} pontos")
+        elif (pontos_j2 > pontos_j1) and (pontos_j2 > pontos_j3) and (pontos_j3 >= pontos_j1):
+            print(f"\n1º Lugar: Jogador 2 com {pontos_j2} pontos\n2º Lugar: Jogador 3 com {pontos_j3} pontos\n3º Lugar: Jogador 1 com {pontos_j1} pontos")
+        elif (pontos_j2 == pontos_j3) and (pontos_j2 > pontos_j1):
+            print(f"\n1º Lugar: Jogador 2 com {pontos_j2} pontos\n2º Lugar: Jogador 3 com {pontos_j3} pontos\n3º Lugar: Jogador 1 com {pontos_j1} pontos")
+        elif (pontos_j3 > pontos_j1) and (pontos_j3 > pontos_j2) and (pontos_j1 >= pontos_j2):
+            print(f"\n1º Lugar: Jogador 3 com {pontos_j3} pontos\n2º Lugar: Jogador 1 com {pontos_j1} pontos\n3º Lugar: Jogador 2 com {pontos_j2} pontos")
+        elif (pontos_j3 > pontos_j1) and (pontos_j3 > pontos_j2) and (pontos_j2 >= pontos_j1):
+            print(f"\n1º Lugar: Jogador 3 com {pontos_j3} pontos\n2º Lugar: Jogador 2 com {pontos_j2} pontos\n3º Lugar: Jogador 1 com {pontos_j1} pontos")
+        elif (pontos_j3 == pontos_j1) and (pontos_j3 > pontos_j2):
+            print(f"\n1º Lugar: Jogador 3 com {pontos_j3} pontos\n2º Lugar: Jogador 1 com {pontos_j1} pontos\n3º Lugar: Jogador 2 com {pontos_j2} pontos")
+        else:
+            print(f"\nTodos com a mesma pontuação:")
+            print(f"\nJogador 1 com {pontos_j1} pontos\nJogador 2 com {pontos_j2} pontos\nJogador 3 com {pontos_j3} pontos")
+
+        soma = pontos_j1 + pontos_j2 + pontos_j3
+
+        if (soma > 100):
+            media = (soma) / 3
+            print(f"\nMédia aritmética da equipe: {media:.2f} pontos!")
+        else:
+            print(f"\nEquipe desclassificada!!!")
+    except ValueError:
+        print("\nValor inserido inválido! Apenas valores númericos inteiros.")
+
 #20. O banco XXX concederá um crédito especial com juros de 2% aos seus clientes de
 #acordo com o saldo médio no último ano. Faça um programa que leia o saldo médio
 #de um cliente e calcule o valor do crédito de acordo com a tabela a seguir.
@@ -417,6 +455,31 @@ def questao_18():
 #de 1001 a 3000 40% do valor do saldo médio
 #acima de 3001 50% do valor do saldo médio
 
+def questao_20():
+    try:
+        saldo_m = float(input("\nInforme o saldo médio: "))
+
+        if (saldo_m < 0):
+            print(f"\nSaldo negativo.")
+        else:
+
+            if (saldo_m <= 500):
+                print(f"\nNenhum crédito!")
+            elif (saldo_m <= 1000):
+                valor_credito = saldo_m * 0.30
+                print(f"\n30% do valor do saldo médio")
+                print(f"\nValor de crédito: R${valor_credito:.2f}")
+            elif (saldo_m <= 3000):
+                valor_credito = saldo_m * 0.40
+                print(f"\n40% do valor do saldo médio")
+                print(f"\nValor de crédito: R${valor_credito:.2f}")
+            else:
+                valor_credito = saldo_m * 0.50
+                print(f"\n50% do valor do saldo médio")
+                print(f"\nValor de crédito: R${valor_credito:.2f}")
+    except ValueError:
+        print("\nValor inserido inválido! Apenas valores númericos reais.")
+
 #21. A biblioteca de uma Universidade deseja fazer um programa que leia o nome do
 #livro que será emprestado, o tipo de usuário (professor ou aluno) e possa
 #imprimir um recibo conforme mostrado a seguir. Considerar que o professor
@@ -425,9 +488,32 @@ def questao_18():
 #• Tipo de usuário:
 #• Total de dias:
 
+def questao_21():
+    try:
+        livro = input("\nInforme o nome do livro que será emprestado: ").title().strip()
+        t_usuario = input("Tipo de usuário (Professor/Aluno): ").title().strip()
+
+        if (t_usuario == "Professor") or (t_usuario == "Aluno"):
+            if (t_usuario == "Professor"):
+                total_dias = 10
+            elif (t_usuario == "Aluno"):
+                total_dias = 3
+
+            print(f"\nRecibo:\n\nNome do Livro: {livro}\nTipo de Usuário: {t_usuario}\nTotal de dias para devolução: {total_dias}")
+
+        else:
+            print("\nOpção inválida!")
+
+    except Exception as erro:
+        print(f"\nErro: {erro}")
+
 #22. Construa um programa que leia o percurso em quilômetros, o tipo do carro e
 #informe o consumo estimado de combustível, sabendo-se que um carro tipo A faz
 #12 km com um litro de gasolina, um tipo B faz 9 km e o tipo C 8 km por litro.
+
+def questao_22():
+    print("\nDepois!")
+
 
 #23. Crie um programa que informe a quantidade total de calorias de uma refeição
 #a partir da escolha do usuário que deverá informar o prato, a sobremesa, e
@@ -438,11 +524,23 @@ def questao_18():
 #Frango         250cal Mousse diet      170cal Suco de melão     100cal
 #Carne          350cal Mousse chocolate 200cal Refrigerante diet 65cal
 
+def questao_23():
+    print("\nDepois!")
+
+
+
+
 #24. A polícia rodoviária resolveu fazer cumprir a lei e vistoriar veículos para
 #cobrar dos motoristas o DUT. Sabendo-se que o mês em que o emplacamento do
 #carro deve ser renovado é determinado pelo último número da placa do mesmo,
 #faça um programa que, a partir da leitura da placa do carro, informe o mês
 #em que o emplacamento deve ser renovado.
+
+def questao_24():
+    print("\nDepois!")
+
+
+
 
 #25. A prefeitura contratou uma firma especializada para manter os níveis de
 #poluição considerados ideais para um país do 1º mundo. As indústrias,
@@ -454,6 +552,12 @@ def questao_18():
 #0,3 1º grupo
 #0,4 1º e 2º grupos
 #0,5 1º, 2º e 3º grupos
+
+def questao_25():
+    print("\nDepois!")
+
+
+
 
 
 try:
