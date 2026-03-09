@@ -604,10 +604,18 @@ def questao_23():
 #em que o emplacamento deve ser renovado.
 
 def questao_24():
-    print("\nDepois!")
+    try:
+        placa = input("\nInforme a placa do carro: ")
 
+        ultimo_num = placa[-1:]
 
+        # print(ultimo_num)
 
+        if (ultimo_num == "1") or (ultimo_num == "2"):
+            
+    
+    except Exception as erro:
+        print(f"\nErro: {erro}")
 
 #25. A prefeitura contratou uma firma especializada para manter os níveis de
 #poluição considerados ideais para um país do 1º mundo. As indústrias,
