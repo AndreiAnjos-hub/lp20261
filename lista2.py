@@ -442,7 +442,7 @@ def questao_19():
         else:
             print(f"\nEquipe desclassificada!!!")
     except ValueError:
-        print("\nValor inserido inválido! Apenas valores númericos inteiros.")
+        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
 
 #20. O banco XXX concederá um crédito especial com juros de 2% aos seus clientes de
 #acordo com o saldo médio no último ano. Faça um programa que leia o saldo médio
@@ -478,7 +478,7 @@ def questao_20():
                 print(f"\n50% do valor do saldo médio")
                 print(f"\nValor de crédito: R${valor_credito:.2f}")
     except ValueError:
-        print("\nValor inserido inválido! Apenas valores númericos reais.")
+        print("\nValor inserido inválido! Apenas valores numéricos reais.")
 
 #21. A biblioteca de uma Universidade deseja fazer um programa que leia o nome do
 #livro que será emprestado, o tipo de usuário (professor ou aluno) e possa
@@ -511,9 +511,25 @@ def questao_21():
 #informe o consumo estimado de combustível, sabendo-se que um carro tipo A faz
 #12 km com um litro de gasolina, um tipo B faz 9 km e o tipo C 8 km por litro.
 
-def questao_22():
-    print("\nDepois!")
+def questao_22(): # Analisar depois
+    try:
+        km = float(input("\nInforme o percurso em quilômetros: "))
+        t_carro = input("Informe o tipo do carro (A, B e C): ").title().strip()
+        
+        if (t_carro != "A") and (t_carro != "B") and (t_carro != "C"):
+            print(f"\nOpção inválida!")
+        else:
+            if (t_carro == "A"):
+                consumo = km / 12
+            elif (t_carro == "B"):
+                consumo = km / 9
+            elif (t_carro == "C"):
+                consumo = km / 8
+                
+            print(f"\nConsumo estimado de combustível: {consumo:.2f} km/l")
 
+    except ValueError:
+        print("\nValor inserido inválido! Apenas valor numérico real.")
 
 #23. Crie um programa que informe a quantidade total de calorias de uma refeição
 #a partir da escolha do usuário que deverá informar o prato, a sobremesa, e
@@ -525,11 +541,62 @@ def questao_22():
 #Carne          350cal Mousse chocolate 200cal Refrigerante diet 65cal
 
 def questao_23():
-    print("\nDepois!")
+    try:
+        print(f"\nPrato:")
+        print(f"\nVegetariano\nPeixe\nFrango\nCarne")
 
+        print(f"\nSobremesa")
+        print(f"\nAbacaxi\nSorvete diet\nMousse diet\nMousse chocolate")
 
+        print(f"\nBebida")
+        print(f"\nChá\nSuco de laranja\nSuco de melão\nRefrigerante diet\n")
 
+        prato = input("Informe o nome do prato: ").title().strip()
+        sobremesa = input("Informe o nome da sobremesa: ").title().strip()
+        bebida = input("Informe o nome da bebida: ").title().strip()
 
+        if (prato != "Vegetariano") and (prato != "Peixe") and (prato != "Frango") and (prato != "Carne"):
+            print(f"\nOpção inválida!")
+        else:
+            if (sobremesa != "Abacaxi") and (sobremesa != "Sorvete Diet") and (sobremesa != "Mousse Diet") and (sobremesa != "Mousse Chocolate"):
+                print(f"\nOpção inválida!")
+            else:
+                if (bebida != "Chá") and (bebida != "Suco De Laranja") and (bebida != "Suco De Melão") and (bebida != "Refrigerante Diet"):
+                    print(f"\nOpção inválida!")
+                else:
+                    if (prato == "Vegetariano"):
+                        qnt_prato_cal = 180
+                    elif (prato == "Peixe"):
+                        qnt_prato_cal = 230
+                    elif (prato == "Frango"):
+                        qnt_prato_cal = 250
+                    else:
+                        qnt_prato_cal = 350
+
+                    if (sobremesa == "Abacaxi"):
+                        qnt_sobremesa_cal = 75
+                    elif (sobremesa == "Sorvete Diet"):
+                        qnt_sobremesa_cal = 110
+                    elif (sobremesa == "Mousse Diet"):
+                        qnt_sobremesa_cal = 170
+                    else:
+                        qnt_sobremesa_cal = 200
+
+                    if (bebida == "Chá"):
+                        qnt_bebida_cal = 20
+                    elif (bebida == "Suco De Laranja"):
+                        qnt_bebida_cal = 70
+                    elif (bebida == "Suco De Melão"):
+                        qnt_bebida_cal = 100
+                    else:
+                        qnt_bebida_cal = 65
+                    
+                    qnt_total_cal = qnt_prato_cal + qnt_sobremesa_cal + qnt_bebida_cal
+                    print(f"\nQuantidade total de calorias da refeição ({prato}, {sobremesa} e {bebida}): {qnt_total_cal} kcal")
+    
+    except Exception as erro:
+        print(f"\nErro: {erro}")
+                
 #24. A polícia rodoviária resolveu fazer cumprir a lei e vistoriar veículos para
 #cobrar dos motoristas o DUT. Sabendo-se que o mês em que o emplacamento do
 #carro deve ser renovado é determinado pelo último número da placa do mesmo,
