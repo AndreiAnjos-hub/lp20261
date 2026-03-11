@@ -1,4 +1,3 @@
-import math
 
 #1. Faça um programa que leia dois valores numéricos inteiros e efetue
 #   a adição, caso o resultado seja maior que 10, apresentá-lo.
