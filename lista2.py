@@ -1,3 +1,5 @@
+import random
+from datetime import datetime
 
 #1. Faça um programa que leia dois valores numéricos inteiros e efetue
 #   a adição, caso o resultado seja maior que 10, apresentá-lo.
@@ -97,9 +99,9 @@ def questao_6():
         limite = salario * 0.30
         
         if (prestacao <= limite):
-            print(f"\nEmpréstimo concedido!")
+            print("\nEmpréstimo concedido!")
         else:
-                print(f"\nEmpréstimo não concedido!")
+                print("\nEmpréstimo não concedido!")
     except ValueError:
         print("\nValor inserido inválido! Apenas valores numéricos reais.")
 
@@ -108,7 +110,7 @@ def questao_6():
 
 def questao_7():
     try:
-        num = int(input("\nInforme um número: "))
+        num = random.randint(1,100)
 
         if (num >= 20) and (num <= 50):
             print(f"\nO número {num} está entre 20 e 50")
@@ -122,7 +124,7 @@ def questao_7():
 
 def questao_8():
     try:
-        num = int(input("\nInforme um número: "))
+        num = random.randint(1,100)
 
         if (num > 20):
             print(f"\nO número {num} é maior do que 20")
@@ -140,11 +142,11 @@ def questao_8():
 def questao_9():
     try:
         ano_nasc = int(input("\nInforme o seu ano de nascimento: "))
-        ano_atual = int(input("Informe o ano atual: "))
+        ano_atual = datetime.now().year
 
-        if (ano_nasc > 0) and (ano_nasc < ano_atual):
+        if (ano_nasc > 1900) and (ano_nasc < ano_atual):
             idade = ano_atual - ano_nasc
-            print(f"\nVocê tem {idade} anos de idade")
+            print(f"\nVocê tem {idade} anos de idade!")
         else:
             print(f"\nAno de nascimento inválido!")
     except ValueError:
@@ -155,9 +157,9 @@ def questao_9():
 
 def questao_10():
     try:
-        num1 = int(input("\nInforme o 1º número: "))
-        num2 = int(input("Informe o 2º número: "))
-        num3 = int(input("Informe o 3º número: "))
+        num1 = random.randint(1,100)
+        num2 = random.randint(1,100)
+        num3 = random.randint(1,100)
 
         if (num1 > num2) and (num1 > num3) and (num2 >= num3):
             print(f"\nOrdem crescente:\n{num1}, {num2}, {num3}")
@@ -186,9 +188,11 @@ def questao_10():
 
 def questao_11():
     try:
-        num1 = int(input("\nInforme o 1º número: "))
-        num2 = int(input("Informe o 2º número: "))
-        num3 = int(input("Informe o 3º número: "))
+        num1 = random.randint(1,100)
+        num2 = random.randint(1,100)
+        num3 = random.randint(1,100)
+
+        print(f"\n{num1}, {num2}, {num3}")
 
         if (num1 > num2) and (num1 > num3):
             print(f"\nO maior número é {num1}")
