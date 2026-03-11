@@ -646,19 +646,16 @@ def questao_25():
 
         if indice <= 0.25:
             print("\nÍndice de poluição aceitável.")
-
         else:
             print("\nIntimidação: ")
     
             if indice >= 0.3:
                 print("\nIndústrias do 1º GRUPO: Suspendam as atividades!")
-            
             if indice >= 0.4:
                 print("\nIndústrias do 2º GRUPO: Suspendam as atividades!")
-            
             if indice >= 0.5:
                 print("\nIndústrias do 3º GRUPO: Suspendam as atividades!")
-                
+        
     except ValueError:
         print("\nValor inserido inválido! Apenas valores numéricos reais.")
 
