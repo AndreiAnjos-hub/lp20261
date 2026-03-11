@@ -161,25 +161,25 @@ def questao_10():
         num3 = int(input("Informe o 3º número: "))
 
         if (num1 > num2) and (num1 > num3) and (num2 >= num3):
-            print(f"\nOrdem crescente:\n{num1}\n{num2}\n{num3}")
+            print(f"\nOrdem crescente:\n{num1}, {num2}, {num3}")
         elif (num1 > num2) and (num1 > num3) and (num3 >= num2):
-            print(f"\nOrdem crescente:\n{num1}\n{num3}\n{num2}")
+            print(f"\nOrdem crescente:\n{num1}, {num3}, {num2}")
         elif (num1 == num2) and (num1 > num3):
-            print(f"\nOrdem crescente:\n{num1}\n{num2}\n{num3}")
+            print(f"\nOrdem crescente:\n{num1}, {num2}, {num3}")
         elif (num2 > num1) and (num2 > num3) and (num1 >= num3):
-            print(f"\nOrdem crescente:\n{num2}\n{num1}\n{num3}")
+            print(f"\nOrdem crescente:\n{num2}, {num1}, {num3}")
         elif (num2 > num1) and (num2 > num3) and (num3 >= num1):
-            print(f"\nOrdem crescente:\n{num2}\n{num3}\n{num1}")
+            print(f"\nOrdem crescente:\n{num2}, {num3}, {num1}")
         elif (num2 == num3) and (num2 > num1):
-            print(f"\nOrdem crescente:\n{num2}\n{num3}\n{num1}")
+            print(f"\nOrdem crescente:\n{num2}, {num3}, {num1}")
         elif (num3 > num1) and (num3 > num2) and (num1 >= num2):
-            print(f"\nOrdem crescente:\n{num3}\n{num1}\n{num2}")
+            print(f"\nOrdem crescente:\n{num3}, {num1}, {num2}")
         elif (num3 > num1) and (num3 > num2) and (num2 >= num1):
-            print(f"\nOrdem crescente:\n{num3}\n{num2}\n{num1}")
+            print(f"\nOrdem crescente:\n{num3}, {num2}, {num1}")
         elif (num3 == num1) and (num3 > num2):
-            print(f"\nOrdem crescente:\n{num3}\n{num1}\n{num2}")
+            print(f"\nOrdem crescente:\n{num3}, {num1}, {num2}")
         else:
-            print(f"\nTodos os números são iguais")
+            print(f"\nTodos os números são iguais:\n{num1}, {num2}, {num3}")
     except ValueError:
         print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
 
@@ -224,7 +224,7 @@ def questao_12():
         if (idade < 18):
             print(f"\nMenor de idade")
     except ValueError:
-        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
+        print("\nValor inserido inválido! Apenas valor numérico inteiro.")
         
 #13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota
 #da prova 2 de um aluno. O programa deve imprimir o nome, a nota da prova 1,
@@ -274,7 +274,7 @@ def questao_14():
             print(f"\nDesconto de 30%")
 
     except ValueError:
-        print("\nValor inserido inválido! Apenas valores numéricos reais.")
+        print("\nValor inserido inválido! Apenas valor numérico real.")
 
 #15. Um comerciante comprou um produto e quer vendê-lo com um lucro de 45% se o
 #valor da compra for menor que R$20,00, caso contrário, o lucro será de 30%.
@@ -291,7 +291,7 @@ def questao_15():
             valor_venda = produto * 1.30
             print (f"\nValor da venda com 30% de lucro: R${valor_venda:.2f}")
     except ValueError:
-        print("\nValor inserido inválido! Apenas valores numéricos reais.")
+        print("\nValor inserido inválido! Apenas valor numérico real.")
 
 #16. A confederação brasileira de natação irá promover eliminatórias para o
 #próximo mundial. Faça um programa que receba a idade de um nadador e imprima
@@ -321,7 +321,7 @@ def questao_16():
             else:
                 print(f"\nSênior")
     except ValueError:
-        print("\nValor inserido inválido! Apenas valores numérico inteiro.")
+        print("\nValor inserido inválido! Apenas valor numérico inteiro.")
 
 #17. Depois da liberação do governo para as mensalidades dos planos de saúde,
 #as pessoas começaram a fazer pesquisas para descobrir um bom plano, não
@@ -357,7 +357,7 @@ def questao_17():
             else:
                 print(f"\nNome: {nome}\nIdade: {idade}\nValor a pagar: R%400,00")
     except ValueError:
-        print("\nValor inserido inválido! Apenas valor númerico inteiro.")
+        print("\nValor inserido inválido! Apenas valor numérico inteiro.")
 
 #18. Faça um programa que leia um número inteiro entre 1 e 12 e escreva o mês
 #correspondente. Caso o usuário digite um número fora desse intervalo, deverá
@@ -395,7 +395,7 @@ def questao_18():
             else:
                 print(f"\nMês {mes}: dezembro")
     except ValueError:
-        print("\nValor inserido inválido! Apenas valor númerico inteiro.")
+        print("\nValor inserido inválido! Apenas valor numérico inteiro.")
 
 #19. Em um campeonato nacional de arco-e-flecha, tem-se equipes de três jogadores
 #para cada estado. Sabendo-se que os arqueiros de uma equipe não obtiveram o
@@ -609,10 +609,22 @@ def questao_24():
 
         ultimo_num = placa[-1:]
 
-        # print(ultimo_num)
-
-        if (ultimo_num == "1") or (ultimo_num == "2"):
-            
+        if (ultimo_num == "1") or (ultimo_num == "2") or (ultimo_num == "3"):
+            print("\nPlaca será renovada em março!")
+        elif (ultimo_num == "4"):
+            print("\nPlaca será renovada em abril!")
+        elif (ultimo_num == "5"):
+            print("\nPlaca será renovada em maio!")
+        elif (ultimo_num == "6"):
+            print("\nPlaca será renovada em junho!")
+        elif (ultimo_num == "7"):
+            print("\nPlaca será renovada em julho!")
+        elif (ultimo_num == "8"):
+            print("\nPlaca será renovada em agosto!")
+        elif (ultimo_num == "9"):
+            print("\nPlaca será renovada em setembro!")
+        elif (ultimo_num == "0"):
+            print("\nPlaca será renovada em outubro!")
     
     except Exception as erro:
         print(f"\nErro: {erro}")
@@ -629,10 +641,26 @@ def questao_24():
 #0,5 1º, 2º e 3º grupos
 
 def questao_25():
-    print("\nDepois!")
+    try:
+        indice = float(input("\nInforme o índice de poluição medido: "))
 
+        if indice <= 0.25:
+            print("\nÍndice de poluição aceitável.")
 
-
+        else:
+            print("\nIntimidação: ")
+    
+            if indice >= 0.3:
+                print("\nIndústrias do 1º GRUPO: Suspendam as atividades!")
+            
+            if indice >= 0.4:
+                print("\nIndústrias do 2º GRUPO: Suspendam as atividades!")
+            
+            if indice >= 0.5:
+                print("\nIndústrias do 3º GRUPO: Suspendam as atividades!")
+                
+    except ValueError:
+        print("\nValor inserido inválido! Apenas valores numéricos reais.")
 
 
 try:
