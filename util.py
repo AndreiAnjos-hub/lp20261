@@ -1,4 +1,4 @@
-def intputint(msg):
+def inputint(msg):
     try:
         valor = int(input(msg))
         return valor
@@ -6,7 +6,7 @@ def intputint(msg):
         print("Erro: Valor informado não é inteiro!")
     return -1
     
-def floatputint(msg):
+def inputfloat(msg):
     try:
         valor = float(input(msg))
         return valor

@@ -1,20 +1,18 @@
 import random
 from datetime import datetime
+from util import inputint, inputfloat
 
 #1. Faça um programa que leia dois valores numéricos inteiros e efetue
 #   a adição, caso o resultado seja maior que 10, apresentá-lo.
 
 def questao_1():
-    try:
-        num1 = int(input("\nInforme o 1º número: "))
-        num2 = int(input("Informe o 2º número: "))
+    num1 = inputint("\nInforme o 1º número: ")
+    num2 = inputint("Informe o 2º número: ")
 
-        soma = num1 + num2
+    soma = num1 + num2
 
-        if (soma > 10):
-            print(f"\nSoma entre {num1} + {num2}: {soma}")
-    except ValueError:
-        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
+    if (soma > 10):
+        print(f"\nSoma entre {num1} + {num2}: {soma}")
 
 #2. Faça um programa que leia dois valores inteiros e efetue a adição.
 #   Caso o valor somado seja maior que 20, este deverá ser apresentado
@@ -22,55 +20,46 @@ def questao_1():
 #   20, este deverá ser apresentado subtraindo-se 5.
 
 def questao_2():
-    try:
-        num1 = int(input("\nInforme o 1º número: "))
-        num2 = int(input("Informe o 2º número: "))
+    num1 = inputint("\nInforme o 1º número: ")
+    num2 = inputint("Informe o 2º número: ")
 
-        soma = num1 + num2
+    soma = num1 + num2
 
-        if (soma > 20):
-            print(f"\nSoma entre {num1} + {num2} + 8: {soma + 8}")
-        else:
-            print(f"\nSoma entre {num1} + {num2} - 5: {soma - 5}")
-    except ValueError:
-        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
+    if (soma > 20):
+        print(f"\nSoma entre {num1} + {num2} + 8: {soma + 8}")
+    else:
+        print(f"\nSoma entre {num1} + {num2} - 5: {soma - 5}")
 
 #3. Faça um programa que leia um número e imprima uma das duas mensagens:
 #   "É múltiplo de 3"ou "Não é múltiplo de 3".
 
 def questao_3():
-    try:
-        num = int(input("\nInforme um número: "))
+    num = inputint("\nInforme um número: ")
 
-        multiplo = num % 3
+    multiplo = num % 3
 
-        if (multiplo == 0):
-            print(f"\nO número {num} é múltiplo de 3")
-        else:
-            print(f"\nO número {num} não é múltiplo de 3")
-    except ValueError:
-        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
+    if (multiplo == 0):
+        print(f"\nO número {num} é múltiplo de 3")
+    else:
+        print(f"\nO número {num} não é múltiplo de 3")
 
 #4. Faça um programa que leia um número e informe se ele é ou não divisível por 5.
 
 def questao_4():
-    try:
-        num = int(input("\nInforme um número: "))
+    num = inputint("\nInforme um número: ")
 
-        divisivel = num % 5
+    divisivel = num % 5
 
-        if (divisivel == 0):
-            print(f"\nO número {num} é divisível por 5")
-        else:
-            print(f"\nO número {num} não é divisível por 5")
-    except ValueError:
-        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
+    if (divisivel == 0):
+        print(f"\nO número {num} é divisível por 5")
+    else:
+        print(f"\nO número {num} não é divisível por 5")
 
 #5. Faça um programa que leia um número e informe se ele é divisível por 3 e por 7.
 
 def questao_5():
     try:
-        num = int(input("\nInforme um número: "))
+        num = inputint("\nInforme um número: ")
 
         div_3 = num % 3
         div_7 = num % 7
@@ -92,124 +81,106 @@ def questao_5():
 #   e o valor da prestação e informar se o empréstimo pode ou não ser concedido.
 
 def questao_6():
-    try:
-        salario = float(input("\nInforme seu salário bruto: "))
-        prestacao = float(input("Informe o valor da prestação: "))
+    salario = inputfloat("\nInforme seu salário bruto: ")
+    prestacao = inputfloat("Informe o valor da prestação: ")
         
-        limite = salario * 0.30
+    limite = salario * 0.30
         
-        if (prestacao <= limite):
-            print("\nEmpréstimo concedido!")
-        else:
-                print("\nEmpréstimo não concedido!")
-    except ValueError:
-        print("\nValor inserido inválido! Apenas valores numéricos reais.")
+    if (prestacao <= limite):
+        print("\nEmpréstimo concedido!")
+    else:
+        print("\nEmpréstimo não concedido!")
 
 #7. Faça um programa que leia um número e indique se o número está compreendido
 #   entre 20 e 50 ou não.
 
 def questao_7():
-    try:
-        num = random.randint(1,100)
+    num = random.randint(1,100)
 
-        if (num >= 20) and (num <= 50):
-            print(f"\nO número {num} está entre 20 e 50")
-        else:
-            print(f"\nO número {num} não está entre 20 e 50")
-    except ValueError:
-        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
+    if (num >= 20) and (num <= 50):
+        print(f"\nO número {num} está entre 20 e 50")
+    else:
+        print(f"\nO número {num} não está entre 20 e 50")
 
 #8. Faça um programa que leia um número e imprima uma das mensagens:
 #   "Maior do que 20", "Igual a 20"ou "Menor do que 20".
 
 def questao_8():
-    try:
-        num = random.randint(1,100)
+    num = random.randint(1,100)
 
-        if (num > 20):
-            print(f"\nO número {num} é maior do que 20")
-        elif (num == 20):
-            print(f"\nO número é igual a 20")
-        else:   
-            print(f"\nO número {num} é menor do que 20")
-    except ValueError:
-        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
+    if (num > 20):
+        print(f"\nO número {num} é maior do que 20")
+    elif (num == 20):
+        print(f"\nO número é igual a 20")
+    else:   
+        print(f"\nO número {num} é menor do que 20")
 
 #9. Faça um programa que permita entrar com o ano de nascimento da pessoa e com o
 #   ano atual. O programa deve imprimir a idade da pessoa. Não se esqueça de
 #   verificar se o ano de nascimento informado é válido.
 
 def questao_9():
-    try:
-        ano_nasc = int(input("\nInforme o seu ano de nascimento: "))
-        ano_atual = datetime.now().year
+    ano_nasc = inputint("\nInforme o seu ano de nascimento: ")
+    ano_atual = datetime.now().year
 
-        if (ano_nasc > 1900) and (ano_nasc < ano_atual):
-            idade = ano_atual - ano_nasc
-            print(f"\nVocê tem {idade} anos de idade!")
-        else:
-            print(f"\nAno de nascimento inválido!")
-    except ValueError:
-        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
+    if (ano_nasc > 1900) and (ano_nasc < ano_atual):
+        idade = ano_atual - ano_nasc
+        print(f"\nVocê tem {idade} anos de idade!")
+    else:
+        print(f"\nAno de nascimento inválido!")
 
 #10. Faça um programa que leia três números inteiros e imprima os três em ordem
 #crescente.
 
 def questao_10():
-    try:
-        num1 = random.randint(1,100)
-        num2 = random.randint(1,100)
-        num3 = random.randint(1,100)
+    num1 = random.randint(1,100)
+    num2 = random.randint(1,100)
+    num3 = random.randint(1,100)
 
-        if (num1 > num2) and (num1 > num3) and (num2 >= num3):
-            print(f"\nOrdem crescente:\n{num1}, {num2}, {num3}")
-        elif (num1 > num2) and (num1 > num3) and (num3 >= num2):
-            print(f"\nOrdem crescente:\n{num1}, {num3}, {num2}")
-        elif (num1 == num2) and (num1 > num3):
-            print(f"\nOrdem crescente:\n{num1}, {num2}, {num3}")
-        elif (num2 > num1) and (num2 > num3) and (num1 >= num3):
-            print(f"\nOrdem crescente:\n{num2}, {num1}, {num3}")
-        elif (num2 > num1) and (num2 > num3) and (num3 >= num1):
-            print(f"\nOrdem crescente:\n{num2}, {num3}, {num1}")
-        elif (num2 == num3) and (num2 > num1):
-            print(f"\nOrdem crescente:\n{num2}, {num3}, {num1}")
-        elif (num3 > num1) and (num3 > num2) and (num1 >= num2):
-            print(f"\nOrdem crescente:\n{num3}, {num1}, {num2}")
-        elif (num3 > num1) and (num3 > num2) and (num2 >= num1):
-            print(f"\nOrdem crescente:\n{num3}, {num2}, {num1}")
-        elif (num3 == num1) and (num3 > num2):
-            print(f"\nOrdem crescente:\n{num3}, {num1}, {num2}")
-        else:
-            print(f"\nTodos os números são iguais:\n{num1}, {num2}, {num3}")
-    except ValueError:
-        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
+    if (num1 > num2) and (num1 > num3) and (num2 >= num3):
+        print(f"\nOrdem crescente:\n{num1}, {num2}, {num3}")
+    elif (num1 > num2) and (num1 > num3) and (num3 >= num2):
+        print(f"\nOrdem crescente:\n{num1}, {num3}, {num2}")
+    elif (num1 == num2) and (num1 > num3):
+        print(f"\nOrdem crescente:\n{num1}, {num2}, {num3}")
+    elif (num2 > num1) and (num2 > num3) and (num1 >= num3):
+        print(f"\nOrdem crescente:\n{num2}, {num1}, {num3}")
+    elif (num2 > num1) and (num2 > num3) and (num3 >= num1):
+        print(f"\nOrdem crescente:\n{num2}, {num3}, {num1}")
+    elif (num2 == num3) and (num2 > num1):
+        print(f"\nOrdem crescente:\n{num2}, {num3}, {num1}")
+    elif (num3 > num1) and (num3 > num2) and (num1 >= num2):
+        print(f"\nOrdem crescente:\n{num3}, {num1}, {num2}")
+    elif (num3 > num1) and (num3 > num2) and (num2 >= num1):
+        print(f"\nOrdem crescente:\n{num3}, {num2}, {num1}")
+    elif (num3 == num1) and (num3 > num2):
+        print(f"\nOrdem crescente:\n{num3}, {num1}, {num2}")
+    else:
+        print(f"\nTodos os números são iguais:\n{num1}, {num2}, {num3}")
 
 #11. Faça um programa que leia 3 números e imprima o maior deles.
 
 def questao_11():
-    try:
-        num1 = random.randint(1,100)
-        num2 = random.randint(1,100)
-        num3 = random.randint(1,100)
+    num1 = random.randint(1,100)
+    num2 = random.randint(1,100)
+    num3 = random.randint(1,100)
 
-        print(f"\n{num1}, {num2}, {num3}")
+    print(f"\n{num1}, {num2}, {num3}")
 
-        if (num1 > num2) and (num1 > num3):
-            print(f"\nO maior número é {num1}")
-        elif (num1 == num2) and (num1 > num3):
-            print(f"\nO maior número é {num1}")
-        elif (num2 > num1) and (num2 > num3):
-            print(f"\nO maior número é {num2}")
-        elif (num2 == num3) and (num2 > num1):
-            print(f"\nO maior número é {num2}")
-        elif (num3 > num1) and (num3 > num2):
-            print(f"\nO maior número é {num3}")
-        elif (num3 == num1) and (num3 > num2):
-            print(f"\nO maior número é {num3}")
-        else:
-            print(f"\nTodos os números são iguais")
-    except ValueError:
-        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
+    if (num1 > num2) and (num1 > num3):
+        print(f"\nO maior número é {num1}")
+    elif (num1 == num2) and (num1 > num3):
+        print(f"\nO maior número é {num1}")
+    elif (num2 > num1) and (num2 > num3):
+        print(f"\nO maior número é {num2}")
+    elif (num2 == num3) and (num2 > num1):
+        print(f"\nO maior número é {num2}")
+    elif (num3 > num1) and (num3 > num2):
+        print(f"\nO maior número é {num3}")
+    elif (num3 == num1) and (num3 > num2):
+        print(f"\nO maior número é {num3}")
+    else:
+        print(f"\nTodos os números são iguais")
 
 #12. Faça um programa que leia a idade de uma pessoa e informe:
 #• Se é maior de idade
@@ -217,17 +188,14 @@ def questao_11():
 #• Se é maior de 65 anos
 
 def questao_12():
-    try:
-        idade = int(input("\nInforme sua idade: "))
+    idade = inputint("\nInforme sua idade: ")
 
-        if (idade >= 18):
-            print(f"\nMaior de idade")
-            if (idade > 65):
-                print(f"Maior de 65 anos")
-        if (idade < 18):
-            print(f"\nMenor de idade")
-    except ValueError:
-        print("\nValor inserido inválido! Apenas valor numérico inteiro.")
+    if (idade >= 18):
+        print(f"\nMaior de idade")
+        if (idade > 65):
+            print(f"Maior de 65 anos")
+    if (idade < 18):
+        print(f"\nMenor de idade")
         
 #13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota
 #da prova 2 de um aluno. O programa deve imprimir o nome, a nota da prova 1,
@@ -236,24 +204,21 @@ def questao_12():
 #reprovação e as demais em prova final).
 
 def questao_13():
-    try:
-        nome = input("\nInforme o seu nome: ").title().strip()
-        nota_1 = float(input("Informe sua 1ª nota: "))
-        nota_2 = float(input("Informe sua 2ª nota: "))
+    nome = input("\nInforme o seu nome: ").title().strip()
+    nota_1 = inputfloat("Informe sua 1ª nota: ")
+    nota_2 = inputfloat("Informe sua 2ª nota: ")
 
-        mf = (nota_1 + nota_2) / 2
+    mf = (nota_1 + nota_2) / 2
 
-        if (mf > 10) or (mf < 0):
-            print(f"Erro! Nota 1 ou 2 inválida")
+    if (mf > 10) or (mf < 0):
+        print(f"Erro! Nota 1 ou 2 inválida")
+    else:
+        if (mf >= 7):
+            print(f"\nAluno: {nome}\nNota 1: {nota_1}\nNota 2: {nota_2}\nMédia Final: {mf}\nAPROVADO!!!")
+        elif (mf < 3):
+            print(f"\nAluno: {nome}\nNota 1: {nota_1}\nNota 2: {nota_2}\nMédia Final: {mf}\nREPROVADO!!!")
         else:
-            if (mf >= 7):
-                print(f"\nAluno: {nome}\nNota 1: {nota_1}\nNota 2: {nota_2}\nMédia Final: {mf}\nAPROVADO!!!")
-            elif (mf < 3):
-                print(f"\nAluno: {nome}\nNota 1: {nota_1}\nNota 2: {nota_2}\nMédia Final: {mf}\nREPROVADO!!!")
-            else:
-                print(f"\nAluno: {nome}\nNota 1: {nota_1}\nNota 2: {nota_2}\nMédia Final: {mf}\nPROVA FINAL!!!")
-    except ValueError:
-        print("\nValor inserido inválido! Apenas valores numéricos reais.")
+            print(f"\nAluno: {nome}\nNota 1: {nota_1}\nNota 2: {nota_2}\nMédia Final: {mf}\nPROVA FINAL!!!")
             
 #14. Faça um programa que permita entrar com o salário de uma pessoa e imprima o
 #desconto do INSS segundo a tabela seguir:
@@ -264,37 +229,30 @@ def questao_13():
 #Maior que R$2000,00 30%
 
 def questao_14():
-    try:
-        salario = float(input("\nInforme seu salário: "))
+    salario = inputfloat("\nInforme seu salário: ")
 
-        if (salario <= 600):
-            print(f"\nIsento!")
-        elif (salario > 600) and (salario <= 1200):
-            print(f"\nDesconto de 20%")
-        elif (salario > 1200) and (salario <= 2000):
-            print(f"\nDesconto de 25%")
-        else:
-            print(f"\nDesconto de 30%")
-
-    except ValueError:
-        print("\nValor inserido inválido! Apenas valor numérico real.")
+    if (salario <= 600):
+        print(f"\nIsento!")
+    elif (salario > 600) and (salario <= 1200):
+        print(f"\nDesconto de 20%")
+    elif (salario > 1200) and (salario <= 2000):
+        print(f"\nDesconto de 25%")
+    else:
+        print(f"\nDesconto de 30%")
 
 #15. Um comerciante comprou um produto e quer vendê-lo com um lucro de 45% se o
 #valor da compra for menor que R$20,00, caso contrário, o lucro será de 30%.
 #Faça um programa que leia o valor do produto e imprima o valor da venda.
 
 def questao_15():
-    try:
-        produto = float(input("\nInforme o valor do produto: "))
+    produto = inputfloat("\nInforme o valor do produto: ")
 
-        if (produto < 20):
-            valor_venda = produto * 1.45
-            print (f"\nValor da venda com 45% de lucro: R${valor_venda:.2f}")
-        else:
-            valor_venda = produto * 1.30
-            print (f"\nValor da venda com 30% de lucro: R${valor_venda:.2f}")
-    except ValueError:
-        print("\nValor inserido inválido! Apenas valor numérico real.")
+    if (produto < 20):
+        valor_venda = produto * 1.45
+        print (f"\nValor da venda com 45% de lucro: R${valor_venda:.2f}")
+    else:
+        valor_venda = produto * 1.30
+        print (f"\nValor da venda com 30% de lucro: R${valor_venda:.2f}")
 
 #16. A confederação brasileira de natação irá promover eliminatórias para o
 #próximo mundial. Faça um programa que receba a idade de um nadador e imprima
@@ -307,24 +265,21 @@ def questao_15():
 #Sênior maiores de 18 anos
 
 def questao_16():
-    try:
-        idade = int(input("\nInforme a sua idade: "))
+    idade = inputint("\nInforme a sua idade: ")
 
-        if (idade < 5):
-            print(f"\nNão tem idade o suficiente para participar da natação!")
+    if (idade < 5):
+        print(f"\nNão tem idade o suficiente para participar da natação!")
+    else:
+        if (idade >= 5) and (idade <= 7):
+            print(f"\nInfantil A")
+        elif (idade >= 8) and (idade <= 10):
+            print(f"\nInfantil B")
+        elif (idade >= 11) and (idade <= 13):
+            print(f"\nJuvenil A")
+        elif (idade >= 14) and (idade <= 17):
+            print(f"\nJuvenil B")
         else:
-            if (idade >= 5) and (idade <= 7):
-                print(f"\nInfantil A")
-            elif (idade >= 8) and (idade <= 10):
-                print(f"\nInfantil B")
-            elif (idade >= 11) and (idade <= 13):
-                print(f"\nJuvenil A")
-            elif (idade >= 14) and (idade <= 17):
-                print(f"\nJuvenil B")
-            else:
-                print(f"\nSênior")
-    except ValueError:
-        print("\nValor inserido inválido! Apenas valor numérico inteiro.")
+            print(f"\nSênior")
 
 #17. Depois da liberação do governo para as mensalidades dos planos de saúde,
 #as pessoas começaram a fazer pesquisas para descobrir um bom plano, não
@@ -340,65 +295,59 @@ def questao_16():
 #Maior que 65 anos R$400,00
 
 def questao_17():
-    try:
-        nome = input("Informe seu nome: ").title().strip()
-        idade = int(input("Informe sua idade: "))
+    nome = input("Informe seu nome: ").title().strip()
+    idade = inputint("Informe sua idade: ")
 
-        if (idade <= 0):
-            print(f"\nIdade insuficiente!")
+    if (idade <= 0):
+        print(f"\nIdade insuficiente!")
+    else:
+        if (idade >= 1) and (idade <= 10):
+            print(f"\nNome: {nome}\nIdade: {idade}\nValor a pagar: R%30,00")
+        elif (idade > 10) and (idade <= 29):
+            print(f"\nNome: {nome}\nIdade: {idade}\nValor a pagar: R%60,00")
+        elif (idade > 29) and (idade <= 45):
+            print(f"\nNome: {nome}\nIdade: {idade}\nValor a pagar: R%120,00")
+        elif (idade > 45) and (idade <= 59):
+            print(f"\nNome: {nome}\nIdade: {idade}\nValor a pagar: R%150,00")
+        elif (idade > 59) and (idade <= 65):
+            print(f"\nNome: {nome}\nIdade: {idade}\nValor a pagar: R%250,00")
         else:
-            if (idade >= 1) and (idade <= 10):
-                print(f"\nNome: {nome}\nIdade: {idade}\nValor a pagar: R%30,00")
-            elif (idade > 10) and (idade <= 29):
-                print(f"\nNome: {nome}\nIdade: {idade}\nValor a pagar: R%60,00")
-            elif (idade > 29) and (idade <= 45):
-                print(f"\nNome: {nome}\nIdade: {idade}\nValor a pagar: R%120,00")
-            elif (idade > 45) and (idade <= 59):
-                print(f"\nNome: {nome}\nIdade: {idade}\nValor a pagar: R%150,00")
-            elif (idade > 59) and (idade <= 65):
-                print(f"\nNome: {nome}\nIdade: {idade}\nValor a pagar: R%250,00")
-            else:
-                print(f"\nNome: {nome}\nIdade: {idade}\nValor a pagar: R%400,00")
-    except ValueError:
-        print("\nValor inserido inválido! Apenas valor numérico inteiro.")
+            print(f"\nNome: {nome}\nIdade: {idade}\nValor a pagar: R%400,00")
 
 #18. Faça um programa que leia um número inteiro entre 1 e 12 e escreva o mês
 #correspondente. Caso o usuário digite um número fora desse intervalo, deverá
 #aparecer uma mensagem informando que não existe mês com este número.
 
 def questao_18():
-    try:
-        mes = int(input("\nInforme um número inteiro entre 1 e 12: "))
+    mes = inputint("\nInforme um número inteiro entre 1 e 12: ")
 
-        if (mes <= 0) or (mes >= 13):
-            print(f"\nNão exite mês com este número: {mes}")
+    if (mes <= 0) or (mes >= 13):
+        print(f"\nNão exite mês com este número: {mes}")
+    else:
+        if (mes == 1):
+            print(f"\nMês {mes}: janeiro")
+        elif (mes == 2):
+            print(f"\nMês {mes}: fevereiro")
+        elif (mes == 3):
+            print(f"\nMês {mes}: março")
+        elif (mes == 4):
+            print(f"\nMês {mes}: abril")
+        elif (mes == 5):
+            print(f"\nMês {mes}: maio")
+        elif (mes == 6):
+            print(f"\nMês {mes}: junho")
+        elif (mes == 7):
+            print(f"\nMês {mes}: julho")
+        elif (mes == 8):
+            print(f"\nMês {mes}: agosto")
+        elif (mes == 9):
+            print(f"\nMês {mes}: setembro")
+        elif (mes == 10):
+            print(f"\nMês {mes}: outubro")
+        elif (mes == 11):
+            print(f"\nMês {mes}: novembro")
         else:
-            if (mes == 1):
-                print(f"\nMês {mes}: janeiro")
-            elif (mes == 2):
-                print(f"\nMês {mes}: fevereiro")
-            elif (mes == 3):
-                print(f"\nMês {mes}: março")
-            elif (mes == 4):
-                print(f"\nMês {mes}: abril")
-            elif (mes == 5):
-                print(f"\nMês {mes}: maio")
-            elif (mes == 6):
-                print(f"\nMês {mes}: junho")
-            elif (mes == 7):
-                print(f"\nMês {mes}: julho")
-            elif (mes == 8):
-                print(f"\nMês {mes}: agosto")
-            elif (mes == 9):
-                print(f"\nMês {mes}: setembro")
-            elif (mes == 10):
-                print(f"\nMês {mes}: outubro")
-            elif (mes == 11):
-                print(f"\nMês {mes}: novembro")
-            else:
-                print(f"\nMês {mes}: dezembro")
-    except ValueError:
-        print("\nValor inserido inválido! Apenas valor numérico inteiro.")
+            print(f"\nMês {mes}: dezembro")
 
 #19. Em um campeonato nacional de arco-e-flecha, tem-se equipes de três jogadores
 #para cada estado. Sabendo-se que os arqueiros de uma equipe não obtiveram o
@@ -410,18 +359,17 @@ def questao_18():
 #  caso contrário, imprimir a mensagem "Equipe desclassificada".
 
 def questao_19():
-    try:
-        pontos_j1 = int(input("\nInforme os pontos obtidos do jogador 1: "))
-        pontos_j2 = int(input("Informe os pontos obtidos do jogador 2: "))
-        pontos_j3 = int(input("Informe os pontos obtidos do jogador 3: "))
+    pontos_j1 = int(input("\nInforme os pontos obtidos do jogador 1: "))
+    pontos_j2 = int(input("Informe os pontos obtidos do jogador 2: "))
+    pontos_j3 = int(input("Informe os pontos obtidos do jogador 3: "))
 
-        if (pontos_j1 > pontos_j2) and (pontos_j1 > pontos_j3) and (pontos_j2 >= pontos_j3):
+    if (pontos_j1 > pontos_j2) and (pontos_j1 > pontos_j3) and (pontos_j2 >= pontos_j3):
             print(f"\n1º Lugar: Jogador 1 com {pontos_j1} pontos\n2º Lugar: Jogador 2 com {pontos_j2} pontos\n3º Lugar: Jogador 3 com {pontos_j3} pontos")
-        elif (pontos_j1 > pontos_j2) and (pontos_j1 > pontos_j3) and (pontos_j3 >= pontos_j2):
+    elif (pontos_j1 > pontos_j2) and (pontos_j1 > pontos_j3) and (pontos_j3 >= pontos_j2):
             print(f"\n1º Lugar: Jogador 1 com {pontos_j1} pontos\n2º Lugar: Jogador 3 com {pontos_j3} pontos\n3º Lugar: Jogador 2 com {pontos_j2} pontos")
-        elif (pontos_j1 == pontos_j2) and (pontos_j1 > pontos_j3):
+    elif (pontos_j1 == pontos_j2) and (pontos_j1 > pontos_j3):
             print(f"\n1º Lugar: Jogador 1 com {pontos_j1} pontos\n2º Lugar: Jogador 2 com {pontos_j2} pontos\n3º Lugar: Jogador 3 com {pontos_j3} pontos")
-        elif (pontos_j2 > pontos_j1) and (pontos_j2 > pontos_j3) and (pontos_j1 >= pontos_j3):
+    elif (pontos_j2 > pontos_j1) and (pontos_j2 > pontos_j3) and (pontos_j1 >= pontos_j3):
             print(f"\n1º Lugar: Jogador 2 com {pontos_j2} pontos\n2º Lugar: Jogador 1 com {pontos_j1} pontos\n3º Lugar: Jogador 3 com {pontos_j3} pontos")
         elif (pontos_j2 > pontos_j1) and (pontos_j2 > pontos_j3) and (pontos_j3 >= pontos_j1):
             print(f"\n1º Lugar: Jogador 2 com {pontos_j2} pontos\n2º Lugar: Jogador 3 com {pontos_j3} pontos\n3º Lugar: Jogador 1 com {pontos_j1} pontos")
@@ -444,8 +392,7 @@ def questao_19():
             print(f"\nMédia aritmética da equipe: {media:.2f} pontos!")
         else:
             print(f"\nEquipe desclassificada!!!")
-    except ValueError:
-        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
+
 
 #20. O banco XXX concederá um crédito especial com juros de 2% aos seus clientes de
 #acordo com o saldo médio no último ano. Faça um programa que leia o saldo médio
