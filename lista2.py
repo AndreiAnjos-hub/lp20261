@@ -58,22 +58,19 @@ def questao_4():
 #5. Faça um programa que leia um número e informe se ele é divisível por 3 e por 7.
 
 def questao_5():
-    try:
-        num = inputint("\nInforme um número: ")
+    num = inputint("\nInforme um número: ")
 
-        div_3 = num % 3
-        div_7 = num % 7
+    div_3 = num % 3
+    div_7 = num % 7
 
-        if (div_3 == 0) and (div_7 == 0):
-            print(f"\nO número {num} é divisível por 3 e por 7")
-        elif (div_3 == 0):
-            print(f"\nO número {num} é divisível por 3")
-        elif (div_7 == 0):
-            print(f"\nO número {num} é divisível por 7")
-        else:
-            print(f"\nO número {num} não é divisível por 3 e por 7")
-    except ValueError:
-        print("\nValor inserido inválido! Apenas valores numéricos inteiros.")
+    if (div_3 == 0) and (div_7 == 0):
+        print(f"\nO número {num} é divisível por 3 e por 7")
+    elif (div_3 == 0):
+        print(f"\nO número {num} é divisível por 3")
+    elif (div_7 == 0):
+        print(f"\nO número {num} é divisível por 7")
+    else:
+        print(f"\nO número {num} não é divisível por 3 e por 7")
 
 #6. A prefeitura do Rio de Janeiro abriu uma linha de crédito para os funcionários
 #   estatutários. O valor máximo da prestação não poderá ultrapassar 30% do salário
@@ -81,7 +78,7 @@ def questao_5():
 #   e o valor da prestação e informar se o empréstimo pode ou não ser concedido.
 
 def questao_6():
-    salario = inputfloat("\nInforme seu salário bruto: ")
+    salario = inputfloat("\nInforme seu salário bruto: ", min=0)
     prestacao = inputfloat("Informe o valor da prestação: ")
         
     limite = salario * 0.30
@@ -120,10 +117,10 @@ def questao_8():
 #   verificar se o ano de nascimento informado é válido.
 
 def questao_9():
-    ano_nasc = inputint("\nInforme o seu ano de nascimento: ")
+    ano_nasc = inputint("\nInforme o seu ano de nascimento: ", min=1900)
     ano_atual = datetime.now().year
 
-    if (ano_nasc > 1900) and (ano_nasc < ano_atual):
+    if (ano_nasc < ano_atual):
         idade = ano_atual - ano_nasc
         print(f"\nVocê tem {idade} anos de idade!")
     else:
@@ -359,40 +356,39 @@ def questao_18():
 #  caso contrário, imprimir a mensagem "Equipe desclassificada".
 
 def questao_19():
-    pontos_j1 = int(input("\nInforme os pontos obtidos do jogador 1: "))
-    pontos_j2 = int(input("Informe os pontos obtidos do jogador 2: "))
-    pontos_j3 = int(input("Informe os pontos obtidos do jogador 3: "))
+    pontos_j1 = inputint("\nInforme os pontos obtidos do jogador 1: ")
+    pontos_j2 = inputint("Informe os pontos obtidos do jogador 2: ")
+    pontos_j3 = inputint("Informe os pontos obtidos do jogador 3: ")
 
     if (pontos_j1 > pontos_j2) and (pontos_j1 > pontos_j3) and (pontos_j2 >= pontos_j3):
-            print(f"\n1º Lugar: Jogador 1 com {pontos_j1} pontos\n2º Lugar: Jogador 2 com {pontos_j2} pontos\n3º Lugar: Jogador 3 com {pontos_j3} pontos")
+        print(f"\n1º Lugar: Jogador 1 com {pontos_j1} pontos\n2º Lugar: Jogador 2 com {pontos_j2} pontos\n3º Lugar: Jogador 3 com {pontos_j3} pontos")
     elif (pontos_j1 > pontos_j2) and (pontos_j1 > pontos_j3) and (pontos_j3 >= pontos_j2):
-            print(f"\n1º Lugar: Jogador 1 com {pontos_j1} pontos\n2º Lugar: Jogador 3 com {pontos_j3} pontos\n3º Lugar: Jogador 2 com {pontos_j2} pontos")
+        print(f"\n1º Lugar: Jogador 1 com {pontos_j1} pontos\n2º Lugar: Jogador 3 com {pontos_j3} pontos\n3º Lugar: Jogador 2 com {pontos_j2} pontos")
     elif (pontos_j1 == pontos_j2) and (pontos_j1 > pontos_j3):
-            print(f"\n1º Lugar: Jogador 1 com {pontos_j1} pontos\n2º Lugar: Jogador 2 com {pontos_j2} pontos\n3º Lugar: Jogador 3 com {pontos_j3} pontos")
+        print(f"\n1º Lugar: Jogador 1 com {pontos_j1} pontos\n2º Lugar: Jogador 2 com {pontos_j2} pontos\n3º Lugar: Jogador 3 com {pontos_j3} pontos")
     elif (pontos_j2 > pontos_j1) and (pontos_j2 > pontos_j3) and (pontos_j1 >= pontos_j3):
-            print(f"\n1º Lugar: Jogador 2 com {pontos_j2} pontos\n2º Lugar: Jogador 1 com {pontos_j1} pontos\n3º Lugar: Jogador 3 com {pontos_j3} pontos")
-        elif (pontos_j2 > pontos_j1) and (pontos_j2 > pontos_j3) and (pontos_j3 >= pontos_j1):
-            print(f"\n1º Lugar: Jogador 2 com {pontos_j2} pontos\n2º Lugar: Jogador 3 com {pontos_j3} pontos\n3º Lugar: Jogador 1 com {pontos_j1} pontos")
-        elif (pontos_j2 == pontos_j3) and (pontos_j2 > pontos_j1):
-            print(f"\n1º Lugar: Jogador 2 com {pontos_j2} pontos\n2º Lugar: Jogador 3 com {pontos_j3} pontos\n3º Lugar: Jogador 1 com {pontos_j1} pontos")
-        elif (pontos_j3 > pontos_j1) and (pontos_j3 > pontos_j2) and (pontos_j1 >= pontos_j2):
-            print(f"\n1º Lugar: Jogador 3 com {pontos_j3} pontos\n2º Lugar: Jogador 1 com {pontos_j1} pontos\n3º Lugar: Jogador 2 com {pontos_j2} pontos")
-        elif (pontos_j3 > pontos_j1) and (pontos_j3 > pontos_j2) and (pontos_j2 >= pontos_j1):
-            print(f"\n1º Lugar: Jogador 3 com {pontos_j3} pontos\n2º Lugar: Jogador 2 com {pontos_j2} pontos\n3º Lugar: Jogador 1 com {pontos_j1} pontos")
-        elif (pontos_j3 == pontos_j1) and (pontos_j3 > pontos_j2):
-            print(f"\n1º Lugar: Jogador 3 com {pontos_j3} pontos\n2º Lugar: Jogador 1 com {pontos_j1} pontos\n3º Lugar: Jogador 2 com {pontos_j2} pontos")
-        else:
-            print(f"\nTodos com a mesma pontuação:")
-            print(f"\nJogador 1 com {pontos_j1} pontos\nJogador 2 com {pontos_j2} pontos\nJogador 3 com {pontos_j3} pontos")
+        print(f"\n1º Lugar: Jogador 2 com {pontos_j2} pontos\n2º Lugar: Jogador 1 com {pontos_j1} pontos\n3º Lugar: Jogador 3 com {pontos_j3} pontos")
+    elif (pontos_j2 > pontos_j1) and (pontos_j2 > pontos_j3) and (pontos_j3 >= pontos_j1):
+        print(f"\n1º Lugar: Jogador 2 com {pontos_j2} pontos\n2º Lugar: Jogador 3 com {pontos_j3} pontos\n3º Lugar: Jogador 1 com {pontos_j1} pontos")
+    elif (pontos_j2 == pontos_j3) and (pontos_j2 > pontos_j1):
+        print(f"\n1º Lugar: Jogador 2 com {pontos_j2} pontos\n2º Lugar: Jogador 3 com {pontos_j3} pontos\n3º Lugar: Jogador 1 com {pontos_j1} pontos")
+    elif (pontos_j3 > pontos_j1) and (pontos_j3 > pontos_j2) and (pontos_j1 >= pontos_j2):
+        print(f"\n1º Lugar: Jogador 3 com {pontos_j3} pontos\n2º Lugar: Jogador 1 com {pontos_j1} pontos\n3º Lugar: Jogador 2 com {pontos_j2} pontos")
+    elif (pontos_j3 > pontos_j1) and (pontos_j3 > pontos_j2) and (pontos_j2 >= pontos_j1):
+        print(f"\n1º Lugar: Jogador 3 com {pontos_j3} pontos\n2º Lugar: Jogador 2 com {pontos_j2} pontos\n3º Lugar: Jogador 1 com {pontos_j1} pontos")
+    elif (pontos_j3 == pontos_j1) and (pontos_j3 > pontos_j2):
+        print(f"\n1º Lugar: Jogador 3 com {pontos_j3} pontos\n2º Lugar: Jogador 1 com {pontos_j1} pontos\n3º Lugar: Jogador 2 com {pontos_j2} pontos")
+    else:
+        print(f"\nTodos com a mesma pontuação:")
+        print(f"\nJogador 1 com {pontos_j1} pontos\nJogador 2 com {pontos_j2} pontos\nJogador 3 com {pontos_j3} pontos")
 
-        soma = pontos_j1 + pontos_j2 + pontos_j3
+    soma = pontos_j1 + pontos_j2 + pontos_j3
 
-        if (soma > 100):
-            media = (soma) / 3
-            print(f"\nMédia aritmética da equipe: {media:.2f} pontos!")
-        else:
-            print(f"\nEquipe desclassificada!!!")
-
+    if (soma > 100):
+        media = (soma) / 3
+        print(f"\nMédia aritmética da equipe: {media:.2f} pontos!")
+    else:
+        print(f"\nEquipe desclassificada!!!")
 
 #20. O banco XXX concederá um crédito especial com juros de 2% aos seus clientes de
 #acordo com o saldo médio no último ano. Faça um programa que leia o saldo médio
@@ -406,29 +402,26 @@ def questao_19():
 #acima de 3001 50% do valor do saldo médio
 
 def questao_20():
-    try:
-        saldo_m = float(input("\nInforme o saldo médio: "))
+    saldo_m = inputfloat("\nInforme o saldo médio: ")
 
-        if (saldo_m < 0):
-            print(f"\nSaldo negativo.")
+    if (saldo_m < 0):
+        print(f"\nSaldo negativo.")
+    else:
+
+        if (saldo_m <= 500):
+            print(f"\nNenhum crédito!")
+        elif (saldo_m <= 1000):
+            valor_credito = saldo_m * 0.30
+            print(f"\n30% do valor do saldo médio")
+            print(f"\nValor de crédito: R${valor_credito:.2f}")
+        elif (saldo_m <= 3000):
+            valor_credito = saldo_m * 0.40
+            print(f"\n40% do valor do saldo médio")
+            print(f"\nValor de crédito: R${valor_credito:.2f}")
         else:
-
-            if (saldo_m <= 500):
-                print(f"\nNenhum crédito!")
-            elif (saldo_m <= 1000):
-                valor_credito = saldo_m * 0.30
-                print(f"\n30% do valor do saldo médio")
-                print(f"\nValor de crédito: R${valor_credito:.2f}")
-            elif (saldo_m <= 3000):
-                valor_credito = saldo_m * 0.40
-                print(f"\n40% do valor do saldo médio")
-                print(f"\nValor de crédito: R${valor_credito:.2f}")
-            else:
-                valor_credito = saldo_m * 0.50
-                print(f"\n50% do valor do saldo médio")
-                print(f"\nValor de crédito: R${valor_credito:.2f}")
-    except ValueError:
-        print("\nValor inserido inválido! Apenas valores numéricos reais.")
+            valor_credito = saldo_m * 0.50
+            print(f"\n50% do valor do saldo médio")
+            print(f"\nValor de crédito: R${valor_credito:.2f}")
 
 #21. A biblioteca de uma Universidade deseja fazer um programa que leia o nome do
 #livro que será emprestado, o tipo de usuário (professor ou aluno) e possa
