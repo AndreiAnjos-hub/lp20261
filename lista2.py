@@ -117,7 +117,7 @@ def questao_8():
 #   verificar se o ano de nascimento informado é válido.
 
 def questao_9():
-    ano_nasc = inputint("\nInforme o seu ano de nascimento: ", min=1900)
+    ano_nasc = inputint(msg="\nInforme o seu ano de nascimento: ", min=1900)
     ano_atual = datetime.now().year
 
     if (ano_nasc < ano_atual):
@@ -185,7 +185,7 @@ def questao_11():
 #• Se é maior de 65 anos
 
 def questao_12():
-    idade = inputint("\nInforme sua idade: ")
+    idade = inputint(msg="\nInforme sua idade: ", min=1, max=120)
 
     if (idade >= 18):
         print(f"\nMaior de idade")
@@ -202,8 +202,8 @@ def questao_12():
 
 def questao_13():
     nome = input("\nInforme o seu nome: ").title().strip()
-    nota_1 = inputfloat("Informe sua 1ª nota: ")
-    nota_2 = inputfloat("Informe sua 2ª nota: ")
+    nota_1 = inputfloat(msg="Informe sua 1ª nota: ", min=0, max=10)
+    nota_2 = inputfloat(msg="Informe sua 2ª nota: ", min=0, max=10)
 
     mf = (nota_1 + nota_2) / 2
 
@@ -226,7 +226,7 @@ def questao_13():
 #Maior que R$2000,00 30%
 
 def questao_14():
-    salario = inputfloat("\nInforme seu salário: ")
+    salario = inputfloat(msg="\nInforme seu salário: ", min=0)
 
     if (salario <= 600):
         print(f"\nIsento!")
@@ -242,7 +242,7 @@ def questao_14():
 #Faça um programa que leia o valor do produto e imprima o valor da venda.
 
 def questao_15():
-    produto = inputfloat("\nInforme o valor do produto: ")
+    produto = inputfloat(msg="\nInforme o valor do produto: ", min=0)
 
     if (produto < 20):
         valor_venda = produto * 1.45
@@ -262,7 +262,7 @@ def questao_15():
 #Sênior maiores de 18 anos
 
 def questao_16():
-    idade = inputint("\nInforme a sua idade: ")
+    idade = inputint(msg="\nInforme a sua idade: ", min=1)
 
     if (idade < 5):
         print(f"\nNão tem idade o suficiente para participar da natação!")
@@ -292,8 +292,8 @@ def questao_16():
 #Maior que 65 anos R$400,00
 
 def questao_17():
-    nome = input("Informe seu nome: ").title().strip()
-    idade = inputint("Informe sua idade: ")
+    nome = input("\nInforme seu nome: ").title().strip()
+    idade = inputint(msg="Informe sua idade: ", min=1, max=120)
 
     if (idade <= 0):
         print(f"\nIdade insuficiente!")
@@ -316,7 +316,7 @@ def questao_17():
 #aparecer uma mensagem informando que não existe mês com este número.
 
 def questao_18():
-    mes = inputint("\nInforme um número inteiro entre 1 e 12: ")
+    mes = inputint(msg="\nInforme um número inteiro entre 1 e 12: ", min=1, max=12)
 
     if (mes <= 0) or (mes >= 13):
         print(f"\nNão exite mês com este número: {mes}")
@@ -356,9 +356,9 @@ def questao_18():
 #  caso contrário, imprimir a mensagem "Equipe desclassificada".
 
 def questao_19():
-    pontos_j1 = inputint("\nInforme os pontos obtidos do jogador 1: ")
-    pontos_j2 = inputint("Informe os pontos obtidos do jogador 2: ")
-    pontos_j3 = inputint("Informe os pontos obtidos do jogador 3: ")
+    pontos_j1 = inputint(msg="\nInforme os pontos obtidos do jogador 1: ", min=0)
+    pontos_j2 = inputint(msg="Informe os pontos obtidos do jogador 2: ", min=0)
+    pontos_j3 = inputint(msg="Informe os pontos obtidos do jogador 3: ", min=0)
 
     if (pontos_j1 > pontos_j2) and (pontos_j1 > pontos_j3) and (pontos_j2 >= pontos_j3):
         print(f"\n1º Lugar: Jogador 1 com {pontos_j1} pontos\n2º Lugar: Jogador 2 com {pontos_j2} pontos\n3º Lugar: Jogador 3 com {pontos_j3} pontos")
@@ -585,7 +585,7 @@ def questao_24():
 
 def questao_25():
     try:
-        indice = float(input("\nInforme o índice de poluição medido: "))
+        indice = inputfloat(msg="\nInforme o índice de poluição medido: ", min=0)
 
         if indice <= 0.25:
             print("\nÍndice de poluição aceitável.")

@@ -3,7 +3,7 @@ def inputint(msg, min=None, max=None):
         valor = int(input(msg))
         if min!=None and valor < min:
             raise Exception(f"ERRO: Valor informado é menor do que o permitido de {min}!")
-        if max!=None and valor < max:
+        if max!=None and valor > max:
             raise Exception(f"ERRO: Valor informado é maior do que o permitido de {max}!")
         return valor
     except ValueError:
@@ -17,7 +17,7 @@ def inputfloat(msg, min=None, max=None):
         valor = float(input(msg))
         if min!=None and valor < min:
             raise Exception(f"ERRO: Valor informado é menor do que o permitido de {min}!")
-        if max!=None and valor < max:
+        if max!=None and valor > max:
             raise Exception(f"ERRO: Valor informado é maior do que o permitido de {max}!")
         return valor
     except ValueError:
