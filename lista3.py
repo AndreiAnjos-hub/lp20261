@@ -52,11 +52,14 @@ def questao_4():
         sexo = input("Informe o sexo: ").title().strip()
 
         if (sexo == "Masculino") and (idade > 21):
-            print(f"\Nome: {nome}")
+            print(f"\nNome: {nome}")
 
 #5. Sabendo-se que a unidade lógica e aritmética calcula o produto através de somas
 #sucessivas, crie um programa que calcule o produto de dois números inteiros
 #lidos. Suponha que os números lidos sejam positivos.
+
+# def questao_5(): # depois
+
 
 #6. Crie um programa que imprima os 20 primeiros termos da série de Fibonacci.
 #Observação: os dois primeiros termos desta série são 1 e 1 e os demais são gerados
@@ -65,10 +68,21 @@ def questao_4():
 #• 1 + 2 = 3, quarto termo, etc.
 # 1 1 2 3 5 8 13 21
 
+# def questao_6():
+#     for num in range(1,21):
+#         print(num)
+#         num = num + num_anterior
+#         t = t + t_anterior
+#         t_anterior = t
+
+
 #7. Crie um programa que permita entrar com o nome, a nota da
 #prova 1 e da prova 2 de 15 alunos. Ao final, imprimir uma listagem, contendo:
 #nome, nota da prova 1, nota da prova 2, e média das notas de cada aluno. Ao final,
 #imprimir a média geral da turma.
+
+# def questao_7():
+
 
 #8. Faça um programa que permita entrar com o nome e o salário bruto de 10 pessoas.
 #Após ler os dados, imprimir o nome e o valor da alíquota do imposto de renda
