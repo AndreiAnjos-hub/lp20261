@@ -21,17 +21,38 @@ Lista de Exercícios referentes a estruturas de iteração (repetição)
 #1.Faça um programa que imprima todos os números de 1 até 100.
 
 def questao_1():
-    nome = input("Digite seu nome: ").title().strip()
-    print (f"\n{nome}")
-
+    print("\nTodos os números de 1 até 100: \n")
+    for num in range(1,101):
+        print(num, end=" ")
 
 #2. Faça um programa que imprima todos os números pares de 100 até 1.
 
+def questao_2():
+    print("\nTodos os pares de 100 até 1: \n")
+    for num in range(101, 1, -1): # 100,1,-2
+        if (num % 2 == 0):
+            print(num, end=" ")
+
 #3. Faça um programa que imprima os múltiplos de 5, no intervalo de 1 até 500.
+
+def questao_3():
+    print("\nTodos os múltiplos de 1 até 500: \n")
+    for num in range(1,501):
+        if (num % 5 == 0):
+            print(num, end=" ")
 
 #4. Faça um programa que permita entrar com o nome, a idade e o sexo de 20
 #pessoas.O programa deve imprimir o nome da pessoa se ela for do sexo masculino
 #e tiver mais de 21 anos.
+
+def questao_4():
+    for i in range(1,6):
+        nome = input("Informe seu nome: ").title().strip()
+        idade = inputint("Informe sua idade: ", min=1, max=120)
+        sexo = input("Informe o sexo: ").title().strip()
+
+        if (sexo == "Masculino") and (idade > 21):
+            print(f"\Nome: {nome}")
 
 #5. Sabendo-se que a unidade lógica e aritmética calcula o produto através de somas
 #sucessivas, crie um programa que calcule o produto de dois números inteiros
@@ -280,26 +301,16 @@ def questao_1():
 #Obs.: Para encerrar a entrada de dados, digite um número menor que zero para a
 #idade.
 
-# e = True
-# while (e == True):
-#     try:
-#         questao = int(input("Digite o número da questão: "))
-#         if questao < 1 or questao > 30:
-#             raise Exception("Questão inválida! Valores devem ser entre 1 e 30.")
-#             eval(f"questao_{questao}()")
-#         e = False
-#     except ValueError:
-#         print("Valor inválido! Apenas valor numérico inteiro.")
-#     except Exception as erro:
-#         print(erro)
 
-
-try:
-    questao = int(input("Digite o número da questão: "))
-    if questao < 1 or questao > 30:
-        raise Exception("Questão inválida! Valores devem ser entre 1 e 30.")
+e = True
+while (e == True):
+    try:
+        questao = int(input("Digite o número da questão: "))
+        if questao < 1 or questao > 30:
+            raise Exception("Questão inválida! Valores devem ser entre 1 e 30.")
         eval(f"questao_{questao}()")
-except ValueError:
-    print("Valor inválido! Apenas valor numérico inteiro.")
-except Exception as erro:
-    print(erro)
+        e = False
+    except ValueError:
+        print("Valor inválido! Apenas valor numérico inteiro.")
+    except Exception as erro:
+        print(erro)
