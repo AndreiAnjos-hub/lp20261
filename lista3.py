@@ -58,8 +58,18 @@ def questao_4():
 #sucessivas, crie um programa que calcule o produto de dois números inteiros
 #lidos. Suponha que os números lidos sejam positivos.
 
-# def questao_5(): # depois
+def questao_5():
+    num1 = inputint("Digite o primeiro número (multiplicando): ")
+    num2 = inputint("Digite o segundo número (multiplicador): ")
 
+    produto = 0
+    contador = 0
+
+    while contador < num2:
+        produto = produto + num1
+        contador = contador + 1
+
+    print(f"\nO produto de {num1} x {num2} através de somas sucessivas é: {produto}")
 
 #6. Crie um programa que imprima os 20 primeiros termos da série de Fibonacci.
 #Observação: os dois primeiros termos desta série são 1 e 1 e os demais são gerados
@@ -68,13 +78,19 @@ def questao_4():
 #• 1 + 2 = 3, quarto termo, etc.
 # 1 1 2 3 5 8 13 21
 
-# def questao_6():
-#     for num in range(1,21):
-#         print(num)
-#         num = num + num_anterior
-#         t = t + t_anterior
-#         t_anterior = t
+def questao_6():  
+    anterior = 1
+    atual = 1
 
+    print(f"\n1º termo: {anterior}")
+    print(f"2º termo: {atual}")
+
+    for i in range(3, 21):
+        proximo = anterior + atual
+        print(f"{i}º termo: {proximo}")
+        
+        anterior = atual
+        atual = proximo
 
 #7. Crie um programa que permita entrar com o nome, a nota da
 #prova 1 e da prova 2 de 15 alunos. Ao final, imprimir uma listagem, contendo:
@@ -82,7 +98,43 @@ def questao_4():
 #imprimir a média geral da turma.
 
 # def questao_7():
+#     soma_geral = 0
 
+#     for i in range(1,16):
+#         aluno = input(f"\n{i}º Aluno: ").title().strip()
+#         nota_1 = inputfloat("Nota da prova 1: ", min=0, max=10)
+#         nota_2 = inputfloat("Nota da prova 2: ", min=0, max=10)
+#         m_aluno = (nota_1 + nota_2) / 2
+#         soma_geral += m_aluno
+
+#         print(f"\nNome do {i}º Aluno: {aluno}\nNota da prova 1: {nota_1}\nNota da prova 2: {nota_2}\nMédia do Aluno: {m_aluno}")
+
+#     print(f"\nMédia geral: {(soma_geral / 15):.2f}")
+
+def questao_7():
+    soma_medias_turma = 0
+    total_alunos = 15
+
+    print("--- CADASTRO DE NOTAS ---")
+
+    for i in range(1, total_alunos + 1):
+        aluno = input(f"\nNome do {i}º Aluno: ").title().strip()
+        n1 = inputfloat(f"Nota da Prova 1 de {aluno}: ", min=0, max=10)
+        n2 = inputfloat(f"Nota da Prova 2 de {aluno}: ", min=0, max=10)
+        
+        media_aluno = (n1 + n2) / 2
+        soma_medias_turma += media_aluno 
+
+        print("-" * 30)
+        print(f"Aluno: {aluno}")
+        print(f"Notas 1 e 2: {n1} | {n2}")
+        print(f"Média: {media_aluno:.2f}")
+        print("-" * 30)
+
+    media_geral = soma_medias_turma / total_alunos
+    print(f"\n{'='*30}")
+    print(f"Média Geral: {media_geral:.2f}")
+    print(f"{'='*30}")
 
 #8. Faça um programa que permita entrar com o nome e o salário bruto de 10 pessoas.
 #Após ler os dados, imprimir o nome e o valor da alíquota do imposto de renda
