@@ -47,7 +47,7 @@ def questao_3():
 
 def questao_4():
     for i in range(1,6):
-        nome = input("Informe seu nome: ").title().strip()
+        nome = input("\nInforme seu nome: ").title().strip()
         idade = inputint("Informe sua idade: ", min=1, max=120)
         sexo = input("Informe o sexo: ").title().strip()
 
@@ -144,6 +144,18 @@ def questao_7():
 #Salário maior ou igual a R$1300,00 e menor que R$2300,00 10% do salário bruto
 #Salário maior ou igual a R$2300,00 15% do salário bruto
 
+def questao_8():
+    for i in range(1,11):
+        nome = input("\nInforme seu nome: ").title().strip()
+        salario_irpf = inputfloat("Informe seu salário: ", min=0)
+
+        if (salario_irpf < 1300):
+            print(f"\n{i}º Caso:\n\n{nome} | Isento")
+        elif (salario_irpf >= 1300) and (salario_irpf < 2300):
+            print(f"\n{i}º Caso:\n\n{nome} | 10% do salário bruto: {(salario_irpf * 0.10):.2f}")
+        else:
+            print(f"\n{i}º Caso:\n\n{nome} | 15% do salário bruto: {(salario_irpf * 0.15):.2f}")
+
 #9. No dia da estreia do filme "Procurando Dory", uma grande emissora de TV realizou
 #uma pesquisa logo após o encerramento do filme. Cada espectador respondeu
 #a um questionário no qual constava sua idade e a sua opinião em relação ao filme:
@@ -154,6 +166,40 @@ def questao_7():
 #• A percentagem de pessoas que responderam bom entre todos os expectadores
 #analisados.
 
+def questao_9():
+    qnt_exce = 0
+    qnt_bom = 0
+    qnt_regular = 0
+    soma_idade = 0
+
+    print("\n", end= "=" * 30)
+    print('\nCrítica do filme "Procurando Dory"')
+    print("=" * 30)
+
+    print("\nExcelente - 3")
+    print("Bom - 2")
+    print("Regular - 1")
+
+    for i in range(1,21):
+        idade = inputint("\nInforme sua idade: ", min=1, max=120)
+        opiniao = inputint("Qual sua opinião sobre o filme: ", min=1, max=3)
+
+        if (opiniao == 3):
+            qnt_exce += 1
+            soma_idade += idade
+        if (opiniao == 2):
+            qnt_regular += 1
+        if (opiniao == 1):
+            qnt_bom += 1
+
+    try:
+        print(f"\nMédia das idades das pessoas que responderam excelente: {(soma_idade / qnt_exce):.2f}")
+    except ZeroDivisionError:
+        print(f"\nMédia das idades das pessoas que responderam excelente: 0")
+    print(f"Quantidade de pessoas que responderam Regular: {qnt_regular}")
+    porcen_bom = (qnt_bom / (qnt_exce + qnt_bom + qnt_regular)) * 100
+    print(f"Porcentagem de pessoas que responderam bom entre todos os expectadores analisados: {porcen_bom}%")
+
 #10. Em um campeonato Europeu de Volleyball, se inscreveram 30 países. Sabendo-se
 #que na lista oficial de cada país consta, além de outros dados, peso e idade de 12
 #jogadores, crie um programa que apresente as seguintes informações:
@@ -162,6 +208,32 @@ def questao_7():
 #• O atleta mais pesado de cada time;
 #• O atleta mais jovem de cada time;
 #• O peso médio e a idade média de todos os participantes.
+
+def questao_10():
+    print("\n", end= "=" * 30)
+    print('\nCampeonato Europeu de Volleyball')
+    print("=" * 30)
+
+    for i in range(1,6):
+        for j in range(1,4):
+            peso = inputfloat(f"\nPeso do {j} jogador da equipe {i}: ", min=50, max=100)
+            idade = inputint(f"Idade do {j} jogador da equipe {i}: ", min=1, max=120)
+            mais_pesado = peso
+            mais_jovem = idade
+            if (peso > mais_pesado):
+                mais_pesado = peso
+                atleta_pesado = j
+            if (idade < mais_jovem):
+                mais_jovem = idade
+                atleta_jovem = j
+            
+            soma_peso_equipe += peso
+            soma_idade_equipe += idade
+            
+
+
+
+
 
 #11. Construa um programa que leia vários números e informe quantos números
 #entre 100 e 200 foram digitados. Quando o valor 0 (zero) for lido, o algoritmo
