@@ -115,8 +115,6 @@ def questao_7():
     soma_medias_turma = 0
     total_alunos = 15
 
-    print("--- CADASTRO DE NOTAS ---")
-
     for i in range(1, total_alunos + 1):
         aluno = input(f"\nNome do {i}º Aluno: ").title().strip()
         n1 = inputfloat(f"Nota da Prova 1 de {aluno}: ", min=0, max=10)
@@ -209,35 +207,127 @@ def questao_9():
 #• O atleta mais jovem de cada time;
 #• O peso médio e a idade média de todos os participantes.
 
+# def questao_10():
+#     print("\n", end= "=" * 30)
+#     print('\nCampeonato Europeu de Volleyball')
+#     print("=" * 30)
+
+#     soma_peso_equipe = 0
+#     soma_idade_equipe = 0
+
+#     for i in range(1,3):
+#         for j in range(1,2):
+#             peso = inputfloat(f"\nPeso do {j} jogador da equipe {i}: ", min=50, max=100)
+#             idade = inputint(f"Idade do {j} jogador da equipe {i}: ", min=1, max=120)
+
+#             mais_pesado = peso
+#             mais_jovem = idade
+
+#             if (peso > mais_pesado):
+#                 mais_pesado = peso
+#                 atleta_pesado = j
+#             if (idade < mais_jovem):
+#                 mais_jovem = idade
+#                 atleta_jovem = j
+                
+#             print("=" * 30)
+#             print("Informações Equipe")
+#             print("=" * 30)
+
+#             soma_peso_equipe += peso
+#             soma_idade_equipe += idade
+
+#             media_peso_equipe = soma_peso_equipe / j
+#             media_idade_equipe = soma_idade_equipe / j
+
+#         print(f"\nMédia de peso da equipe: {media_peso_equipe:.2f}")
+#         print(f"Média de idade da equipe: {media_idade_equipe:.2f}")
+#         print(f"Atleta mais pesado da equipe {i}: atleta {atleta_pesado}")
+#         print(f"Atleta mais jovem da equipe {i}: atleta {atleta_jovem}")
+    
+#     print("=" * 30)
+#     print("Informações Geral")
+#     print("=" * 30)
+
+#     media_peso = soma_peso_equipe / i
+#     media_idade = soma_idade_equipe / i
+
+#     print(f"\nMédia do peso geral: {media_peso:.2f}")
+#     print(f"Média da idade geral: {media_idade:.2f}")
+
 def questao_10():
-    print("\n", end= "=" * 30)
-    print('\nCampeonato Europeu de Volleyball')
+    print("\n" + "=" * 30)
+    print('Campeonato Europeu de Volleyball')
     print("=" * 30)
 
-    for i in range(1,6):
-        for j in range(1,4):
-            peso = inputfloat(f"\nPeso do {j} jogador da equipe {i}: ", min=50, max=100)
-            idade = inputint(f"Idade do {j} jogador da equipe {i}: ", min=1, max=120)
-            mais_pesado = peso
-            mais_jovem = idade
-            if (peso > mais_pesado):
+    soma_peso_geral = 0
+    soma_idade_geral = 0
+    total_atletas_campeonato = 0
+
+    num_equipes = 2
+    atletas_por_equipe = 3 # Exemplo com 3 para testar melhor que 1
+
+    for i in range(1, num_equipes + 1):
+        # INICIALIZAÇÃO PARA CADA EQUIPE
+        soma_peso_equipe = 0
+        soma_idade_equipe = 0
+        
+        # Valores iniciais extremos para comparação
+        mais_pesado = 0
+        mais_jovem = 999
+        atleta_pesado = 0
+        atleta_jovem = 0
+
+        print(f"\n--- EQUIPE {i} ---")
+
+        for j in range(1, atletas_por_equipe + 1):
+            peso = inputfloat(f"Peso do {j}º jogador da equipe {i}: ", min=50, max=150)
+            idade = inputint(f"Idade do {j}º jogador da equipe {i}: ", min=1, max=120)
+
+            # Lógica do Mais Pesado
+            if peso > mais_pesado:
                 mais_pesado = peso
                 atleta_pesado = j
-            if (idade < mais_jovem):
+            
+            # Lógica do Mais Jovem
+            if idade < mais_jovem:
                 mais_jovem = idade
                 atleta_jovem = j
-            
+
             soma_peso_equipe += peso
             soma_idade_equipe += idade
             
+            # Acumuladores Gerais
+            soma_peso_geral += peso
+            soma_idade_geral += idade
+            total_atletas_campeonato += 1
 
+        # Resultados da Equipe (fora do loop de J, dentro do de I)
+        media_p_equipe = soma_peso_equipe / atletas_por_equipe
+        media_i_equipe = soma_idade_equipe / atletas_por_equipe
 
+        print("-" * 30)
+        print(f"Média de peso da equipe {i}: {media_p_equipe:.2f} kg")
+        print(f"Média de idade da equipe {i}: {media_i_equipe:.2f} anos")
+        print(f"Atleta {atleta_pesado} é o mais pesado ({mais_pesado} kg)")
+        print(f"Atleta {atleta_jovem} é o mais jovem ({mais_jovem} anos)")
 
+    # Resultados Gerais (fora de todos os loops)
+    print("\n" + "=" * 30)
+    print("INFORMAÇÕES GERAIS DO CAMPEONATO")
+    print("=" * 30)
+    
+    media_peso_geral = soma_peso_geral / total_atletas_campeonato
+    media_idade_geral = soma_idade_geral / total_atletas_campeonato
 
+    print(f"Média de peso geral: {media_peso_geral:.2f} kg")
+    print(f"Média de idade geral: {media_idade_geral:.2f} anos")
 
 #11. Construa um programa que leia vários números e informe quantos números
 #entre 100 e 200 foram digitados. Quando o valor 0 (zero) for lido, o algoritmo
 #deverá cessar sua execução.
+
+
 
 #12. Dado um país A, com 5 milhões de habitantes e uma taxa de natalidade de 3% ao
 #ano, e um país B com 7 milhões de habitantes e uma taxa de natalidade de 2% ao
