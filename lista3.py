@@ -327,12 +327,25 @@ def questao_10():
 #entre 100 e 200 foram digitados. Quando o valor 0 (zero) for lido, o algoritmo
 #deverá cessar sua execução.
 
+def questao_11():
+    qnt_num = 0
+    print("\n")
 
+    while True:
+        num = inputint("Informe um número: ")
+
+        if (num >= 100) and (num <= 200):
+            qnt_num += 1
+        elif (num == 0):
+            break
+    
+    print(f"\nQuantidade total de números informado entre 100 e 200: {qnt_num}")
 
 #12. Dado um país A, com 5 milhões de habitantes e uma taxa de natalidade de 3% ao
 #ano, e um país B com 7 milhões de habitantes e uma taxa de natalidade de 2% ao
 #ano, fazer um programa que calcule e imprima o tempo necessário para que a
 #população do país A ultrapasse a população do país B.
+
 
 #13. Uma empresa de fornecimento de energia elétrica faz a leitura mensal dos medidores
 #de consumo. Para cada consumidor, são digitados os seguintes dados:
