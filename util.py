@@ -1,18 +1,4 @@
-# def inputint(msg, min=None, max=None):
-#     erro = True
-#     while (erro == True):
-#         try:
-#             valor = int(input(msg))
-#             if min!=None and valor < min:
-#                 raise Exception(f"ERRO: Valor informado é menor do que o permitido de {min}!")
-#             if max!=None and valor > max:
-#                 raise Exception(f"ERRO: Valor informado é maior do que o permitido de {max}!")
-#             erro = False
-#             return valor
-#         except ValueError:
-#             print("Erro: Valor informado não é inteiro!")
-#         except Exception as erro:
-#             print(erro)
+import random
 
 def inputint(msg, min=None, max=None):
     while True: 
@@ -32,6 +18,7 @@ def inputint(msg, min=None, max=None):
         except ValueError:
             print("ERRO: Valor informado não é um número inteiro!")
 
+
 def inputfloat(msg, min=None, max=None):
     while True: 
         try:
@@ -49,19 +36,11 @@ def inputfloat(msg, min=None, max=None):
             
         except ValueError:
             print("ERRO: Valor informado não é um número inteiro!")
-    
-# def inputfloat(msg, min=None, max=None):
-#     erro = True
-#     while (erro == True):
-#         try:
-#             valor = float(input(msg))
-#             if min!=None and valor < min:
-#                 raise Exception(f"ERRO: Valor informado é menor do que o permitido de {min}!")
-#             if max!=None and valor > max:
-#                 raise Exception(f"ERRO: Valor informado é maior do que o permitido de {max}!")
-#             erro = False
-#             return valor
-#         except ValueError:
-#             print("Erro: Valor informado não é real!")
-#         except Exception as erro:
-#             print(erro)
+
+
+def gerar_palavra(min=4, max=10):
+    qnt_letras = random.randrange(min,max+1)
+    palavra = ""
+    for _ in range(random.randrange(qnt_letras)):
+        palavra += chr(random.randrange(65, 91))
+    return palavra

@@ -1,6 +1,6 @@
 import random
 from datetime import datetime
-from util import inputint, inputfloat
+from util import inputint, inputfloat, gerar_palavra
 
 '''
 Lista de Exercícios referentes a estruturas de iteração (repetição)
@@ -46,13 +46,13 @@ def questao_3():
 #e tiver mais de 21 anos.
 
 def questao_4():
+    print("\n")
     for i in range(1,6):
-        nome = input("\nInforme seu nome: ").title().strip()
-        idade = inputint("Informe sua idade: ", min=1, max=120)
-        sexo = input("Informe o sexo: ").title().strip()
-
+        nome = gerar_palavra(10)
+        idade = random.randrange(1,121)
+        sexo = random.choice(("Masculino", "Feminino"))
         if (sexo == "Masculino") and (idade > 21):
-            print(f"\nNome: {nome}")
+            print(f"A pessoa {nome} do sexo {sexo} tem {idade} anos de idade.")
 
 #5. Sabendo-se que a unidade lógica e aritmética calcula o produto através de somas
 #sucessivas, crie um programa que calcule o produto de dois números inteiros
@@ -345,6 +345,8 @@ def questao_11():
 #ano, e um país B com 7 milhões de habitantes e uma taxa de natalidade de 2% ao
 #ano, fazer um programa que calcule e imprima o tempo necessário para que a
 #população do país A ultrapasse a população do país B.
+
+# def questao_12():
 
 
 #13. Uma empresa de fornecimento de energia elétrica faz a leitura mensal dos medidores
