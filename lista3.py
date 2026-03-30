@@ -47,19 +47,19 @@ def questao_3():
 
 def questao_4():
     print("\n")
-    for i in range(1,6):
-        nome = gerar_palavra(10)
-        idade = random.randrange(1,121)
-        sexo = random.choice(("Masculino", "Feminino"))
+    for _ in range(20):
+        nome = str = gerar_palavra()
+        idade = int = random.randrange(1,121)
+        sexo = str = random.choice(("Masculino", "Feminino"))
         if (sexo == "Masculino") and (idade > 21):
-            print(f"A pessoa {nome} do sexo {sexo} tem {idade} anos de idade.")
+            print(f"A pessoa {nome:10} do sexo {sexo} tem {idade} anos de idade.")
 
 #5. Sabendo-se que a unidade lógica e aritmética calcula o produto através de somas
 #sucessivas, crie um programa que calcule o produto de dois números inteiros
 #lidos. Suponha que os números lidos sejam positivos.
 
 def questao_5():
-    num1 = inputint("Digite o primeiro número (multiplicando): ")
+    num1 = inputint("\nDigite o primeiro número (multiplicando): ")
     num2 = inputint("Digite o segundo número (multiplicador): ")
 
     produto = 0
@@ -265,14 +265,12 @@ def questao_10():
     total_atletas_campeonato = 0
 
     num_equipes = 2
-    atletas_por_equipe = 3 # Exemplo com 3 para testar melhor que 1
+    atletas_por_equipe = 3
 
     for i in range(1, num_equipes + 1):
-        # INICIALIZAÇÃO PARA CADA EQUIPE
         soma_peso_equipe = 0
         soma_idade_equipe = 0
         
-        # Valores iniciais extremos para comparação
         mais_pesado = 0
         mais_jovem = 999
         atleta_pesado = 0
@@ -284,12 +282,10 @@ def questao_10():
             peso = inputfloat(f"Peso do {j}º jogador da equipe {i}: ", min=50, max=150)
             idade = inputint(f"Idade do {j}º jogador da equipe {i}: ", min=1, max=120)
 
-            # Lógica do Mais Pesado
             if peso > mais_pesado:
                 mais_pesado = peso
                 atleta_pesado = j
             
-            # Lógica do Mais Jovem
             if idade < mais_jovem:
                 mais_jovem = idade
                 atleta_jovem = j
@@ -297,12 +293,10 @@ def questao_10():
             soma_peso_equipe += peso
             soma_idade_equipe += idade
             
-            # Acumuladores Gerais
             soma_peso_geral += peso
             soma_idade_geral += idade
             total_atletas_campeonato += 1
 
-        # Resultados da Equipe (fora do loop de J, dentro do de I)
         media_p_equipe = soma_peso_equipe / atletas_por_equipe
         media_i_equipe = soma_idade_equipe / atletas_por_equipe
 
@@ -312,7 +306,6 @@ def questao_10():
         print(f"Atleta {atleta_pesado} é o mais pesado ({mais_pesado} kg)")
         print(f"Atleta {atleta_jovem} é o mais jovem ({mais_jovem} anos)")
 
-    # Resultados Gerais (fora de todos os loops)
     print("\n" + "=" * 30)
     print("INFORMAÇÕES GERAIS DO CAMPEONATO")
     print("=" * 30)
@@ -347,6 +340,7 @@ def questao_11():
 #população do país A ultrapasse a população do país B.
 
 # def questao_12():
+#     pais_a
 
 
 #13. Uma empresa de fornecimento de energia elétrica faz a leitura mensal dos medidores
@@ -363,6 +357,31 @@ def questao_11():
 #• O total de consumo para os três tipos de consumidor
 #• A média de consumo dos tipos 1 e 2
 
+def questao_13():
+    while true:
+        num_consumidor = input("\nNúmero do consumidor: ")
+        qnt_kwh = inputfloat("Quantidade de kwh consumidos no mês: ", min=0)
+        codigo = random.randrange(1,4)
+
+        if (qnt_kwh > 0):
+            if (codigo == 1):
+                soma_tipo_1 += 1
+                consumo_total = qnt_kwh * 0.3
+                soma_consumo_1 += consumo_total
+            elif (codigo == 2):
+                soma_tipo_2 += 1
+                consumo_total = qnt_kwh * 0.5
+                soma_consumo_2 += consumo_total
+            elif (codigo == 3):
+                consumo_total = qnt_kwh * 0.7
+                soma_consumo_3 += consumo_total
+        elif (qnt_kwh == 0):
+            break
+            consumo_total_geral = soma_consumo_1 + soma_consumo_2 + soma_consumo_3
+            media_consumo = consumo_total_geral / 3
+        else:
+            print(f"\nValor inválido!")
+        
 #14. Faça um programa que leia vários números inteiros e apresente o fatorial de cada
 #número. O algoritmo encerra quando se digita um número menor do que 1.n
 
