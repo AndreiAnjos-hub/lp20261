@@ -358,7 +358,8 @@ def questao_11():
 #• A média de consumo dos tipos 1 e 2
 
 def questao_13():
-    while true:
+    soma_tipo_1 
+    while True:
         num_consumidor = input("\nNúmero do consumidor: ")
         qnt_kwh = inputfloat("Quantidade de kwh consumidos no mês: ", min=0)
         codigo = random.randrange(1,4)
@@ -384,6 +385,10 @@ def questao_13():
         
 #14. Faça um programa que leia vários números inteiros e apresente o fatorial de cada
 #número. O algoritmo encerra quando se digita um número menor do que 1.n
+
+# def questao_14():
+#     while True:
+
 
 #15. Faça um programa que permita entrar com a idade de várias pessoas e
 #imprima:
