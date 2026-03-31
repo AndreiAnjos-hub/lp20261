@@ -339,9 +339,22 @@ def questao_11():
 #ano, fazer um programa que calcule e imprima o tempo necessário para que a
 #população do país A ultrapasse a população do país B.
 
-# def questao_12():
-#     pais_a
+def questao_12():
+    pop_pais_A = 5000000
+    pop_pais_B = 7000000
 
+    taxa_nat_A = 0.03
+    taxa_nat_B = 0.02
+    t_anos = 0
+
+    while (pop_pais_A <= pop_pais_B):
+        pop_pais_A += pop_pais_A * taxa_nat_A
+        pop_pais_B += pop_pais_B * taxa_nat_B
+        t_anos += 1
+
+    print(f"\nSerão necessários {t_anos} anos para que a população do país A ultrapasse a do país B.")
+    print(f"População final país A: {pop_pais_A:,.0f}")
+    print(f"População final país B: {pop_pais_B:,.0f}")
 
 #13. Uma empresa de fornecimento de energia elétrica faz a leitura mensal dos medidores
 #de consumo. Para cada consumidor, são digitados os seguintes dados:
@@ -358,37 +371,67 @@ def questao_11():
 #• A média de consumo dos tipos 1 e 2
 
 def questao_13():
-    soma_tipo_1 
-    while True:
-        num_consumidor = input("\nNúmero do consumidor: ")
-        qnt_kwh = inputfloat("Quantidade de kwh consumidos no mês: ", min=0)
-        codigo = random.randrange(1,4)
+    soma_kwh_1 = 0
+    soma_kwh_2 = 0
+    soma_kwh_3 = 0
+    qtd_consumidores_1_2 = 0
 
-        if (qnt_kwh > 0):
-            if (codigo == 1):
-                soma_tipo_1 += 1
-                consumo_total = qnt_kwh * 0.3
-                soma_consumo_1 += consumo_total
-            elif (codigo == 2):
-                soma_tipo_2 += 1
-                consumo_total = qnt_kwh * 0.5
-                soma_consumo_2 += consumo_total
-            elif (codigo == 3):
-                consumo_total = qnt_kwh * 0.7
-                soma_consumo_3 += consumo_total
-        elif (qnt_kwh == 0):
-            break
-            consumo_total_geral = soma_consumo_1 + soma_consumo_2 + soma_consumo_3
-            media_consumo = consumo_total_geral / 3
-        else:
-            print(f"\nValor inválido!")
+    while True:
+        num_consumidor = inputint("\nNúmero do consumidor (0 para sair): ", min=0)
         
+        if num_consumidor == 0:
+            break
+            
+        qnt_kwh = inputfloat("Quantidade de kWh consumidos no mês: ", min=0)
+        codigo = inputint("Tipo (1-Residencial, 2-Comercial, 3-Industrial): ", min=1, max=3)
+
+        if codigo == 1:
+            custo_individual = qnt_kwh * 0.3
+            soma_kwh_1 += qnt_kwh
+            qtd_consumidores_1_2 += 1
+            print(f"\nCusto para o consumidor {num_consumidor}: R$ {custo_individual:.2f}")
+        elif codigo == 2:
+            custo_individual = qnt_kwh * 0.5
+            soma_kwh_2 += qnt_kwh
+            qtd_consumidores_1_2 += 1
+            print(f"\nCusto para o consumidor {num_consumidor}: R$ {custo_individual:.2f}")
+        elif codigo == 3:
+            custo_individual = qnt_kwh * 0.7
+            soma_kwh_3 += qnt_kwh
+            print(f"\nCusto para o consumidor {num_consumidor}: R$ {custo_individual:.2f}")
+        else:
+            print("Código inválido! Dados deste consumidor ignorados.")
+
+    total_geral_kwh = soma_kwh_1 + soma_kwh_2 + soma_kwh_3
+    
+    if qtd_consumidores_1_2 > 0:
+        media_1_2 = (soma_kwh_1 + soma_kwh_2) / qtd_consumidores_1_2
+    else:
+        media_1_2 = 0
+
+    print("\n" + "="*40)
+    print(f"Total de consumo Tipo 1: {soma_kwh_1:.2f} kWh")
+    print(f"Total de consumo Tipo 2: {soma_kwh_2:.2f} kWh")
+    print(f"Total de consumo Tipo 3: {soma_kwh_3:.2f} kWh")
+    print(f"Média de consumo dos tipos 1 e 2: {media_1_2:.2f} kWh")
+    print("="*40)
+
 #14. Faça um programa que leia vários números inteiros e apresente o fatorial de cada
 #número. O algoritmo encerra quando se digita um número menor do que 1.n
 
-# def questao_14():
-#     while True:
+def questao_14():
+    while True:
+        num = inputint("\nInforme um valor inteiro: ", min=0)
 
+        if (num < 1):
+            break
+
+        fatorial = 1
+
+        for i in range(1,num + 1):
+            fatorial = fatorial * i
+
+        print(f"\nFatorial de {num}: {fatorial}")
 
 #15. Faça um programa que permita entrar com a idade de várias pessoas e
 #imprima:
