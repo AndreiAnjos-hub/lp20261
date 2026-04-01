@@ -438,6 +438,23 @@ def questao_14():
 #• total de pessoas com menos de 21 anos
 #• total de pessoas com mais de 50 anos
 
+def questao_15():
+    qnt_menos_21 = 0
+    qnt_mais_50 = 0
+
+    while True:
+        idade = inputint("\nInforme sua idade: ",min=0, max=121)
+
+        if (idade == 0):
+            break
+        elif (idade < 21):
+            qnt_menos_21 += 1
+        elif (idade > 50 ):
+            qnt_mais_50 += 1
+
+    print(f"\nTotal de pessoas com menos de 21 anos: {qnt_menos_21}")
+    print(f"Total de pessoas com mais de 50 anos: {qnt_mais_50}")
+
 #16. Sabendo-se que a unidade lógica e aritmética calcula a divisão por meio de subtrações
 #sucessivas, criar um algoritmo que calcule e imprima o resto da divisão de
 #números inteiros lidos. Para isso, basta subtrair o divisor ao dividendo, sucessivamente,
@@ -451,6 +468,9 @@ def questao_14():
 #  5 é o Divisor
 #  2 é o Quociente (resultado inteiro da divisão)
 #  0 é o Resto da Divisão
+
+# def questao_16():
+
 
 #17. Crie um programa que possa ler um conjunto de pedidos de compra e
 #calcule o valor total da compra. Cada pedido é composto pelos seguintes campos:
