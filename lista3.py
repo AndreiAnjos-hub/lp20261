@@ -671,13 +671,12 @@ def questao_20():
         print("3 - Outros")
         print(30 * "-")
 
-        local = inputint("\nResposta: ", min=1, max=5)
+        local = inputint("\nResposta: ", min=1, max=3)
 
         if (local == 1) and (time == 5):
             qnt_rj_outros += 1
         elif (local == 2) and (time == 1):
             qnt_nite_flu += 1
-
 
         print(f"\nQual o seu salário?")
         print(30 * "-")
