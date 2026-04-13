@@ -570,6 +570,40 @@ def questao_18():
 #• percentual de reprovados.
 #Obs.: Considere aprovado com nota >= 7.0
 
+def questao_19():
+    print(30 * "-")
+    print("Prova de Algoritmos")
+    print(30 * "-")
+    
+    qnt_turmas = inputint("Quantidade de turmas: ", min=1)
+
+    for i in range (1, qnt_turmas + 1):
+        print(30 * "-")
+        print(f"{i}º TURMA")
+        print(30 * "-")
+
+        qnt_aprovados = 0
+        qnt_reprovados = 0
+        soma_notas = 0
+
+        qnt_alunos = inputint(f"Quantidade de alunos na {i}º turma: ", min=1)
+
+        for j in range(1, qnt_alunos + 1):
+            nota_aluno = inputfloat(f"\nNota do {j}º aluno: ", min=0, max=10)
+            soma_notas += nota_aluno
+
+            if (nota_aluno >= 7.0):
+                qnt_aprovados += 1
+            else:
+                qnt_reprovados += 1
+
+        media_turma = soma_notas / qnt_alunos
+        percentual_repro = (qnt_reprovados / qnt_alunos) * 100
+
+        print(30 * "-")
+        print(f"RESULTADOS DA {i}º TURMA\n\nAprovados: {qnt_aprovados}\nMédia da turma: {media_turma:.2f}\nPercentual de reprovados: {percentual_repro:.2f}%")
+        print(30 * "-")
+
 #20. Uma pesquisa de opinião realizada no Rio de Janeiro, teve as seguintes perguntas:
 #• Qual o seu time de coração?
 #1-Fluminense;
