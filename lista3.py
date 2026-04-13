@@ -276,7 +276,7 @@ def questao_10():
         atleta_pesado = 0
         atleta_jovem = 0
 
-        print(f"\n--- EQUIPE {i} ---")
+        print(f"\n--- Equipe {i} ---")
 
         for j in range(1, atletas_por_equipe + 1):
             peso = inputfloat(f"Peso do {j}º jogador da equipe {i}: ", min=50, max=150)
@@ -307,7 +307,7 @@ def questao_10():
         print(f"Atleta {atleta_jovem} é o mais jovem ({mais_jovem} anos)")
 
     print("\n" + "=" * 30)
-    print("INFORMAÇÕES GERAIS DO CAMPEONATO")
+    print("Informações gerais do campeonato")
     print("=" * 30)
     
     media_peso_geral = soma_peso_geral / total_atletas_campeonato
@@ -469,8 +469,23 @@ def questao_15():
 #  2 é o Quociente (resultado inteiro da divisão)
 #  0 é o Resto da Divisão
 
-# def questao_16():
+def questao_16():
+    dividendo = inputint("\nInforme o dividendo (número a ser dividido): ", min=0)
+    divisor = inputint("Informe o divisor (quem divide): ", min=0)
 
+    resto = dividendo
+    quociente = 0
+
+    while resto >= divisor:
+        resto = resto - divisor
+        quociente += 1
+    
+    print("-" * 30)
+    print(f"Dividendo: {dividendo}")
+    print(f"Divisor: {divisor}")
+    print(f"Quociente (inteiro): {quociente}")
+    print(f"Resto da divisão: {resto}")
+    print("-" * 30)
 
 #17. Crie um programa que possa ler um conjunto de pedidos de compra e
 #calcule o valor total da compra. Cada pedido é composto pelos seguintes campos:
@@ -481,6 +496,28 @@ def questao_15():
 #O programa deverá processar novos pedidos até que o usuário digite 0 (zero)
 #como número do pedido.
  
+def questao_17():
+    while True:
+        n_pedido = inputint("\nNúmero do pedido: ", min=0)
+
+        if (n_pedido == 0):
+            print("\nEncerrando pedidos...")
+            break
+
+        dia = datetime.now().day
+        mes = datetime.now().month
+        ano = datetime.now().year
+        if {mes < 10}:
+            data_pedido = f"{dia}/0{mes}/{ano}"
+        else:
+            data_pedido = f"{dia}/0{mes}/{ano}"
+        preco = inputfloat("Preço unitário: ", min=1)
+        quantidade = inputint("Quantidade: ", min=1)
+
+        print("\n", 30 * "=")
+        print(f"Nº Pedido: {n_pedido}\nData: {data_pedido}\nPreço unitário: R${preco:.2f}\nQuantidade: {quantidade}\nPreço total: R${(preco * quantidade):.2f}")
+        print(30 * "=")
+
 #18. Uma pousada estipulou o preço para a diária em R$30,00 e mais uma taxa de
 #serviços diários de:
 #• R$15,00, se o número de dias for menor que 10;
@@ -489,6 +526,41 @@ def questao_15():
 #cliente e ao final o total faturado pela pousada.
 #O programa deverá ler novos clientes até que o usuário digite 0 (zero) como
 #número da conta.
+
+def questao_18():
+    total_fatura = 0
+
+    while True:
+        print(30 * "=")
+        print("POUSADA")
+        print("\nValor da diária: R$30,00")
+        print("Menos de 10 dias: R$15,00")
+        print("10 dias ou mais: R$8,00")
+        print(30 * "=")
+
+        n_conta = inputint("\nNúmero da conta: ", min=0)
+
+        if (n_conta == 0):
+            print("\nEncerrando registros...")
+            break
+        
+        nome = input("Nome: ").title().strip()
+        dias = inputint("Quantidade de dias: ", min=1)
+        if (dias < 10):
+            taxa_servico = 15
+        else:
+            taxa_servico = 8
+
+        conta = (30 + taxa_servico) * dias
+        total_fatura += conta
+    
+        print("\n===== Extrato do Cliente =====")
+        print(f"Nº Conta: {n_conta}\nNome: {nome}\nDias: {dias}\nValor total: R${conta:.2f}")
+        print(30 * "=")
+    
+    print(30 * "=")
+    print(f"Faturamento total da pousada: R${total_fatura:.2f}")
+    print(30 * "=")
 
 #19. Em uma Universidade, os alunos das turmas de informática fizeram uma prova
 #de algoritmos. Cada turma possui um número de alunos. Criar um programa que
