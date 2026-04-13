@@ -625,6 +625,88 @@ def questao_19():
 #3.12. Exercícios da Aula 73
 #Obs.: O programa encerra quando se digita 0 para o time.
 
+def questao_20():
+    print ("\nPESQUISA DE OPINIÃO (RJ)")
+
+    qnt_fluminense = 0
+    qnt_botafogo = 0
+    qnt_vasco = 0
+    qnt_flamengo = 0
+    qnt_outros = 0
+
+    qnt_rj_outros = 0
+    qnt_nite_flu = 0
+    soma_salarial_bota = 0
+
+    while True:
+        print(f"\nQual o seu time de coração?")
+        print(30 * "-")
+        print("1 - Fluminense")
+        print("2 - Botafogo")
+        print("3 - Vasco")
+        print("4 - Flamengo")
+        print("5 - Outros")
+        print(30 * "-")
+
+        time = inputint("\nResposta: ", min=0, max=5)
+
+        if (time == 0):
+            print("\nEncerrando pesquisa...")
+            break
+        elif (time == 1):
+            qnt_fluminense += 1
+        elif (time == 2):
+            qnt_botafogo += 1
+        elif (time == 3):
+            qnt_vasco += 1
+        elif (time == 4):
+            qnt_flamengo += 1
+        elif (time == 5):
+            qnt_outros += 1
+
+        print(f"\nOnde você mora?")
+        print(30 * "-")
+        print("1 - RJ")
+        print("2 - Niterói")
+        print("3 - Outros")
+        print(30 * "-")
+
+        local = inputint("\nResposta: ", min=1, max=5)
+
+        if (local == 1) and (time == 5):
+            qnt_rj_outros += 1
+        elif (local == 2) and (time == 1):
+            qnt_nite_flu += 1
+
+
+        print(f"\nQual o seu salário?")
+        print(30 * "-")
+        salario = inputfloat("\nResposta: ", min=0)
+        print(30 * "-")
+
+        if (time == 2):
+            soma_salarial_bota += salario
+
+    try:
+        media_salarial_bota = soma_salarial_bota / qnt_botafogo
+    except ZeroDivisionError:
+        media_salarial_bota = 0
+
+    print(30 * "-")
+    print("RESULTADOS DA PESQUISA DE OPINIÃO NO RJ")
+
+    print(f"\nNúmero de torcedores por clube:")
+    print(f"\nFluminense: {qnt_fluminense}")
+    print(f"Botafogo: {qnt_botafogo}")
+    print(f"Vasco: {qnt_vasco}")
+    print(f"Flamengo: {qnt_flamengo}")
+    print(f"Outros: {qnt_outros}")
+
+    print(f"\nMédia salarial dos torcedores do Botafogo: {media_salarial_bota:.2f}")
+    print(f"Número de pessoas moradoras do Rio de Janeiro, torcedores de outros clubes: {qnt_rj_outros}")
+    print(f"Número de pessoas de Niterói torcedoras do Fluminense: {qnt_nite_flu}")
+    print(30 * "-")
+
 #21. Em uma universidade cada aluno possui os seguintes dados:
 #• Renda pessoal;
 #• Renda familiar;
