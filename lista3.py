@@ -717,48 +717,47 @@ def questao_20():
 #em relação às rendas pessoal e familiar.
 #Obs.: O programa encerra quando se digita 0 para a renda pessoal.
 
-def questao_21():
-    print("\NUNIVERSIDADE")
+# def questao_21():
+#     print("\nUNIVERSIDADE")
 
-    qnt_alunos = 0
-    qnt_pessoal_maior = 0
-    qnt_alunos_despesas = 0
+#     qnt_alunos = 0
+#     qnt_pessoal_maior = 0
+#     qnt_alunos_despesas = 0
 
-    while True:
-        renda_pessoal = inputfloat("\nRenda pessoal: ", min=0)
+#     while True:
+#         renda_pessoal = inputfloat("\nRenda pessoal: ", min=0)
 
-        if (renda_pessoal == 0):
-            print("\nEncerrando programa...")
-            break
+#         if (renda_pessoal == 0):
+#             print("\nEncerrando programa...")
+#             break
 
-        renda_familiar = inputfloat("Renda familiar: ", min=0)
-        total_gasto_alimentacao = inputfloat("Total gasto com alimentação: ", min=0)
-        total_gasto_despesas = inputfloat("Total gasto com outras despesas: ", min=0)
+#         renda_familiar = inputfloat("Renda familiar: ", min=0)
+#         total_gasto_alimentacao = inputfloat("Total gasto com alimentação: ", min=0)
+#         total_gasto_despesas = inputfloat("Total gasto com outras despesas: ", min=0)
 
-        if (total_gasto_despesas > 200):
-            qnt_alunos_despesas += 1
-        if (renda_pessoal > renda_familiar):
-            qnt_pessoal_maior += 1
+#         if (total_gasto_despesas > 200):
+#             qnt_alunos_despesas += 1
+#         if (renda_pessoal > renda_familiar):
+#             qnt_pessoal_maior += 1
 
-        try:
-            porcentagem_gasto_pessoal = ((total_gasto_alimentacao + total_gasto_despesas) / renda_pessoal) * 100
-            porcentagem_gasto_familiar = ((total_gasto_alimentacao + total_gasto_despesas) / renda_familiar) * 100
-        except ZeroDivisionError:
-            porcentagem_gasto_pessoal = 0
-            porcentagem_gasto_familiar = 0
+#         try:
+#             porcentagem_gasto_pessoal = ((total_gasto_alimentacao + total_gasto_despesas) / renda_pessoal) * 100
+#             porcentagem_gasto_familiar = ((total_gasto_alimentacao + total_gasto_despesas) / renda_familiar) * 100
+#         except ZeroDivisionError:
+#             porcentagem_gasto_pessoal = 0
+#             porcentagem_gasto_familiar = 0
 
-    try:
-        porcentagem_despesas_200 = (qnt_alunos_despesas / qnt_alunos) * 100
-    except ZeroDivisionError:
-        porcentagem_despesas_200 = 0
+#     try:
+#         porcentagem_despesas_200 = (qnt_alunos_despesas / qnt_alunos) * 100
+#     except ZeroDivisionError:
+#         porcentagem_despesas_200 = 0
 
-    print(30 * "-")
-    print(f"Porcentagem de alunos que gastam acima de R$200,00 com outras despesas: {porcentagem_despesas_200:.2f}%")
-    print(f"Número de alunos com renda pessoal maior que a familiar: {qnt_pessoal_maior}")
-    print(f"Porcentagem gasta com alimentação e outras despesas em relação a renda pessoal: {porcentagem_gasto_pessoal:.2f}%")
-    print(f"Porcentagem gasta com alimentação e outras despesas em relação a renda familiar: {porcentagem_gasto_familiar:.2f}%")
-    print(30 * "-")
-
+#     print(30 * "-")
+#     print(f"Porcentagem de alunos que gastam acima de R$200,00 com outras despesas: {porcentagem_despesas_200:.2f}%")
+#     print(f"Número de alunos com renda pessoal maior que a familiar: {qnt_pessoal_maior}")
+#     print(f"Porcentagem gasta com alimentação e outras despesas em relação a renda pessoal: {porcentagem_gasto_pessoal:.2f}%")
+#     print(f"Porcentagem gasta com alimentação e outras despesas em relação a renda familiar: {porcentagem_gasto_familiar:.2f}%")
+#     print(30 * "-")
 
 def questao_21():
     print("\nUNIVERSIDADE")
@@ -768,38 +767,32 @@ def questao_21():
     qnt_outras_despesas_acima_200 = 0
 
     while True:
-        # Usando float(input()) para compatibilidade padrão
-        renda_pessoal = float(input("\nRenda pessoal (0 para sair): "))
+        renda_pessoal = inputfloat("\nRenda pessoal (0 para sair): ", min=0)
 
         if renda_pessoal == 0:
             print("\nEncerrando programa...")
             break
 
-        # Se não saiu, contamos um aluno novo
         qnt_total_alunos += 1
 
-        renda_familiar = float(input("Renda familiar: "))
-        total_gasto_alimentacao = float(input("Total gasto com alimentação: "))
-        total_gasto_despesas = float(input("Total gasto com outras despesas: "))
+        renda_familiar = inputfloat("Renda familiar: ", min=0)
+        total_gasto_alimentacao = inputfloat("Total gasto com alimentação: ", min=0)
+        total_gasto_despesas = inputfloat("Total gasto com outras despesas: ", min=0)
 
-        # 1. Porcentagem de alunos que gasta acima de R$200 com outras despesas
         if total_gasto_despesas > 200:
             qnt_outras_despesas_acima_200 += 1
 
-        # 2. Número de alunos com renda pessoal maior que a renda familiar
         if renda_pessoal > renda_familiar:
             qnt_pessoal_maior_familiar += 1
 
-        # 3. Porcentagem gasta com alimentação e despesas em relação às rendas (Por aluno)
         soma_gastos = total_gasto_alimentacao + total_gasto_despesas
         
         perc_pessoal = (soma_gastos / renda_pessoal) * 100 if renda_pessoal > 0 else 0
         perc_familiar = (soma_gastos / renda_familiar) * 100 if renda_familiar > 0 else 0
 
-        print(f"-> Este aluno gasta {perc_pessoal:.2f}% da sua renda pessoal.")
-        print(f"-> Este aluno gasta {perc_familiar:.2f}% da sua renda familiar.")
+        print(f"\nO aluno gasta {perc_pessoal:.2f}% da sua renda pessoal.")
+        print(f"O aluno gasta {perc_familiar:.2f}% da sua renda familiar.")
 
-    # Cálculos Finais (fora do loop)
     if qnt_total_alunos > 0:
         porcentagem_final_despesas = (qnt_outras_despesas_acima_200 / qnt_total_alunos) * 100
     else:
@@ -809,11 +802,9 @@ def questao_21():
     print("RELATÓRIO FINAL")
     print(30 * "-")
     print(f"Total de alunos processados: {qnt_total_alunos}")
-    print(f"Alunos com gasto em 'Outras Despesas' > R$200: {porcentagem_final_despesas:.2f}%")
-    print(f"Alunos com renda pessoal > familiar: {qnt_pessoal_maior_familiar}")
+    print(f"Alunos com gasto em 'Outras Despesas' maior que R$200,00: {porcentagem_final_despesas:.2f}%")
+    print(f"Alunos com renda pessoal maior que renda familiar: {qnt_pessoal_maior_familiar}")
     print(30 * "-")
-
-# questao_21()
 
 #22. Crie um programa que ajude o DETRAN a saber o total de recursos que foram
 #arrecadados com a aplicação de multas de trânsito.
@@ -826,6 +817,44 @@ def questao_21():
 #imprimir também o número da carteira do motorista que obteve o maior número
 #de multas.
 #Obs.: O programa encerra ao ler a carteira de motorista de valor 0.
+
+def questao_22():
+    valor_multas_geral = 0
+    maior_n_multas = 0
+
+    while True:
+        n_carteira = inputint("\nNúmero da carteira de motorista: ", min=0, max=4327)
+
+        if (n_carteira == 0):
+            print("\nEncerrando programa...")
+            break
+
+        n_multas = inputint("Número de multas: ")
+
+        if (n_multas > maior_n_multas):
+            maior_n_multas = n_multas
+            carteira_maior_n_multas = n_carteira
+
+        valor_multas_motorista = 0
+
+        for i in range(1, n_multas + 1):
+            valor_multa = inputfloat(f"Valor da {i}º multa: ", min=0.1)
+            valor_multas_motorista += valor_multa
+        
+        valor_multas_geral += valor_multas_motorista
+
+        print(30 * "-")
+        print("INFORMAÇÕES DO MOTORISTA")
+        print(30 * "-")
+        print(f"\nNº Carteira de Motorista: {n_carteira}")
+        print(f"Nº de multas: {n_multas}")
+        print(f"Quantidade de dívidas no total: R${valor_multas_motorista:.2f}\n")
+
+    print(30 * "=")
+    print("INFORMAÇÕES GERAIS")
+    print(30 * "=")
+    print(f"\nNº Carteira de Motorista que teve o maior nº de multas: {carteira_maior_n_multas} | {maior_n_multas} multas")
+    print(f"Total de recursos arrecadados: R${valor_multas_geral:.2f}\n")
 
 #23. Crie um programa que leia um conjunto de informações (nome, sexo, idade, peso
 #e altura) dos atletas que participaram de uma olimpíada, e informar:
