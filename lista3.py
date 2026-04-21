@@ -853,7 +853,7 @@ def questao_22():
     print(30 * "=")
     print("INFORMAÇÕES GERAIS")
     print(30 * "=")
-    print(f"\nNº Carteira de Motorista que teve o maior nº de multas: {carteira_maior_n_multas} | {maior_n_multas} multas")
+    print(f"\nNº Carteira de Motorista que teve o maior nº de multas: {carteira_maior_n_multas} | Multas: {maior_n_multas}")
     print(f"Total de recursos arrecadados: R${valor_multas_geral:.2f}\n")
 
 #23. Crie um programa que leia um conjunto de informações (nome, sexo, idade, peso
@@ -865,6 +865,69 @@ def questao_22():
 #atleta.
 #Para resolver este exercício, consulte a aula 7 que aborda o tratamento de strings,
 #como comparação e atribuição de textos.
+
+def questao_23():
+    print("\n" + "="*30)
+    print("SISTEMA OLIMPÍADAS")
+    print("="*30)
+
+    n_atletas = 0
+    soma_idade_atletas = 0
+    
+    nome_mais_alta = ""
+    maior_altura = 0
+    
+    nome_mais_pesado = ""
+    maior_peso = 0
+
+    while True:
+        nome = input("\nNome do atleta (ou @ para sair): ").strip().title()
+
+        if (nome == "@"):
+            print("\nEncerrando e gerando relatório...")
+            break
+
+        n_atletas += 1
+        sexo = input("Sexo (M/F): ").strip().upper()
+        while (sexo != "M") and (sexo != "F"):
+            sexo = input("Responda apenas com M/F: ").strip().title()
+        idade = inputint("Idade: ", min=1, max=120)
+        peso = inputfloat("Peso: ", min=50, max=100)
+        altura = inputfloat("Altura: ")
+
+        n_atletas += 1
+        soma_idade_atletas += idade
+
+        if sexo == "F":
+            if altura > maior_altura:
+                maior_altura = altura
+                nome_mais_alta = nome
+        elif sexo == "M":
+            if peso > maior_peso:
+                maior_peso = peso
+                nome_mais_pesado = nome
+
+    try:
+        media_idade = soma_idade_atletas / n_atletas
+    except ZeroDivisionError:
+        media_idade = 0
+
+    print("\n" + 30 * "-")
+    print("RELATÓRIO FINAL DA DELEGAÇÃO")
+    print(30 * "-")
+    
+    if nome_mais_alta:
+        print(f"Atleta feminina mais alta: {nome_mais_alta} ({maior_altura:.2f}m)")
+    else:
+        print("Nenhuma atleta do sexo feminino cadastrada.")
+
+    if nome_mais_pesado:
+        print(f"Atleta masculino mais pesado: {nome_mais_pesado} ({maior_peso:.2f}kg)")
+    else:
+        print("Nenhum atleta do sexo masculino cadastrado.")
+
+    print(f"Média de idade dos atletas: {media_idade:.1f} anos")
+    print(30 * "-")
 
 #24. Faça um programa que calcule quantos litros de gasolina são usados em uma
 #viagem, sabendo que um carro faz 10 km/litro. O usuário fornecerá a velocidade
