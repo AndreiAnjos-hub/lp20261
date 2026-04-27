@@ -44,3 +44,9 @@ def gerar_palavra(min=4, max=10):
     for _ in range(random.randrange(qnt_letras)):
         palavra += chr(random.randrange(65, 91))
     return palavra
+
+def gerar_letra(quantidade):
+    letra = ""
+    for _ in range(quantidade):
+        letra += chr(random.randrange(65, 91))
+    return letra
