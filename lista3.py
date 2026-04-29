@@ -1052,6 +1052,7 @@ def questao_26():
 
     c4 = c5 = c7 = c12 = 0
     total_pessoas = 0
+    canais = [4,5,7,12]
 
     while True:
         canal = int(input("\nNúmero do canal (4, 5, 7, 12 ou 0 para sair): "))
@@ -1060,11 +1061,11 @@ def questao_26():
             print("Processando dados finais...")
             break
 
-        if canal not in [4, 5, 7, 12]:
+        if canal not in canais:
             print("Canal inválido! Apenas 4, 5, 7 ou 12.")
             continue
 
-        pessoas = int(input(f"Quantidade de pessoas assistindo ao canal {canal}: "))
+        pessoas = inputint(f"Quantidade de pessoas assistindo ao canal {canal}: ", min=1)
         
         total_pessoas += pessoas
         
@@ -1111,13 +1112,13 @@ def questao_27():
     matricula_melhor_cr = 0
 
     while True:
-        matricula = int(input("\nNúmero da matrícula (1-5000 ou 0 para sair): "))
+        matricula = inputint("\nNúmero da matrícula (1-5000 ou 0 para sair): ", min=0)
 
         if matricula < 1 or matricula > 5000:
             print("Matrícula inválida. Encerrando processamento...")
             break
 
-        qnt_disciplinas = int(input(f"Quantidade de disciplinas cursadas pelo aluno {matricula}: "))
+        qnt_disciplinas = inputint(f"Quantidade de disciplinas cursadas pelo aluno {matricula}: ", min=1)
         
         soma_notas = 0
         for i in range(1, qnt_disciplinas + 1):
