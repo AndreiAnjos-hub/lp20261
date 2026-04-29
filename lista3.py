@@ -1168,14 +1168,14 @@ def questao_28():
     peso_inferior_40 = 0
 
     while True:
-        idade = int(input("\nIdade (0 ou negativa para sair): "))
+        idade = inputint("\nIdade (0 ou negativa para sair): ")
         
-        if idade <= 0:
+        if (idade <= 0):
             print("Encerrando coleta de dados...")
             break
         
-        altura = float(input("Altura (m): "))
-        peso = float(input("Peso (kg): "))
+        altura = inputfloat("Altura (m): ")
+        peso = inputfloat("Peso (kg): ")
 
         total_pessoas += 1
 
@@ -1227,7 +1227,7 @@ def questao_29():
     total_geral = 0.0
 
     while True:
-        valor = float(input("\nValor da mercadoria (0 para encerrar): R$ "))
+        valor = inputfloat("\nValor da mercadoria (0 para encerrar): R$ ")
 
         if valor == 0:
             print("Fechando caixa...")
@@ -1285,7 +1285,7 @@ def questao_30():
     cont_viuvos = 0
 
     while True:
-        idade = int(input("\nIdade (negativa para sair): "))
+        idade = inputint("\nIdade (negativa para sair): ")
 
         if idade < 0:
             print("Encerrando coleta de dados...")
@@ -1331,7 +1331,7 @@ def questao_30():
 e = True
 while (e == True):
     try:
-        questao = int(input("Digite o número da questão: "))
+        questao = inputint("Digite o número da questão: ")
         if questao < 1 or questao > 30:
             raise Exception("Questão inválida! Valores devem ser entre 1 e 30.")
         eval(f"questao_{questao}()")
