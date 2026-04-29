@@ -47,7 +47,7 @@ def questao_2():
 # para a geração de uma senha aleatória. Ao final o programa deve exibir a
 # senha sugerida. (ASCII 40-126)
 
-def questao_3():
+def questao_21():
     qnt_caracters = inputint("\nInforme a quantidade de caracteres para a geração de uma senha aleatória: ", min=6)
 
     caracteres = [chr(random.randrange(40, 127)) for _ in range(qnt_caracters)]
@@ -62,8 +62,31 @@ def questao_3():
 #3. Construa uma programa que armazene 15 números em uma lista e imprima
 #uma listagem numerada contendo o número e uma das mensagens: par ou ímpar.
 
+def questao_3():
+    numeros = [random.randrange(200) for _ in range(15)]
+
+    for i, numero in enumerate(numeros):
+        if (numero % 2 == 0):
+            print(f"{i + 1} número: {numero} | Par") 
+        else:
+            print(f"{i + 1} número: {numero} | Ímpar") 
+
 #4. Faça um programa que armazene 8 números em uma lista e imprima todos os
 #números. Ao final, imprima o total de números múltiplos de seis.
+
+def questao_4():
+    numeros = [random.randrange(200) for _ in range(8)]
+
+    multiplos_6 = 0
+
+    for i, numero in enumerate(numeros):
+        if (numero % 6 == 0):
+            multiplos_6 += 1
+            print(f"{i + 1} número: {numero} | Múltiplo de 6") 
+        else:
+            print(f"{i + 1} número: {numero}") 
+            
+    print(f"\nQuantidade de números múltiplos de seis: {multiplos_6}")
 
 #5. Faça um programa que armazene as notas das provas 1 e 2 de 15 alunos. Calcule
 #e armazene a média arredondada. Armazene também a situação do aluno: 1-
@@ -71,10 +94,68 @@ def questao_3():
 #contendo as notas, a média e a situação de cada aluno em formato tabulado.
 #Utilize quantas listas forem necessárias para armazenar os dados.
 
+# def questao_5():
+#     notas_1 = [round(random.uniform(0.0, 10.0), 1) for _ in range(15)]
+#     notas_2 = [round(random.uniform(0.0, 10.0), 1) for _ in range(15)]
+
+#     for nota_1 in notas_1:
+#         print(nota_1) 
+
+#     for nota_1 in notas_1:
+#         print(nota_1) 
+
+#     for i, nota_1 in enumerate(notas_1):
+#         for nota_2 in notas_2:
+#             media_aluno = (nota_1 + nota_2) / 2
+#             if (media_aluno >= 6.0):
+#                 print(f"{i + 1}º aluno | Nota 1 : {nota_1} | Nota 2 : {nota_2} | Média : {media_aluno:.2f} | APROVADO")
+#             else:
+#                 print(f"{i + 1}º aluno | Nota 1 : {nota_1} | Nota 2 : {nota_2} | Média : {media_aluno:.2f} | REPROVADO")
+
+def questao_5():
+    notas_1 = [round(random.uniform(0.0, 10.0), 1) for _ in range(15)]
+    notas_2 = [round(random.uniform(0.0, 10.0), 1) for _ in range(15)]
+    
+    medias = []
+    situacoes = []
+
+    for i in range(15):
+        media = round((notas_1[i] + notas_2[i]) / 2) 
+        medias.append(media)
+        
+        if media >= 6:
+            situacoes.append("Aprovado")
+        else:
+            situacoes.append("Reprovado")
+
+    print("\n" + "="*60)
+    print(f"{'Nº':<4} | {'Nota 1':<8} | {'Nota 2':<8} | {'Média':<6} | {'Situação':<10}")
+    print("-" * 60)
+
+    for i in range(15):
+        print(f"{i+1:<4} | {notas_1[i]:<8.1f} | {notas_2[i]:<8.1f} | {medias[i]:<6.1f} | {situacoes[i]:<10}")
+    print("="*60)
+
 #6. Construa um programa que permita armazenar o salário de 20 pessoas. Calcular
 #e armazenar o novo salário sabendo-se que o reajuste foi de 8%. Imprimir uma
 #listagem numerada com o salário e o novo salário. Declare quantas listas forem
 #necessárias.
+
+def questao_6():
+    print("\n" + "="*50)
+    print("ATUALIZAÇÃO SALARIAL - REAJUSTE 8%")
+    print("="*50)
+
+    salarios = [round(random.uniform(1412.0, 8000.0), 2) for _ in range(20)]
+    
+    novos_salarios = [round(salario * 1.08, 2) for salario in salarios]
+
+    print(f"{'Nº':<4} | {'Salário Antigo':<15} | {'Novo Salário':<15}")
+    print("-" * 50)
+
+    for i in range(20):
+        print(f"{i+1:<4} | R$ {salarios[i]:<12.2f} | R$ {novos_salarios[i]:<12.2f}")
+    print("="*50)
 
 #7. Crie um programa que leia o preço de compra e o preço de venda de 100 mercadorias
 #(utilize listas). Ao final, o programa deverá imprimir quantas mercadorias
