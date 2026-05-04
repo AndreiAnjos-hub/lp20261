@@ -164,6 +164,47 @@ def questao_6():
 #• 10% <= lucro <= 20%
 #• lucro > 20%
 
+def questao_7():
+    compras = []
+    vendas = []
+    lucros = []
+
+    lucro_menor_10 = 0
+    lucro_entre_10_20 = 0
+    lucro_maior_20 = 0
+
+    for _ in range(100):
+        compra = random.uniform(10.0, 500.0) 
+        venda = random.uniform(10.0, 600.0)
+
+        compras.append(compra)
+        vendas.append(venda)
+
+    for i in range(100):
+        lucro_percentual = round(((vendas[i] - compras[i]) / compras[i]) * 100, 2)
+        lucros.append(lucro_percentual)
+
+        if lucro_percentual < 10:
+            lucro_menor_10 += 1
+        elif 10 <= lucro_percentual <= 20:
+            lucro_entre_10_20 += 1
+        else:
+            lucro_maior_20 += 1
+
+    print(f"{'Nº':<4} | {'Preço de Compra':<15} | {'Preço de Venda':<15} | {'Lucro Percentual':<5}")
+    print("-" * 50)
+    
+    for i in range(100):
+        print(f"{i+1:<4} | R$ {compras[i]:<12.2f} | R$ {vendas[i]:<12.2f} | {lucros[i]:<5}%")
+    print("="*50)
+
+    print(f"{'FAIXA DE LUCRO':<25} | {'QUANTIDADE':<10}")
+    print("-" * 40)
+    print(f"Lucro < 10%               | {lucro_menor_10}")
+    print(f"10% <= Lucro <= 20%       | {lucro_entre_10_20}")
+    print(f"Lucro > 20%               | {lucro_maior_20}")
+    print("=" * 40)
+
 #8. Construa um programa que armazene o código, a quantidade, o valor de compra
 #e o valor de venda de 30 produtos. A listagem pode ser de todos os produtos ou
 #somente de um ao se digitar o código. Utilize dicionário como estrutura de dados.
