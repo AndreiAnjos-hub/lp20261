@@ -209,6 +209,75 @@ def questao_7():
 #e o valor de venda de 30 produtos. A listagem pode ser de todos os produtos ou
 #somente de um ao se digitar o código. Utilize dicionário como estrutura de dados.
 
+def questao_8():
+    produtos = {"código",
+                "quantidade",
+                "valor de compra",
+                "valor de venda"
+    }
+
+    for _ in range(30):
+        codigo = random.uniform(1000,9999)
+        quantidade = random.uniform(1,500)
+        valor_compra = random.uniform(10.0, 500.0)
+        valor_venda = random.uniform(10.0, 500.0)
+
+        produtos["código"] = codigo
+        produtos["quantidade"] = quantidade
+        produtos["valor de compra"] = valor_compra
+        produtos["valor de venda"] = valor_venda
+
+    for chave, valor in produtos.items():
+        print(f"{chave} {valor}")
+
+import random
+
+def questao_8():
+    estoque = {}
+
+    for _ in range(30):
+        codigo = random.randint(1000, 9999)
+        quantidade = random.randint(1, 500)
+        valor_compra = round(random.uniform(10.0, 500.0), 1)
+        valor_venda = round(random.uniform(valor_compra, 700.0), 1)
+
+        estoque[codigo] = {
+            "quantidade": quantidade,
+            "valor_compra": valor_compra,
+            "valor_venda": valor_venda
+        }
+
+    while True:
+        print("\n(1) - Listar todos os produtos")
+        print("(2) - Buscar produto específico")
+        print("(S) - Sair")
+        
+        opcao = input("\nDigite sua opção: ")
+        
+        if (opcao == '1'):
+            print("\n--- Listagem Completa ---")
+            for codigo, dados in estoque.items():
+                print(f"Código: {codigo} | Quantidade: {dados['quantidade']} | Compra: R${dados['valor_compra']} | Venda: R${dados['valor_venda']}")
+                
+        elif (opcao == '2'):
+            try:
+                cod_busca = inputint("Informe o código: ")
+                if cod_busca in estoque:
+                    produto = estoque[cod_busca]
+                    print(f"\nProduto encontrado: {cod_busca}")
+                    print(f"Estoque: {produto['quantidade']} | Preço Venda: R${produto['valor_venda']}")
+                else:
+                    print("Código não encontrado.")
+            except ValueError:
+                print("Entrada inválida!")
+        
+        elif (opcao.upper() == "S"):
+            print("\nEncerrando programa...")
+            break
+
+        else:
+            print("\nOpção inválida! Tente novamente.")
+
 #9. Faça um programa que leia dois conjuntos de números inteiros, tendo
 #cada um 10 elementos. Ao final o programa deve listar os elementos comuns aos
 #conjuntos.
