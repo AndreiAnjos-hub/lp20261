@@ -1,10 +1,13 @@
 import random
 from datetime import datetime
+from rich.console import Console
 from util import inputint, inputfloat, gerar_palavra, gerar_letra
 
 '''
 Lista de Exercícios referentes a coleções e arquivos em python
 '''
+
+console = Console()
 
 #1. Faça um programa que armazene 15 números inteiros em uma lista e depois
 #permita que o usuário digite um número inteiro para ser buscado na lista, se
@@ -19,7 +22,7 @@ def questao_1():
 
     print("\n15 números inteiros: \n")
     for i, numero in enumerate(numeros):
-        print(f"Posição: {i + 1} | Número: {numero}")
+        console.print(f"Posição: [cyan]{i + 1}[/cyan] | Número: [blue]{numero}[/blue]")
     
     n_busca = inputint("\nInforme o número a ser localizado: ")
     try:
@@ -27,7 +30,7 @@ def questao_1():
     except ValueError:
         print("\nValor não encontrado!")
     else:
-        print(f"\nNúmero {n_busca} localizado na posição: {posicao}")
+        console.print(f"\nNúmero [blue]{n_busca}[/blue] localizado na posição: [green]{posicao}[/green]")
 
 #2. Faça um programa que armazene 10 letras em uma lista e imprima uma listagem
 #numerada. (ASCII 65-90)
@@ -41,7 +44,7 @@ def questao_2():
 
     print("\nLetras enumeradas: \n")
     for i, letra in enumerate(letras):
-        print(f"{i + 1} - {letra}")
+        console.print(f"{i + 1} - [yellow]{letra}[/yellow]")
 
 #2.1 Faça um programa que peça ao usuário para informar a qtde de caracteres
 # para a geração de uma senha aleatória. Ao final o programa deve exibir a
@@ -49,15 +52,9 @@ def questao_2():
 
 def questao_21():
     qnt_caracters = inputint("\nInforme a quantidade de caracteres para a geração de uma senha aleatória: ", min=6)
-
     caracteres = [chr(random.randrange(40, 127)) for _ in range(qnt_caracters)]
 
-    print(f"\nSenha sugerida: {''.join(caracteres)}")
-
-    # print("\nSenha sugerida:", end=" ")
-    # for caracter in caracteres:
-    #     print(caracter, end="")
-    # print() 
+    console.print(f"\nSenha sugerida: [orange1]{''.join(caracteres)}[/orange1]")
 
 #3. Construa uma programa que armazene 15 números em uma lista e imprima
 #uma listagem numerada contendo o número e uma das mensagens: par ou ímpar.
@@ -67,9 +64,11 @@ def questao_3():
 
     for i, numero in enumerate(numeros):
         if (numero % 2 == 0):
-            print(f"{i + 1} número: {numero} | Par") 
+            console.print(f"[white]{i + 1} número: {numero} |[/white] ", end="")
+            console.print("Par", style="#d9ffa9")
         else:
-            print(f"{i + 1} número: {numero} | Ímpar") 
+            console.print(f"[white]{i + 1} número: {numero} |[/white] ", end="")
+            console.print("Ímpar", style="#f1555a")
 
 #4. Faça um programa que armazene 8 números em uma lista e imprima todos os
 #números. Ao final, imprima o total de números múltiplos de seis.
@@ -82,35 +81,17 @@ def questao_4():
     for i, numero in enumerate(numeros):
         if (numero % 6 == 0):
             multiplos_6 += 1
-            print(f"{i + 1} número: {numero} | Múltiplo de 6") 
+            console.print(f"[white]{i + 1} número: {numero} |[/white] [bright_cyan]Múltiplo de 6[/bright_cyan]") 
         else:
             print(f"{i + 1} número: {numero}") 
             
-    print(f"\nQuantidade de números múltiplos de seis: {multiplos_6}")
+    console.print(f"\nQuantidade de números múltiplos de seis: [bright_green]{multiplos_6}[/bright_green]")
 
 #5. Faça um programa que armazene as notas das provas 1 e 2 de 15 alunos. Calcule
 #e armazene a média arredondada. Armazene também a situação do aluno: 1-
 #Aprovado ou 2-Reprovado. Ao final o programa deve imprimir uma listagem
 #contendo as notas, a média e a situação de cada aluno em formato tabulado.
 #Utilize quantas listas forem necessárias para armazenar os dados.
-
-# def questao_5():
-#     notas_1 = [round(random.uniform(0.0, 10.0), 1) for _ in range(15)]
-#     notas_2 = [round(random.uniform(0.0, 10.0), 1) for _ in range(15)]
-
-#     for nota_1 in notas_1:
-#         print(nota_1) 
-
-#     for nota_1 in notas_1:
-#         print(nota_1) 
-
-#     for i, nota_1 in enumerate(notas_1):
-#         for nota_2 in notas_2:
-#             media_aluno = (nota_1 + nota_2) / 2
-#             if (media_aluno >= 6.0):
-#                 print(f"{i + 1}º aluno | Nota 1 : {nota_1} | Nota 2 : {nota_2} | Média : {media_aluno:.2f} | APROVADO")
-#             else:
-#                 print(f"{i + 1}º aluno | Nota 1 : {nota_1} | Nota 2 : {nota_2} | Média : {media_aluno:.2f} | REPROVADO")
 
 def questao_5():
     notas_1 = [round(random.uniform(0.0, 10.0), 1) for _ in range(15)]
@@ -129,11 +110,15 @@ def questao_5():
             situacoes.append("Reprovado")
 
     print("\n" + "="*60)
-    print(f"{'Nº':<4} | {'Nota 1':<8} | {'Nota 2':<8} | {'Média':<6} | {'Situação':<10}")
+    console.print(f"[bold cyan]{'Nº':<4}[/bold cyan] | [bright_green]{'Nota 1':<8}[/bright_green] | ", end="")
+    console.print(f"[bright_green]{'Nota 2':<8}[/bright_green] | [purple]{'Média':<6}[/purple] | [gold1]{'Situação':<10}[/gold1]")
     print("-" * 60)
 
     for i in range(15):
-        print(f"{i+1:<4} | {notas_1[i]:<8.1f} | {notas_2[i]:<8.1f} | {medias[i]:<6.1f} | {situacoes[i]:<10}")
+        if (situacoes[i] == "Aprovado"):
+            console.print(f"[white]{i+1:<4} | {notas_1[i]:<8.1f} | {notas_2[i]:<8.1f} | {medias[i]:<6.1f} |[/white] [bright_green]{situacoes[i]:<10}[/bright_green]")
+        else:
+            console.print(f"[white]{i+1:<4} | {notas_1[i]:<8.1f} | {notas_2[i]:<8.1f} | {medias[i]:<6.1f} |[/white] [bright_red]{situacoes[i]:<10}[/bright_red]")
     print("="*60)
 
 #6. Construa um programa que permita armazenar o salário de 20 pessoas. Calcular
@@ -143,14 +128,13 @@ def questao_5():
 
 def questao_6():
     print("\n" + "="*50)
-    print("ATUALIZAÇÃO SALARIAL - REAJUSTE 8%")
-    print("="*50)
+    console.print("[bright_black]ATUALIZAÇÃO SALARIAL - REAJUSTE 8%[/bright_black]")
+    print("="*50, "\n")
 
     salarios = [round(random.uniform(1412.0, 8000.0), 2) for _ in range(20)]
-    
     novos_salarios = [round(salario * 1.08, 2) for salario in salarios]
 
-    print(f"{'Nº':<4} | {'Salário Antigo':<15} | {'Novo Salário':<15}")
+    console.print(f"[bright_cyan]{'Nº':<4}[/bright_cyan] | [gold1]{'Salário Antigo':<15}[/gold1] | [spring_green2]{'Novo Salário':<15}[/spring_green2]")
     print("-" * 50)
 
     for i in range(20):
@@ -191,18 +175,22 @@ def questao_7():
         else:
             lucro_maior_20 += 1
 
-    print(f"{'Nº':<4} | {'Preço de Compra':<15} | {'Preço de Venda':<15} | {'Lucro Percentual':<5}")
+    console.print(f"[bright_cyan]{'Nº':<4}[/bright_cyan] | [gold1]{'Preço de Compra':<15}[/gold1] | ", end="")
+    console.print(f"[spring_green2]{'Preço de Venda':<15}[/spring_green2] | [dodger_blue1]{'Lucro Percentual':<5}[/dodger_blue1]")
     print("-" * 50)
     
     for i in range(100):
-        print(f"{i+1:<4} | R$ {compras[i]:<12.2f} | R$ {vendas[i]:<12.2f} | {lucros[i]:<5}%")
+        if (lucros[i] > 0):
+            console.print(f"[white]{i+1:<4} | R$ {compras[i]:<12.2f} | R$ {vendas[i]:<12.2f} |[/white] [bright_green]{lucros[i]:<5}%[/bright_green]")
+        else:
+            console.print(f"[white]{i+1:<4} | R$ {compras[i]:<12.2f} | R$ {vendas[i]:<12.2f} |[/white] [bright_red]{lucros[i]:<5}%[/bright_red]")
     print("="*50)
 
-    print(f"{'FAIXA DE LUCRO':<25} | {'QUANTIDADE':<10}")
+    console.print(f"[grey50]{'FAIXA DE LUCRO':<25}[/grey50] | [bright_white]{'QUANTIDADE':<10}[/bright_white]")
     print("-" * 40)
-    print(f"Lucro < 10%               | {lucro_menor_10}")
-    print(f"10% <= Lucro <= 20%       | {lucro_entre_10_20}")
-    print(f"Lucro > 20%               | {lucro_maior_20}")
+    console.print(f"[white]Lucro < 10%               |[/white] [bright_red]{lucro_menor_10}[/bright_red]")
+    console.print(f"[white]10% <= Lucro <= 20%       |[/white] [bright_yellow]{lucro_entre_10_20}[/bright_yellow]")
+    console.print(f"[white]Lucro > 20%               |[/white] [bright_green]{lucro_maior_20}[/bright_green]")
     print("=" * 40)
 
 #8. Construa um programa que armazene o código, a quantidade, o valor de compra
@@ -248,35 +236,40 @@ def questao_8():
         }
 
     while True:
-        print("\n(1) - Listar todos os produtos")
-        print("(2) - Buscar produto específico")
-        print("(S) - Sair")
+        console.print("\n[green](1)[/green] - Listar todos os produtos")
+        console.print("[yellow](2)[/yellow] - Buscar produto específico")
+        console.print("[red](S)[/red] - Sair")
         
         opcao = input("\nDigite sua opção: ")
         
         if (opcao == '1'):
-            print("\n--- Listagem Completa ---")
+            console.print("\n            --- Listagem Completa ---\n")
+
+            console.print(f"[bright_cyan]{'Código':<8}[/bright_cyan] | [gold1]{'Quantidade':<10}[/gold1] | ", end="")
+            console.print(f"[spring_green2]{'Compra':<10}[/spring_green2] | [dodger_blue1]{'Venda':<5}[/dodger_blue1]")
+            print("-" * 50)
+
             for codigo, dados in estoque.items():
-                print(f"Código: {codigo} | Quantidade: {dados['quantidade']} | Compra: R${dados['valor_compra']} | Venda: R${dados['valor_venda']}")
+                console.print(f"[white]{codigo:<8} | {dados['quantidade']:<10} | R${dados['valor_compra']:<10} | R${dados['valor_venda']:<5}[/white]")
                 
         elif (opcao == '2'):
             try:
-                cod_busca = inputint("Informe o código: ")
+                cod_busca = inputint("\nInforme o código: ")
                 if cod_busca in estoque:
                     produto = estoque[cod_busca]
-                    print(f"\nProduto encontrado: {cod_busca}")
-                    print(f"Estoque: {produto['quantidade']} | Preço Venda: R${produto['valor_venda']}")
+                    console.print(f"\nProduto encontrado: [gold1]{cod_busca}[/gold1]")
+                    console.print(f"Estoque: [green]{produto['quantidade']}[/green] | Preço Venda: [gold1]R${produto['valor_venda']}[/gold1]")
                 else:
-                    print("Código não encontrado.")
+                    console.print("\n[bright_red]Código não encontrado.[/bright_red]")
             except ValueError:
-                print("Entrada inválida!")
+                console.print("\n[red]Entrada inválida![/red]")
         
         elif (opcao.upper() == "S"):
-            print("\nEncerrando programa...")
+            console.print("\n[orange1]Encerrando programa...[/orange1]")
             break
 
         else:
-            print("\nOpção inválida! Tente novamente.")
+            console.print("\n[red]Opção inválida! Tente novamente.[/red]")
 
 #9. Faça um programa que leia dois conjuntos de números inteiros, tendo
 #cada um 10 elementos. Ao final o programa deve listar os elementos comuns aos
