@@ -128,7 +128,7 @@ def questao_5():
 
 def questao_6():
     print("\n" + "="*50)
-    console.print("[bright_black]ATUALIZAÇÃO SALARIAL - REAJUSTE 8%[/bright_black]")
+    console.print("[bold white on bright_black]ATUALIZAÇÃO SALARIAL - REAJUSTE 8%[/bold white on bright_black]")
     print("="*50, "\n")
 
     salarios = [round(random.uniform(1412.0, 8000.0), 2) for _ in range(20)]
@@ -275,10 +275,61 @@ def questao_8():
 #cada um 10 elementos. Ao final o programa deve listar os elementos comuns aos
 #conjuntos.
 
+def questao_9():
+    console.print("\n", 30 * "-", style="bright_black")
+    console.print("[bold black on gold1]INTERSECÇÃO DE CONJUNTOS[/bold black on gold1]")
+    console.print(30 * "-", style="bright_black")
+
+    conjuntos_1 = [random.randrange(25) for _ in range(10)]
+    conjuntos_2 = [random.randrange(25) for _ in range(10)]
+
+    console.print(f"\n[bright_green]C1:[/bright_green] {conjuntos_1}")
+    console.print(f"[bright_yellow]C2:[/bright_yellow] {conjuntos_2}\n")
+
+    intercessao = sorted(list(set(conjuntos_1) & set(conjuntos_2)))
+    contador = len(intercessao)
+
+    console.print(30 * "-", style="bright_black")
+    console.print(f"[bold]Elementos Comuns:[/bold] [gold1]{intercessao}[/gold1]")
+    console.print(f"[bold]Quantidade de itens únicos em comum:[/bold] {contador}")
+
 #10. Faça um programa que leia uma lista com 10 elementos e obtenha outra lista resultado
 #cujos valores são os fatoriais da lista original.
 #Imprimir o maior e o menor, sem ordenar, o percentual de números pares e a
 #média dos elementos da lista.
+
+def questao_10():
+    elementos = [random.randint(1, 10) for _ in range(10)]
+    fatoriais = []
+    
+    for num in elementos:
+        fatorial = 1
+        for j in range(1, num + 1):
+            fatorial *= j
+        fatoriais.append(fatorial)
+
+    console.print(f"\n[bold white on purple] LISTAGEM DE RESULTADOS [/bold white on purple]\n")
+    console.print(f"[bright_cyan]{'Índice':<8}[/bright_cyan] | [gold1]{'Num':<6}[/gold1] | [spring_green2]{'Fatorial':<10}[/spring_green2]")
+    console.print("-" * 35)
+
+    qtd_pares = 0
+    for i in range(10):
+        console.print(f"[bright_white]{i + 1:<8} | {elementos[i]:<6} | {fatoriais[i]:<10}[/bright_white]")
+        
+        if fatoriais[i] % 2 == 0:
+            qtd_pares += 1
+
+    maior = max(fatoriais)
+    menor = min(fatoriais)
+    percentual_pares = (qtd_pares / len(fatoriais)) * 100
+    media = sum(fatoriais) / len(fatoriais)
+
+    console.print(f"\n" + 35 * "-")
+    console.print(f"[bold green]▶ Maior:[/bold green] [bright_white]{maior}[/bright_white]")
+    console.print(f"[bold red]▶ Menor:[/bold red] [bright_white]{menor}[/bright_white]")
+    console.print(f"[bold yellow]▶ Percentual de Pares:[/bold yellow] [bright_white]{percentual_pares:.2f}%[/bright_white]")
+    console.print(f"[bold cyan]▶ Média dos Fatoriais:[/bold cyan] [bright_white]{media:.2f}[/bright_white]")
+    console.print(35 * "-" + "\n")
 
 #11. Imprimir o maior e o menor, sem ordenar, o percentual de números pares e a
 #média dos elementos da lista.
