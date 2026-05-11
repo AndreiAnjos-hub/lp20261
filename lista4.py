@@ -404,6 +404,45 @@ def questao_12():
 #avisar ao cliente a inexistência de lugares. A leitura do número 0 (zero) para o voo
 #desejado indica o término da leitura de reservas.
 
+def questao_13():
+    voos = []
+
+    for i in range(10):
+        voos.append(random.randint(1, 10))
+
+    while True:
+        console.print("\n[bright_green](1)[/bright_green] - Listar todos os voos")
+        console.print("[bright_yellow](2)[/bright_yellow] - Realizar uma reserva")
+        console.print("[bright_red](S)[/bright_red] - Sair")
+
+        opcao = input("\nEscolha uma opção: ")
+
+        if (opcao == "1"):
+            console.print(f"\n[bold white on purple] VOOS DISPONÍVEIS [/bold white on purple]\n")
+            console.print(f"[bright_cyan]{'Número do Voo':<15}[/bright_cyan] | [gold1]{'Lugares disponíveis':<12}[/gold1]")
+            console.print("-" * 35)
+
+            for i in range(10):
+                console.print(f"[bright_white]{i + 1:<15} | {voos[i]:<12}[/bright_white]")
+
+        elif (opcao == "2"):
+            n_carteira_id_cliente = inputint("\nInforme o número da carteira de identidade: ")
+            n_voo = inputint("Informe o número do voo desejado: ", min=0)
+
+            if (voos[n_voo - 1] == 0):
+                console.print(f"\n[bold red]O voo {n_voo} está lotado![/bold red]")
+                continue
+            
+            voos[n_voo - 1] -= 1
+            console.print(f"\n[gold1]Parabéns {n_carteira_id_cliente}. Voo {n_voo} reservado com sucesso![/gold1]")
+
+        elif (opcao.upper() == "S"):
+            console.print("\n[orange1]Encerrando programa...[/orange1]")
+            break
+        
+        else:
+            console.print("\n[bright_red]Opção inválida[/bright_red]")
+ 
 #14. Faça um programa que armazene 50 números inteiros em uma lista. O programa
 #deve gerar e imprimir uma segunda lista em que cada elemento é o quadrado do
 #elemento da primeira lista.
