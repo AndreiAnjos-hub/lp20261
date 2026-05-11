@@ -343,6 +343,57 @@ def questao_10():
 #o código 0 (zero) para uma mesa ou quando todos os 150 lugares estiverem
 #ocupados.
 
+# def questao_12():
+#     casa_espetaculo = [[0 for _ in range(5)] for _ in range(30)]
+
+#     while True:
+#         console.print("[bright_green](1)[/bright_green] - Listar todo os lugares")
+#         console.print("[bright_yellow](2)[/bright_yellow] - Realizar reserva de um lugar")
+#         console.print("[bright_red](S)[/bright_red] - Sair")
+
+#         opcao = input("Escolha a opçaõ desejada: ")
+
+#         if (opcao == "1"):
+#             for i in range(30):
+#                 print(casa_espetaculo[i])
+
+def questao_12():
+    mesas = [[5] for _ in range(30)]
+    total_ocupado = 0
+    limite_total = 150
+
+    while total_ocupado < limite_total:
+        console.print(f"\n[bold blue]Vagas totais ocupadas:[/bold blue] {total_ocupado}/{limite_total}")
+        try:
+            codigo = inputint("Digite o código da mesa (1-30) ou 0 para sair: ")
+            
+            if codigo == 0:
+                break
+            
+            if 1 <= codigo <= 30:
+                mesa_indice = codigo - 1
+                vagas_na_mesa = mesas[mesa_indice][0]
+
+                if vagas_na_mesa == 0:
+                    console.print(f"[bold red]Mesa {codigo} está lotada![/bold red]")
+                    continue
+
+                quantidade = inputint(f"Quantos lugares deseja (Disponível: {vagas_na_mesa})? ")
+
+                if 0 < quantidade <= vagas_na_mesa:
+                    mesas[mesa_indice][0] -= quantidade
+                    total_ocupado += quantidade
+                    console.print(f"[bold green]Reserva confirmada na mesa {codigo}![/bold green]")
+                else:
+                    console.print(f"[bold yellow]Não foi possível. Essa mesa só tem {vagas_na_mesa} vagas.[/bold yellow]")
+            else:
+                console.print("[red]Código de mesa inválido![/red]")
+
+        except ValueError:
+            console.print("[red]Por favor, digite apenas números![/red]")
+
+    console.print("\n[orange1]Sistema encerrado. Obrigado![/orange1]")
+
 #13. Construa um programa que realize as reservas de passagens áreas de uma companhia.
 #O programa deve permitir cadastrar o número de 10 voos e definir a
 #quantidade de lugares disponíveis para cada um. Após o cadastro, leia vários
