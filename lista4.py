@@ -427,7 +427,7 @@ def questao_13():
 
         elif (opcao == "2"):
             n_carteira_id_cliente = inputint("\nInforme o número da carteira de identidade: ")
-            n_voo = inputint("Informe o número do voo desejado: ", min=0)
+            n_voo = inputint("Informe o número do voo desejado: ")
 
             if (voos[n_voo - 1] == 0):
                 console.print(f"\n[bold red]O voo {n_voo} está lotado![/bold red]")
