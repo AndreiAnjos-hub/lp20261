@@ -465,6 +465,31 @@ def questao_14():
 #0. Imprimir quantos números iguais ao último número foram lidos. O limite de
 #números é 100.
 
+def questao_15():
+    numeros = []
+    limite = 0
+    i = 0
+
+    while (limite < 100):
+        num = random.randrange(100)
+        if (num != 0):
+            numeros.append(num)
+            i += 1
+            limite += 1
+        else:
+            break
+
+    print("\nLimite: ")
+    console.print(f"--------------[bold black on bright_white] {limite} [/bold black on bright_white]-------------")
+
+    console.print(f"\n[bright_white]Lista de numeros:[/bright_white] [bold cyan]{numeros}[/bold cyan]")
+
+    ultimo_num = numeros.pop(i-1)
+    qnt_ultimo_num = (numeros.count(ultimo_num)) + 1
+
+    console.print(f"\n[bright_white]Ultimo numero:[/bright_white] [orange1]{ultimo_num}[/orange1]")
+    console.print(f"[bright_white]Quantos números iguais ao último:[/bright_white] [orange1]{qnt_ultimo_num}[/orange1]")
+
 #16. Crie um programa para ler um conjunto de 100 números reais e informe:
 #• quantos números lidos são iguais a 30
 #• quantos são maior que a média
@@ -482,6 +507,7 @@ def questao_14():
 
 #20. Faça um programa que leia a matrícula e a média de 100 alunos. Ordene da maior
 #para a menor nota e imprima uma relação contendo todas as matrículas e médias.
+
 
 e = True
 while (e == True):
