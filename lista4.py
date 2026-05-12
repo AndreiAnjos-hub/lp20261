@@ -447,6 +447,20 @@ def questao_13():
 #deve gerar e imprimir uma segunda lista em que cada elemento é o quadrado do
 #elemento da primeira lista.
 
+def questao_14():
+    numeros = [random.randrange(15) for _ in range(50)]
+    quadrados = []
+    
+    for i in range(50):
+        quadrados.append((numeros[i] * numeros[i]))
+    
+    console.print(f"\n[bold white on purple] 50 Elementos [/bold white on purple]\n")
+    console.print(f"[bright_cyan]{'Índice':<8}[/bright_cyan] | [spring_green2]{'Números':<12}[/spring_green2] | [gold1]{'Quadrados':<12}[/gold1]")
+    console.print("-" * 35)
+
+    for i in range(50):
+        console.print(f"[bright_white]{i + 1:<8} | {numeros[i]:<12} | {quadrados[i]:<12}[/bright_white]")
+
 #15. Faça um programa que leia e armazene vários números, até digitar o número
 #0. Imprimir quantos números iguais ao último número foram lidos. O limite de
 #números é 100.
