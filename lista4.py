@@ -518,6 +518,12 @@ def questao_16():
 #17. Faça um programa que leia um conjunto de 30 valores inteiros, armazene-os em
 #uma lista e os imprima ao contrário da ordem de leitura.
 
+def questao_17():
+    numeros = [random.randrange(50) for _ in range(30)]
+
+    console.print(f"\n[bright_white]Lista de 30 números:[/bright_white] {numeros.sort()}")
+    console.print(f"\n[bright_white]Lista de 30 números reverse:[/bright_white] [orange1]{numeros.reverse()}[/orange1]")
+
 #18. Faça um programa que permita entrar com 20 valores numéricos,
 # em que podem existir vários elementos repetidos. Gere
 #uma lista ordenada que terá apenas os elementos não repetidos.
