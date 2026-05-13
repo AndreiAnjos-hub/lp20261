@@ -495,6 +495,26 @@ def questao_15():
 #• quantos são maior que a média
 #• quantos são iguais a média
 
+def questao_16():
+    numeros = [random.randrange(31) for _ in range(100)]
+    qnt_maior_media = 0
+    qnt_igual_media = 0
+
+    media = sum(numeros) / len(numeros)
+
+    for i in range(100):
+        if (numeros[i] > media):
+            qnt_maior_media += 1
+        elif (numeros[i] == media):
+            qnt_igual_media += 1
+
+    console.print(f"\n[bright_white]Lista de 100 números:[/bright_white] {numeros}")
+
+    qnt_num_30 = numeros.count(30)
+    console.print(f"\n[bright_white]Quantidade de números iguais a 30:[/bright_white] [orange1]{qnt_num_30}[/orange1]")
+    console.print(f"[bright_white]Quantidade de números maiores que a média [cyan](>{media:.2f})[/cyan]:[/bright_white] [spring_green2]{qnt_maior_media}[/spring_green2]")
+    console.print(f"[bright_white]Quantidade de números iguais a média [cyan](={media:.2f})[/cyan]:[/bright_white] [spring_green2]{qnt_igual_media}[/spring_green2]")
+
 #17. Faça um programa que leia um conjunto de 30 valores inteiros, armazene-os em
 #uma lista e os imprima ao contrário da ordem de leitura.
 
