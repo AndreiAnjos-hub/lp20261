@@ -218,8 +218,6 @@ def questao_8():
     for chave, valor in produtos.items():
         print(f"{chave} {valor}")
 
-import random
-
 def questao_8():
     estoque = {}
 
@@ -342,20 +340,6 @@ def questao_10():
 #emitir uma mensagem. O programa deve terminar quando o usuário digitar
 #o código 0 (zero) para uma mesa ou quando todos os 150 lugares estiverem
 #ocupados.
-
-# def questao_12():
-#     casa_espetaculo = [[0 for _ in range(5)] for _ in range(30)]
-
-#     while True:
-#         console.print("[bright_green](1)[/bright_green] - Listar todo os lugares")
-#         console.print("[bright_yellow](2)[/bright_yellow] - Realizar reserva de um lugar")
-#         console.print("[bright_red](S)[/bright_red] - Sair")
-
-#         opcao = input("Escolha a opçaõ desejada: ")
-
-#         if (opcao == "1"):
-#             for i in range(30):
-#                 print(casa_espetaculo[i])
 
 def questao_12():
     mesas = [[5] for _ in range(30)]
@@ -521,15 +505,78 @@ def questao_16():
 def questao_17():
     numeros = [random.randrange(50) for _ in range(30)]
 
-    console.print(f"\n[bright_white]Lista de 30 números:[/bright_white] {numeros.sort()}")
-    console.print(f"\n[bright_white]Lista de 30 números reverse:[/bright_white] [orange1]{numeros.reverse()}[/orange1]")
+    console.print(f"\n[bright_white]Lista de 30 números:[/bright_white] {numeros}")
+
+    numeros.reverse()
+    console.print(f"\n[bright_white]Lista de 30 números reverse:[/bright_white] [orange1]{numeros}[/orange1]")
 
 #18. Faça um programa que permita entrar com 20 valores numéricos,
 # em que podem existir vários elementos repetidos. Gere
 #uma lista ordenada que terá apenas os elementos não repetidos.
 
+def questao_18():
+    numeros = [random.randrange(21) for _ in range(20)]
+    numeros_n_repetidos = []
+
+    for i in range(20):
+        if (numeros[i] not in numeros_n_repetidos):
+            numeros_n_repetidos.append(numeros[i])
+
+    numeros_n_repetidos.sort()
+
+    console.print(f"\n[bright_white]20 números inteiros:[/bright_white] [cyan]{numeros}[/cyan]")
+    console.print(f"[bright_white]Números não repetidos ordenados:[/bright_white] [spring_green2]{numeros_n_repetidos}[/spring_green2]")
+
 #19. Suponha uma estrutura de 30 elementos contendo: código e telefone. Faça
 #um programa que permita buscar pelo código e imprimir o telefone.
+
+def questao_19():
+    dados_pessoais = {}
+
+    for _ in range(30):
+        codigo = random.randint(1000, 9999)
+        num_1 = random.randint(1000,9999)
+        num_2 = random.randint(1000,9999) 
+        telefone = f"{num_1} - {num_2}"
+
+        dados_pessoais[codigo] = telefone
+
+    while True:
+        console.print("\n[green](1)[/green] [white]- Listar todos os códigos[/white]")
+        console.print("[yellow](2)[/yellow] [white]- Buscar telefone[/white]")
+        console.print("[red](S)[/red] [white]- Sair[/white]")
+
+        opcao = input("\nEscolha uma opção: ").strip()
+
+        if (opcao == "1"):
+            console.print("\n            --- Listagem Completa ---\n")
+
+            console.print(f"[bright_cyan]{'Código':<8}[/bright_cyan] | [gold1]{'Telefone':<10}[/gold1]")
+            print("-" * 25)
+
+            for codigo, telefone in dados_pessoais.items():
+                console.print(f"[white]{codigo:<8} | {telefone:<10}[/white]")
+
+        elif (opcao == "2"):
+            try:
+                cod_busca = inputint("\nInforme o código: ")
+                if cod_busca in dados_pessoais:
+                    telefone_encontrado = dados_pessoais[cod_busca]
+                    console.print(f"\nCódigo encontrado: [gold1]{cod_busca}[/gold1]")
+                    console.print(f"Código: [spring_green2]{telefone_encontrado}[/spring_green2]")
+                else:
+                    
+                    console.print("\n[bright_red]Código não encontrado.[/bright_red]")
+
+            except ValueError:
+                console.print("\n[bright_red]Entrada inválida![/bright_red]")
+
+        elif (opcao.upper() == "S"):
+            console.print("\n[orange1]Encerrando programa...[/orange1]")
+            break
+
+        else:
+            console.print("\n[bright_red]Opção inválida! Tente novamente.[/bright_red]")
 
 #20. Faça um programa que leia a matrícula e a média de 100 alunos. Ordene da maior
 #para a menor nota e imprima uma relação contendo todas as matrículas e médias.
