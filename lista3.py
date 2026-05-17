@@ -97,20 +97,6 @@ def questao_6():
 #nome, nota da prova 1, nota da prova 2, e média das notas de cada aluno. Ao final,
 #imprimir a média geral da turma.
 
-# def questao_7():
-#     soma_geral = 0
-
-#     for i in range(1,16):
-#         aluno = input(f"\n{i}º Aluno: ").title().strip()
-#         nota_1 = inputfloat("Nota da prova 1: ", min=0, max=10)
-#         nota_2 = inputfloat("Nota da prova 2: ", min=0, max=10)
-#         m_aluno = (nota_1 + nota_2) / 2
-#         soma_geral += m_aluno
-
-#         print(f"\nNome do {i}º Aluno: {aluno}\nNota da prova 1: {nota_1}\nNota da prova 2: {nota_2}\nMédia do Aluno: {m_aluno}")
-
-#     print(f"\nMédia geral: {(soma_geral / 15):.2f}")
-
 def questao_7():
     soma_medias_turma = 0
     total_alunos = 15
@@ -206,54 +192,6 @@ def questao_9():
 #• O atleta mais pesado de cada time;
 #• O atleta mais jovem de cada time;
 #• O peso médio e a idade média de todos os participantes.
-
-# def questao_10():
-#     print("\n", end= "=" * 30)
-#     print('\nCampeonato Europeu de Volleyball')
-#     print("=" * 30)
-
-#     soma_peso_equipe = 0
-#     soma_idade_equipe = 0
-
-#     for i in range(1,3):
-#         for j in range(1,2):
-#             peso = inputfloat(f"\nPeso do {j} jogador da equipe {i}: ", min=50, max=100)
-#             idade = inputint(f"Idade do {j} jogador da equipe {i}: ", min=1, max=120)
-
-#             mais_pesado = peso
-#             mais_jovem = idade
-
-#             if (peso > mais_pesado):
-#                 mais_pesado = peso
-#                 atleta_pesado = j
-#             if (idade < mais_jovem):
-#                 mais_jovem = idade
-#                 atleta_jovem = j
-                
-#             print("=" * 30)
-#             print("Informações Equipe")
-#             print("=" * 30)
-
-#             soma_peso_equipe += peso
-#             soma_idade_equipe += idade
-
-#             media_peso_equipe = soma_peso_equipe / j
-#             media_idade_equipe = soma_idade_equipe / j
-
-#         print(f"\nMédia de peso da equipe: {media_peso_equipe:.2f}")
-#         print(f"Média de idade da equipe: {media_idade_equipe:.2f}")
-#         print(f"Atleta mais pesado da equipe {i}: atleta {atleta_pesado}")
-#         print(f"Atleta mais jovem da equipe {i}: atleta {atleta_jovem}")
-    
-#     print("=" * 30)
-#     print("Informações Geral")
-#     print("=" * 30)
-
-#     media_peso = soma_peso_equipe / i
-#     media_idade = soma_idade_equipe / i
-
-#     print(f"\nMédia do peso geral: {media_peso:.2f}")
-#     print(f"Média da idade geral: {media_idade:.2f}")
 
 def questao_10():
     print("\n" + "=" * 30)
@@ -716,48 +654,6 @@ def questao_20():
 #que a renda familiar e a porcentagem gasta com alimentação e outras despesas
 #em relação às rendas pessoal e familiar.
 #Obs.: O programa encerra quando se digita 0 para a renda pessoal.
-
-# def questao_21():
-#     print("\nUNIVERSIDADE")
-
-#     qnt_alunos = 0
-#     qnt_pessoal_maior = 0
-#     qnt_alunos_despesas = 0
-
-#     while True:
-#         renda_pessoal = inputfloat("\nRenda pessoal: ", min=0)
-
-#         if (renda_pessoal == 0):
-#             print("\nEncerrando programa...")
-#             break
-
-#         renda_familiar = inputfloat("Renda familiar: ", min=0)
-#         total_gasto_alimentacao = inputfloat("Total gasto com alimentação: ", min=0)
-#         total_gasto_despesas = inputfloat("Total gasto com outras despesas: ", min=0)
-
-#         if (total_gasto_despesas > 200):
-#             qnt_alunos_despesas += 1
-#         if (renda_pessoal > renda_familiar):
-#             qnt_pessoal_maior += 1
-
-#         try:
-#             porcentagem_gasto_pessoal = ((total_gasto_alimentacao + total_gasto_despesas) / renda_pessoal) * 100
-#             porcentagem_gasto_familiar = ((total_gasto_alimentacao + total_gasto_despesas) / renda_familiar) * 100
-#         except ZeroDivisionError:
-#             porcentagem_gasto_pessoal = 0
-#             porcentagem_gasto_familiar = 0
-
-#     try:
-#         porcentagem_despesas_200 = (qnt_alunos_despesas / qnt_alunos) * 100
-#     except ZeroDivisionError:
-#         porcentagem_despesas_200 = 0
-
-#     print(30 * "-")
-#     print(f"Porcentagem de alunos que gastam acima de R$200,00 com outras despesas: {porcentagem_despesas_200:.2f}%")
-#     print(f"Número de alunos com renda pessoal maior que a familiar: {qnt_pessoal_maior}")
-#     print(f"Porcentagem gasta com alimentação e outras despesas em relação a renda pessoal: {porcentagem_gasto_pessoal:.2f}%")
-#     print(f"Porcentagem gasta com alimentação e outras despesas em relação a renda familiar: {porcentagem_gasto_familiar:.2f}%")
-#     print(30 * "-")
 
 def questao_21():
     print("\nUNIVERSIDADE")

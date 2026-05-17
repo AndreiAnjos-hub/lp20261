@@ -198,27 +198,6 @@ def questao_7():
 #somente de um ao se digitar o código. Utilize dicionário como estrutura de dados.
 
 def questao_8():
-    produtos = {"código",
-                "quantidade",
-                "valor de compra",
-                "valor de venda"
-    }
-
-    for _ in range(30):
-        codigo = random.uniform(1000,9999)
-        quantidade = random.uniform(1,500)
-        valor_compra = random.uniform(10.0, 500.0)
-        valor_venda = random.uniform(10.0, 500.0)
-
-        produtos["código"] = codigo
-        produtos["quantidade"] = quantidade
-        produtos["valor de compra"] = valor_compra
-        produtos["valor de venda"] = valor_venda
-
-    for chave, valor in produtos.items():
-        print(f"{chave} {valor}")
-
-def questao_8():
     estoque = {}
 
     for _ in range(30):
@@ -580,28 +559,6 @@ def questao_19():
 
 #20. Faça um programa que leia a matrícula e a média de 100 alunos. Ordene da maior
 #para a menor nota e imprima uma relação contendo todas as matrículas e médias.
-
-# def questao_20():
-#     alunos = {}
-
-#     for _ in range(30):
-#         matricula = random.randint(100000000, 99999999)
-#         matricula = f"2026" + random.randint(100000000, 99999999)
-#         nota_1 = round(random.uniform(0.0, 10.0), 1)
-#         nota_2 = round(random.uniform(0.0, 10.0), 1)
-#         media = (nota_1 + nota_2) / 2
-
-#         alunos[f"2026{matricula}"] = media
-
-#     notas_ordenadas = dict(sorted(alunos.items()))
-
-#     console.print("\n            ---[bold white on purple] Listagem Completa [/bold white on purple]---\n")
-    
-#     console.print(f"[bright_cyan]{'Matrícula':<8}[/bright_cyan] | [gold1]{'Média':<10}[/gold1]")
-#     print("-" * 25)
-
-#     for matricula, media in notas_ordenadas.items():
-#         console.print(f"[white]{matricula:<8} | {media:<10}[/white]")
 
 def questao_20():
     alunos = {}

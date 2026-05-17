@@ -129,32 +129,6 @@ def questao_9():
 #10. Faça um programa que leia três números inteiros e imprima os três em ordem
 #crescente.
 
-# def questao_10():
-#     num1 = random.randint(1,100)
-#     num2 = random.randint(1,100)
-#     num3 = random.randint(1,100)
-
-#     if (num1 > num2) and (num1 > num3) and (num2 >= num3):
-#         print(f"\nOrdem crescente:\n{num1}, {num2}, {num3}")
-#     elif (num1 > num2) and (num1 > num3) and (num3 >= num2):
-#         print(f"\nOrdem crescente:\n{num1}, {num3}, {num2}")
-#     elif (num1 == num2) and (num1 > num3):
-#         print(f"\nOrdem crescente:\n{num1}, {num2}, {num3}")
-#     elif (num2 > num1) and (num2 > num3) and (num1 >= num3):
-#         print(f"\nOrdem crescente:\n{num2}, {num1}, {num3}")
-#     elif (num2 > num1) and (num2 > num3) and (num3 >= num1):
-#         print(f"\nOrdem crescente:\n{num2}, {num3}, {num1}")
-#     elif (num2 == num3) and (num2 > num1):
-#         print(f"\nOrdem crescente:\n{num2}, {num3}, {num1}")
-#     elif (num3 > num1) and (num3 > num2) and (num1 >= num2):
-#         print(f"\nOrdem crescente:\n{num3}, {num1}, {num2}")
-#     elif (num3 > num1) and (num3 > num2) and (num2 >= num1):
-#         print(f"\nOrdem crescente:\n{num3}, {num2}, {num1}")
-#     elif (num3 == num1) and (num3 > num2):
-#         print(f"\nOrdem crescente:\n{num3}, {num1}, {num2}")
-#     else:
-#         print(f"\nTodos os números são iguais:\n{num1}, {num2}, {num3}")
-
 def questao_10():
     num1 = random.randint(1, 5)
     num2 = random.randint(1, 5)
@@ -179,28 +153,6 @@ def questao_10():
             print(f"\nOrdem crescente:\n\n{num3}\n{num2}\n{num1}")
 
 #11. Faça um programa que leia 3 números e imprima o maior deles.
-
-# def questao_11():
-#     num1 = random.randint(1,100)
-#     num2 = random.randint(1,100)
-#     num3 = random.randint(1,100)
-
-#     print(f"\n{num1}, {num2}, {num3}")
-
-#     if (num1 > num2) and (num1 > num3):
-#         print(f"\nO maior número é {num1}")
-#     elif (num1 == num2) and (num1 > num3):
-#         print(f"\nO maior número é {num1}")
-#     elif (num2 > num1) and (num2 > num3):
-#         print(f"\nO maior número é {num2}")
-#     elif (num2 == num3) and (num2 > num1):
-#         print(f"\nO maior número é {num2}")
-#     elif (num3 > num1) and (num3 > num2):
-#         print(f"\nO maior número é {num3}")
-#     elif (num3 == num1) and (num3 > num2):
-#         print(f"\nO maior número é {num3}")
-#     else:
-#         print(f"\nTodos os números são iguais")
 
 def questao_11():
     num1 = random.randint(1, 100)
@@ -397,41 +349,6 @@ def questao_18():
 #• Se a soma dos pontos for maior do que 100, imprimir a média aritmética entre eles,
 #  caso contrário, imprimir a mensagem "Equipe desclassificada".
 
-# def questao_19():
-#     pontos_j1 = inputint(msg="\nInforme os pontos obtidos do jogador 1: ", min=0)
-#     pontos_j2 = inputint(msg="Informe os pontos obtidos do jogador 2: ", min=0)
-#     pontos_j3 = inputint(msg="Informe os pontos obtidos do jogador 3: ", min=0)
-
-#     if (pontos_j1 > pontos_j2) and (pontos_j1 > pontos_j3) and (pontos_j2 >= pontos_j3):
-#         print(f"\n1º Lugar: Jogador 1 com {pontos_j1} pontos\n2º Lugar: Jogador 2 com {pontos_j2} pontos\n3º Lugar: Jogador 3 com {pontos_j3} pontos")
-#     elif (pontos_j1 > pontos_j2) and (pontos_j1 > pontos_j3) and (pontos_j3 >= pontos_j2):
-#         print(f"\n1º Lugar: Jogador 1 com {pontos_j1} pontos\n2º Lugar: Jogador 3 com {pontos_j3} pontos\n3º Lugar: Jogador 2 com {pontos_j2} pontos")
-#     elif (pontos_j1 == pontos_j2) and (pontos_j1 > pontos_j3):
-#         print(f"\n1º Lugar: Jogador 1 com {pontos_j1} pontos\n2º Lugar: Jogador 2 com {pontos_j2} pontos\n3º Lugar: Jogador 3 com {pontos_j3} pontos")
-#     elif (pontos_j2 > pontos_j1) and (pontos_j2 > pontos_j3) and (pontos_j1 >= pontos_j3):
-#         print(f"\n1º Lugar: Jogador 2 com {pontos_j2} pontos\n2º Lugar: Jogador 1 com {pontos_j1} pontos\n3º Lugar: Jogador 3 com {pontos_j3} pontos")
-#     elif (pontos_j2 > pontos_j1) and (pontos_j2 > pontos_j3) and (pontos_j3 >= pontos_j1):
-#         print(f"\n1º Lugar: Jogador 2 com {pontos_j2} pontos\n2º Lugar: Jogador 3 com {pontos_j3} pontos\n3º Lugar: Jogador 1 com {pontos_j1} pontos")
-#     elif (pontos_j2 == pontos_j3) and (pontos_j2 > pontos_j1):
-#         print(f"\n1º Lugar: Jogador 2 com {pontos_j2} pontos\n2º Lugar: Jogador 3 com {pontos_j3} pontos\n3º Lugar: Jogador 1 com {pontos_j1} pontos")
-#     elif (pontos_j3 > pontos_j1) and (pontos_j3 > pontos_j2) and (pontos_j1 >= pontos_j2):
-#         print(f"\n1º Lugar: Jogador 3 com {pontos_j3} pontos\n2º Lugar: Jogador 1 com {pontos_j1} pontos\n3º Lugar: Jogador 2 com {pontos_j2} pontos")
-#     elif (pontos_j3 > pontos_j1) and (pontos_j3 > pontos_j2) and (pontos_j2 >= pontos_j1):
-#         print(f"\n1º Lugar: Jogador 3 com {pontos_j3} pontos\n2º Lugar: Jogador 2 com {pontos_j2} pontos\n3º Lugar: Jogador 1 com {pontos_j1} pontos")
-#     elif (pontos_j3 == pontos_j1) and (pontos_j3 > pontos_j2):
-#         print(f"\n1º Lugar: Jogador 3 com {pontos_j3} pontos\n2º Lugar: Jogador 1 com {pontos_j1} pontos\n3º Lugar: Jogador 2 com {pontos_j2} pontos")
-#     else:
-#         print(f"\nTodos com a mesma pontuação:")
-#         print(f"\nJogador 1 com {pontos_j1} pontos\nJogador 2 com {pontos_j2} pontos\nJogador 3 com {pontos_j3} pontos")
-
-#     soma = pontos_j1 + pontos_j2 + pontos_j3
-
-#     if (soma > 100):
-#         media = (soma) / 3
-#         print(f"\nMédia aritmética da equipe: {media:.2f} pontos!")
-#     else:
-#         print(f"\nEquipe desclassificada!!!")
-
 def questao_19():
     pontos_j1 = inputint(msg="\nInforme os pontos obtidos do jogador 1: ", min=0)
     pontos_j2 = inputint(msg="Informe os pontos obtidos do jogador 2: ", min=0)
@@ -557,63 +474,6 @@ def questao_22(): # Analisar depois
 #Peixe          230cal Sorvete diet     110cal Suco de laranja   70cal
 #Frango         250cal Mousse diet      170cal Suco de melão     100cal
 #Carne          350cal Mousse chocolate 200cal Refrigerante diet 65cal
-
-# def questao_23():
-#     try:
-#         print(f"\nPrato:")
-#         print(f"\nVegetariano\nPeixe\nFrango\nCarne")
-
-#         print(f"\nSobremesa")
-#         print(f"\nAbacaxi\nSorvete diet\nMousse diet\nMousse chocolate")
-
-#         print(f"\nBebida")
-#         print(f"\nChá\nSuco de laranja\nSuco de melão\nRefrigerante diet\n")
-
-#         prato = input("Informe o nome do prato: ").title().strip()
-#         sobremesa = input("Informe o nome da sobremesa: ").title().strip()
-#         bebida = input("Informe o nome da bebida: ").title().strip()
-
-#         if (prato != "Vegetariano") and (prato != "Peixe") and (prato != "Frango") and (prato != "Carne"):
-#             print(f"\nOpção inválida!")
-#         else:
-#             if (sobremesa != "Abacaxi") and (sobremesa != "Sorvete Diet") and (sobremesa != "Mousse Diet") and (sobremesa != "Mousse Chocolate"):
-#                 print(f"\nOpção inválida!")
-#             else:
-#                 if (bebida != "Chá") and (bebida != "Suco De Laranja") and (bebida != "Suco De Melão") and (bebida != "Refrigerante Diet"):
-#                     print(f"\nOpção inválida!")
-#                 else:
-#                     if (prato == "Vegetariano"):
-#                         qnt_prato_cal = 180
-#                     elif (prato == "Peixe"):
-#                         qnt_prato_cal = 230
-#                     elif (prato == "Frango"):
-#                         qnt_prato_cal = 250
-#                     else:
-#                         qnt_prato_cal = 350
-
-#                     if (sobremesa == "Abacaxi"):
-#                         qnt_sobremesa_cal = 75
-#                     elif (sobremesa == "Sorvete Diet"):
-#                         qnt_sobremesa_cal = 110
-#                     elif (sobremesa == "Mousse Diet"):
-#                         qnt_sobremesa_cal = 170
-#                     else:
-#                         qnt_sobremesa_cal = 200
-
-#                     if (bebida == "Chá"):
-#                         qnt_bebida_cal = 20
-#                     elif (bebida == "Suco De Laranja"):
-#                         qnt_bebida_cal = 70
-#                     elif (bebida == "Suco De Melão"):
-#                         qnt_bebida_cal = 100
-#                     else:
-#                         qnt_bebida_cal = 65
-                    
-#                     qnt_total_cal = qnt_prato_cal + qnt_sobremesa_cal + qnt_bebida_cal
-#                     print(f"\nQuantidade total de calorias da refeição ({prato}, {sobremesa} e {bebida}): {qnt_total_cal} kcal")
-    
-#     except Exception as erro:
-#         print(f"\nErro: {erro}")
 
 def questao_23():
     try:
