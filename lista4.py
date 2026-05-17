@@ -581,12 +581,58 @@ def questao_19():
 #20. Faça um programa que leia a matrícula e a média de 100 alunos. Ordene da maior
 #para a menor nota e imprima uma relação contendo todas as matrículas e médias.
 
+# def questao_20():
+#     alunos = {}
+
+#     for _ in range(30):
+#         matricula = random.randint(100000000, 99999999)
+#         matricula = f"2026" + random.randint(100000000, 99999999)
+#         nota_1 = round(random.uniform(0.0, 10.0), 1)
+#         nota_2 = round(random.uniform(0.0, 10.0), 1)
+#         media = (nota_1 + nota_2) / 2
+
+#         alunos[f"2026{matricula}"] = media
+
+#     notas_ordenadas = dict(sorted(alunos.items()))
+
+#     console.print("\n            ---[bold white on purple] Listagem Completa [/bold white on purple]---\n")
+    
+#     console.print(f"[bright_cyan]{'Matrícula':<8}[/bright_cyan] | [gold1]{'Média':<10}[/gold1]")
+#     print("-" * 25)
+
+#     for matricula, media in notas_ordenadas.items():
+#         console.print(f"[white]{matricula:<8} | {media:<10}[/white]")
+
+def questao_20():
+    alunos = {}
+
+    for _ in range(100):
+        final_matricula = random.randint(10000, 99999)
+        matricula = f"2026{final_matricula}"
+        
+        nota_1 = round(random.uniform(0.0, 10.0), 1)
+        nota_2 = round(random.uniform(0.0, 10.0), 1)
+        media = round((nota_1 + nota_2) / 2, 1)
+
+        alunos[matricula] = media
+
+    notas_ordenadas = dict(sorted(alunos.items(), key=lambda x: x[1], reverse=True))
+
+    console.print("\n--- [bold white on purple]Classificação dos Alunos[/bold white on purple] ---\n")
+    
+    console.print(f"[bright_cyan]{'Matrícula':<12}[/bright_cyan] | [gold1]{'Média':<6}[/gold1]")
+    console.print("-" * 23)
+
+    for mat, med in notas_ordenadas.items():
+        cor_nota = "bright_green" if med >= 6.0 else "bright_red" if med < 5.0 else "white"
+        console.print(f"[white]{mat:<12}[/white] | [{cor_nota}]{med:<6.1f}[/{cor_nota}]")
+
 
 e = True
 while (e == True):
     try:
         questao = inputint("Digite o número da questão: ")
-        if questao < 1 or questao > 30:
+        if questao < 1 or questao > 21:
             raise Exception("Questão inválida! Valores devem ser entre 1 e 30.")
         eval(f"questao_{questao}()")
         e = False
