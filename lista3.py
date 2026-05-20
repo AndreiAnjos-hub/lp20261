@@ -1,4 +1,5 @@
 import random
+import matplotlib as plt
 from datetime import datetime
 from util import inputint, inputfloat, gerar_palavra
 
