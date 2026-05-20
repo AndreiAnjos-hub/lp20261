@@ -1,5 +1,5 @@
 import random
-import matplotlib as plt
+import matplotlib.pyplot as plt
 from datetime import datetime
 from util import inputint, inputfloat, gerar_palavra
 
@@ -279,21 +279,43 @@ def questao_11():
 #população do país A ultrapasse a população do país B.
 
 def questao_12():
+    xA = []
+    yA = []
+    xB = []
+    yB = []
+
+    t_ano = 0
+
     pop_pais_A = 5000000
     pop_pais_B = 7000000
 
     taxa_nat_A = 0.03
     taxa_nat_B = 0.02
-    t_anos = 0
 
     while (pop_pais_A <= pop_pais_B):
+        xA.append(ano)
+        yA.append(paisA)
+        xB.append(ano)
+        yB.append(paisB)
+
         pop_pais_A += pop_pais_A * taxa_nat_A
         pop_pais_B += pop_pais_B * taxa_nat_B
+
         t_anos += 1
 
     print(f"\nSerão necessários {t_anos} anos para que a população do país A ultrapasse a do país B.")
     print(f"População final país A: {pop_pais_A:,.0f}")
     print(f"População final país B: {pop_pais_B:,.0f}")
+
+    plt.ticklabel_format(style='plain', axis='y') # 'plain' mostra o número cheio
+    plt.plot(xA, yA, marker='.', linestyle='-', color='b', label='País A')
+    plt.plot(xB, yB, marker='.', linestyle='-', color='r', label='País B')
+
+    plt.title('Crescimento Populacional dos Países A e B')
+    plt.xlabel('Ano')
+    plt.ylabel('População')
+    plt.legend(loc='best')
+    plt.show()
 
 #13. Uma empresa de fornecimento de energia elétrica faz a leitura mensal dos medidores
 #de consumo. Para cada consumidor, são digitados os seguintes dados:
