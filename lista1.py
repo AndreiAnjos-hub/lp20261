@@ -314,7 +314,7 @@ def questao_18():
 
 def questao_19():
     try:
-        prestacao_vencida = float(input("Informe o valor da prestação em atraso: "))
+        prestacao_vencida = float(input("\nInforme o valor da prestação em atraso: "))
         taxa_periodica_juros = float(input("Informe a taxa periódica de juros: "))
         periodo_atraso = float(input("Informe o período de atraso: "))
         
@@ -335,8 +335,8 @@ def questao_19():
 
 def questao_20():
     try:
-        dolar = float(input("Informe o valor em dólar (US$): "))
-        real = dolar * 5.20
+        dolar = float(input("\nInforme o valor em dólar (US$): "))
+        real = dolar * 5.01
         
         print(f"\nDólar (US$) convertido para real (R$): R${real:.2f}")
     
