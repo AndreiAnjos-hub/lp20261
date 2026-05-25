@@ -17,7 +17,7 @@ def questao_1():
 
     with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
         f_out.write(f"Questão 1\n\n")
-        f_out.write(f"=== Resposta: {nome} ===\n")
+        f_out.write(f"Resposta:\n\n{nome}\n")
         f_out.write("_" * 50 + "\n\n")
 
 # 2. Faça um programa que imprima o produto dos valores 30 e 27.

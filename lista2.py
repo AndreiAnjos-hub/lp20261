@@ -1,6 +1,14 @@
 import random
 from datetime import datetime
 from util import inputint, inputfloat
+from tkinter import Tk, Label, Entry, Button, messagebox
+
+nome_arquivo_txt = "ex_lista_2.txt"
+
+with open(nome_arquivo_txt, "w", encoding="utf-8") as f_out:
+        f_out.write("=" * 60 + "\n")
+        f_out.write(f"          Exercícios Lista 2: {nome_arquivo_txt.upper()}\n")
+        f_out.write("=" * 60 + "\n\n")
 
 #1. Faça um programa que leia dois valores numéricos inteiros e efetue
 #   a adição, caso o resultado seja maior que 10, apresentá-lo.
@@ -13,6 +21,10 @@ def questao_1():
 
     if (soma > 10):
         print(f"\nSoma entre {num1} + {num2}: {soma}")
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 1\n\n")
+            f_out.write(f"Resposta:\n\nSoma entre {num1} + {num2}: {soma}\n")
+            f_out.write("_" * 50 + "\n\n")
 
 #2. Faça um programa que leia dois valores inteiros e efetue a adição.
 #   Caso o valor somado seja maior que 20, este deverá ser apresentado
@@ -27,8 +39,18 @@ def questao_2():
 
     if (soma > 20):
         print(f"\nSoma entre {num1} + {num2} + 8: {soma + 8}")
+
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 2\n\n")
+            f_out.write(f"Resposta:\n\nSoma entre {num1} + {num2} + 8: {soma + 8}\n")
+            f_out.write("_" * 50 + "\n\n")
     else:
         print(f"\nSoma entre {num1} + {num2} - 5: {soma - 5}")
+
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 2\n\n")
+            f_out.write(f"Resposta:\n\nSoma entre {num1} + {num2} - 5: {soma - 5}\n")
+            f_out.write("_" * 50 + "\n\n")
 
 #3. Faça um programa que leia um número e imprima uma das duas mensagens:
 #   "É múltiplo de 3"ou "Não é múltiplo de 3".
@@ -40,8 +62,18 @@ def questao_3():
 
     if (multiplo == 0):
         print(f"\nO número {num} é múltiplo de 3")
+
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 3\n\n")
+            f_out.write(f"Resposta:\n\nO número {num} é múltiplo de 3\n")
+            f_out.write("_" * 50 + "\n\n")
     else:
         print(f"\nO número {num} não é múltiplo de 3")
+
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 3\n\n")
+            f_out.write(f"Resposta:\n\nO número {num} não é múltiplo de 3\n")
+            f_out.write("_" * 50 + "\n\n")
 
 #4. Faça um programa que leia um número e informe se ele é ou não divisível por 5.
 
@@ -52,8 +84,18 @@ def questao_4():
 
     if (divisivel == 0):
         print(f"\nO número {num} é divisível por 5")
+
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 4\n\n")
+            f_out.write(f"Resposta:\n\nO número {num} é divisível por 5\n")
+            f_out.write("_" * 50 + "\n\n")
     else:
         print(f"\nO número {num} não é divisível por 5")
+
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 4\n\n")
+            f_out.write(f"Resposta:\n\nO número {num} não é divisível por 5\n")
+            f_out.write("_" * 50 + "\n\n")
 
 #5. Faça um programa que leia um número e informe se ele é divisível por 3 e por 7.
 
@@ -65,12 +107,33 @@ def questao_5():
 
     if (div_3 == 0) and (div_7 == 0):
         print(f"\nO número {num} é divisível por 3 e por 7")
+
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 5\n\n")
+            f_out.write(f"Resposta:\n\nO número {num} é divisível por 3 e por 7\n")
+            f_out.write("_" * 50 + "\n\n")
+
     elif (div_3 == 0):
         print(f"\nO número {num} é divisível por 3")
+
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 5\n\n")
+            f_out.write(f"Resposta:\n\nO número {num} não é divisível por 5\n")
+            f_out.write("_" * 50 + "\n\n")
     elif (div_7 == 0):
         print(f"\nO número {num} é divisível por 7")
+
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 5\n\n")
+            f_out.write(f"Resposta:\n\nO número {num} não é divisível por 5\n")
+            f_out.write("_" * 50 + "\n\n")
     else:
         print(f"\nO número {num} não é divisível por 3 e por 7")
+
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 5\n\n")
+            f_out.write(f"Resposta:\n\nO número {num} não é divisível por 5\n")
+            f_out.write("_" * 50 + "\n\n")
 
 #6. A prefeitura do Rio de Janeiro abriu uma linha de crédito para os funcionários
 #   estatutários. O valor máximo da prestação não poderá ultrapassar 30% do salário
@@ -187,6 +250,37 @@ def questao_12():
             print(f"Maior de 65 anos")
     if (idade < 18):
         print(f"\nMenor de idade")
+
+# from tkinter import Tk, Label, Entry, Button, messagebox
+        
+# # 1. Criação da janela principal
+# janela = Tk()
+# janela.title('Questão 12')
+# janela.geometry("300x150") # Define uma largura e altura inicial para a janela
+
+# # 2. Criação dos componentes (Widgets)
+# lbl_nome = Label(janela, text='Idade: ')
+# lbl_nome.pack(pady=20) # O .pack() posiciona o texto na tela. O pady dá um espaço no topo.
+# lbl_nome.config(pady=20)
+# lbl_nome.grid(row=0,column=0)
+
+# global txt_idade
+# txt_idade = Entry(width=20)
+# txt_idade.grid(row=0,column=1)
+
+# def resultado():
+#     if (int(txt_idade.get()) >= 18):
+#         messagebox.showinfo(title='Info',message=f'Maior de idade')
+#     elif (int(txt_idade.get()) > 65):
+#         messagebox.showinfo(title='Info',message=f'Maior de 65 anos')
+#     else:
+#         messagebox.showinfo(title='Info',message=f'Menor de idade')
+
+# btn_ola = Button(text='Verificar classificação',command=resultado)
+# btn_ola.grid(row=1,column=0)
+
+# # 3. Mantém a janela aberta e escutando os cliques/eventos
+# janela.mainloop()
         
 #13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota
 #da prova 2 de um aluno. O programa deve imprimir o nome, a nota da prova 1,
