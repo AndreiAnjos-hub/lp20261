@@ -2,16 +2,32 @@ import math
 
 # LISTA 1 - EXERCÍCIOS DE PYTHON
 
+nome_arquivo_txt = "ex_lista_1.txt"
+
+with open(nome_arquivo_txt, "w", encoding="utf-8") as f_out:
+        f_out.write("=" * 60 + "\n")
+        f_out.write(f"          Exercícios Lista 1: {nome_arquivo_txt.upper()}\n")
+        f_out.write("=" * 60 + "\n\n")
+
 # 1. Faça um programa que imprima o seu nome.
 
 def questao_1():
     nome = input("Digite seu nome: ").title().strip()
     print (f"\n{nome}")
 
+    with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+        f_out.write(f"Questão 1\n\n")
+        f_out.write(f"=== Resposta: {nome} ===\n")
+        f_out.write("_" * 50 + "\n\n")
+
 # 2. Faça um programa que imprima o produto dos valores 30 e 27.
 
 def questao_2():
     print(f"Produto dos valores 30 e 27: {30*27}")
+    with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+        f_out.write(f"Questão 2\n\n")
+        f_out.write(f"=== Resposta: Produto dos valores 30 e 27: {30*27} ===\n")
+        f_out.write("_" * 50 + "\n\n")
 
 # 3. Faça um programa que imprima a média aritmética entre os números 5, 8, 12.
 
@@ -21,6 +37,11 @@ def questao_3():
 
     print(f"Média entre 5, 8, 12: {media:.2f}")
 
+    with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+        f_out.write(f"Questão 3\n\n")
+        f_out.write(f"=== Resposta: Média entre 5, 8, 12: {media:.2f} ===\n")
+        f_out.write("_" * 50 + "\n\n")
+
 # 4. Faça um programa que leia e imprima um número inteiro.
 
 def questao_4():
@@ -28,11 +49,14 @@ def questao_4():
     try:
         num = int(input("Digite um número inteiro: "))
         print(f"\nNúmero inteiro digitado: {num}")
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 4\n\n")
+            f_out.write(f"=== Resposta: Número inteiro digitado: {num} ===\n")
+            f_out.write("_" * 50 + "\n\n")
     except ValueError:
         print(f"\nO valor digitado é inválido! Apenas valores inteiros.\nTente novamente!")
     except:
         print(f"\nErro desconhecido! Contate o administrador do sistema.")
-
 
 # 5. Faça um programa que leia dois números reais e os imprima.
 
@@ -41,6 +65,11 @@ def questao_5():
         num1 = float(input("Digite o 1º número real: "))
         num2 = float(input("Digite o 2º número real: "))
         print (f"\nNúmeros reais digitados: {num1} e {num2}")
+
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 5\n\n")
+            f_out.write(f"=== Resposta: Números reais digitados: {num1} e {num2} ===\n")
+            f_out.write("_" * 50 + "\n\n")
     except ValueError:
         print (f"\nValor inserido inválido! Apenas valores reais.\nTente novamente!")
 
@@ -51,28 +80,41 @@ def questao_6():
         num = int(input("Digite um número inteiro: "))
         print (f"\nAntecessor de {num}: {num - 1}")
         print (f"Sucessor de {num}: {num + 1}")
+
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 6\n\n")
+            f_out.write(f"=== Resposta: Antecessor de {num}: {num - 1}    Sucessor de {num}: {num + 1} ===\n")
+            f_out.write("_" * 50 + "\n\n")
     except ValueError:
         print (f"\nValor inserido inválido! Apenas valor inteiro.\nTente novamente!")
-
 
 # 7. Faça um programa que leia o nome o endereço e o telefone de um cliente e ao final, imprima esses dados.
 
 def questao_7():
-    nome = input("Digite seu nome: ").title().strip()
+    nome = input("\nDigite seu nome: ").title().strip()
     endereco = input("Digite seu endereço: ")
     telefone = input("Digite seu telefone: ")
 
     print (f"\nNome: {nome}\nEndereço: {endereco}\nTelefone: {telefone}")
 
+    with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+        f_out.write(f"Questão 7\n\n")
+        f_out.write(f"=== Resposta: Nome: {nome} | Endereço: {endereco} | Telefone: {telefone} ===\n")
+        f_out.write("_" * 50 + "\n\n")
+
 # 8. Faça um programa que leia dois números inteiros e imprima a subtração deles.
 
 def questao_8():
     try:
-        num1 = int(input("Digite o 1º número: "))
+        num1 = int(input("\nDigite o 1º número: "))
         num2 = int(input("Digite o 2º número: "))
         
         print (f"\nSubtração de {num1} e {num2}: {num1 - num2}")
 
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 6\n\n")
+            f_out.write(f"=== Resposta: Subtração de {num1} e {num2}: {num1 - num2} ===\n")
+            f_out.write("_" * 50 + "\n\n")
     except ValueError:
         print (f"\nValor inserido inválido! Apenas valores inteiros.\nTente novamente!")
 
