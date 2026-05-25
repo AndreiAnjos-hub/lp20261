@@ -112,7 +112,7 @@ def questao_8():
         print (f"\nSubtração de {num1} e {num2}: {num1 - num2}")
 
         with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
-            f_out.write(f"Questão 6\n\n")
+            f_out.write(f"Questão 8\n\n")
             f_out.write(f"=== Resposta: Subtração de {num1} e {num2}: {num1 - num2} ===\n")
             f_out.write("_" * 50 + "\n\n")
     except ValueError:
@@ -122,9 +122,13 @@ def questao_8():
 
 def questao_9():
     try:
-        num = float(input("Digite um número real: "))
+        num = float(input("\nDigite um número real: "))
         print (f"\n1/4 do número {num}: {num/4}")
     
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 9\n\n")
+            f_out.write(f"=== Resposta: 1/4 do número {num}: {num/4} ===\n")
+            f_out.write("_" * 50 + "\n\n")
     except ValueError:
         print (f"\nValor inserido inválido! Apenas valor real.\nTente novamente!")
 
@@ -133,7 +137,7 @@ def questao_9():
 
 def questao_10():
     try:
-        num1 = float(input("Digite o 1º número real: "))
+        num1 = float(input("\nDigite o 1º número real: "))
         num2 = float(input("Digite o 2º número real: "))
         num3 = float(input("Digite o 3º número real: "))
         
@@ -142,20 +146,27 @@ def questao_10():
         
         print(f"\nMédia aritmética dos números {num1}, {num2}, {num3}: {media:.2f}")
 
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 10\n\n")
+            f_out.write(f"=== Resposta: Média aritmética dos números {num1}, {num2}, {num3}: {media:.2f} ===\n")
+            f_out.write("_" * 50 + "\n\n")
     except ValueError:
         print (f"\nValor inserido inválido! Apenas valores reais.\nTente novamente!")
-
 
 # 11. Faça um programa que leia dois números reais e calcule as quatro operações básicas entre estes dois números, adição,
 # subtração,multiplicação e divisão. Ao final, o programa deve imprimir os resultados dos cálculos.
 
 def questao_11():
     try:
-        num1 = float(input("Digite o 1º número real: "))
+        num1 = float(input("\nDigite o 1º número real: "))
         num2 = float(input("Digite o 2º número real: "))
         
         print (f"\nAdição: {num1 + num2}\nSubtração: {num1 - num2}\nMultiplicação: {num1 * num2}\nDivisão: {num1 / num2:.2f}")
 
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 11\n\n")
+            f_out.write(f"Resposta:\n\nAdição: {num1 + num2}\nSubtração: {num1 - num2}\nMultiplicação: {num1 * num2}\nDivisão: {num1 / num2:.2f}\n")
+            f_out.write("_" * 50 + "\n\n")
     except ValueError:
         print (f"\nValor inserido inválido! Apenas valores reais.\nTente novamente!")
 
@@ -164,11 +175,15 @@ def questao_11():
 
 def questao_12():
     try:
-        num = float(input("Digite um número real: "))
+        num = float(input("\nDigite um número real: "))
         print(f'{num}*{num} = {num*num}')  
         print(f'math.pow({num},2) = {math.pow(num,2)}') # recomendado para float
         print(f'{num}**2 = {num**2}')
     
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 12\n\n")
+            f_out.write(f"Resposta:\n\nmath.pow({num},2) = {math.pow(num,2)}\n")
+            f_out.write("_" * 50 + "\n\n")
     except ValueError:
         print (f"\nValor inserido inválido! Apenas valores reais.\nTente novamente!")
 
@@ -176,25 +191,32 @@ def questao_12():
 
 def questao_13():
     try:
-        saldo = float(input("Informe o saldo da conta poupança: "))
+        saldo = float(input("\nInforme o saldo da conta poupança: "))
         novo_saldo = saldo * 1.02
         print(f"\nNovo saldo com reajuste de 2%: {novo_saldo:.2f}")
 
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 13\n\n")
+            f_out.write(f"Resposta:\n\nNovo saldo com reajuste de 2%: {novo_saldo:.2f}\n")
+            f_out.write("_" * 50 + "\n\n")
     except ValueError:
         print (f"\nValor inserido inválido! Apenas valores reais.\nTente novamente!")
-
 
 # 14. Faça um programa que leia a base e a altura de um retângulo e imprima o perímetro (base*2 + altura*2) e a área (base * altura).    
 
 def questao_14():
     try:
-        base = float(input("Informe a base do retãngulo: "))
+        base = float(input("\nInforme a base do retãngulo: "))
         altura = float(input("Informe a altura do retângulo: "))
         
         perimetro = (base*2 + altura*2)
         area = (base * altura)
         print(f"\nPerímetro do retângulo: {perimetro:.2f} m\nÁrea do retângulo: {area:.2f} m²")
 
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 14\n\n")
+            f_out.write(f"Resposta:\n\nPerímetro do retângulo: {perimetro:.2f} m\nÁrea do retângulo: {area:.2f} m²\n")
+            f_out.write("_" * 50 + "\n\n")
     except ValueError:
         print (f"\nValor inserido inválido! Apenas valores reais.\nTente novamente!")
 
@@ -202,7 +224,7 @@ def questao_14():
 
 def questao_15():
     try:
-        produto = float(input("Informe o valor do produto: "))
+        produto = float(input("\nInforme o valor do produto: "))
         percentual = float(input("Informe o percentual do desconto desejado: "))
         
         desconto = produto * (percentual/100)
@@ -210,6 +232,10 @@ def questao_15():
         
         print(f"\nValor do desconto: R${desconto:.2f}\nValor do final do produto: R${valor_final:.2f}")
 
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 15\n\n")
+            f_out.write(f"=== Resposta:\nValor do desconto: R${desconto:.2f}\nValor do final do produto: R${valor_final:.2f} ===\n")
+            f_out.write("_" * 50 + "\n\n")
     except ValueError:
         print (f"\nValor inserido inválido! Apenas valores reais.\nTente novamente!")
 
@@ -218,12 +244,16 @@ def questao_15():
 
 def questao_16():
     try:
-        salario_atual = float(input("Informe o salário atual: "))
+        salario_atual = float(input("\nInforme o salário atual: "))
         percentual_reajuste = float(input("Informe o percentual de reajuste: "))
         
         novo_salario = salario_atual + (salario_atual * (percentual_reajuste/100))
         print(f"\nNovo salário com o reajuste: R${novo_salario:.2f}")
 
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 16\n\n")
+            f_out.write(f"=== Resposta:\nNovo salário com o reajuste: R${novo_salario:.2f} ===\n")
+            f_out.write("_" * 50 + "\n\n")
     except ValueError:
         print (f"\nValor inserido inválido! Apenas valores reais.\nTente novamente!")
 
@@ -234,11 +264,15 @@ def questao_16():
 
 def questao_17():
     try:
-        centigrados = float(input("Informe a temperatura em graus centígrados: "))
+        centigrados = float(input("\nInforme a temperatura em graus centígrados: "))
         fahrenheit = (9 * centigrados + 160) / 5
         
         print(f"\nConversão de graus centígrados para Fahrenheit: {fahrenheit:.2f} °F")
 
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 17\n\n")
+            f_out.write(f"=== Resposta:\nConversão de graus centígrados para Fahrenheit: {fahrenheit:.2f} °F ===\n")
+            f_out.write("_" * 50 + "\n\n")
     except ValueError:
         print (f"\nValor inserido inválido! Apenas valor real.\nTente novamente!")
 
@@ -257,7 +291,7 @@ def questao_17():
 
 def questao_18():
     try:
-        t = float(input("Informe o tempo decorrido na viagem: "))
+        t = float(input("\nInforme o tempo decorrido na viagem: "))
         v = float(input("Informe a velocidade média: "))
         
         d = t * v
@@ -265,6 +299,10 @@ def questao_18():
         
         print(f"\nDistância percorrida na viagem: {d} m\nQuantidade de litros consumidos na viagem: {l:.2f} l")
 
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 18\n\n")
+            f_out.write(f"=== Resposta:\nDistância percorrida na viagem: {d} m\nQuantidade de litros consumidos na viagem: {l:.2f} l ===\n")
+            f_out.write("_" * 50 + "\n\n")
     except ValueError:
         print (f"\nValor inserido inválido! Apenas valor real.\nTente novamente!")
 
@@ -285,6 +323,10 @@ def questao_19():
         
         print(f"\nValor da prestação atrasada: R${prestacao_vencida:.2f}\nPeríodo de atraso: {periodo_atraso}\nJuros cobrados: R${juros:.2f}\nValor total da prestação com juros: R${valor_final:.2f}")
 
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 19\n\n")
+            f_out.write(f"=== Resposta:\nValor da prestação atrasada: R${prestacao_vencida:.2f}\nPeríodo de atraso: {periodo_atraso}\nJuros cobrados: R${juros:.2f}\nValor total da prestação com juros: R${valor_final:.2f} ===\n")
+            f_out.write("_" * 50 + "\n\n")
     except ValueError:
         print (f"\nValor inserido inválido! Apenas valor real.\nTente novamente!")
 
@@ -298,6 +340,10 @@ def questao_20():
         
         print(f"\nDólar (US$) convertido para real (R$): R${real:.2f}")
     
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 19\n\n")
+            f_out.write(f"Resposta:\n\nDólar (US$) convertido para real (R$): R${real:.2f}\n")
+            f_out.write("_" * 50 + "\n\n")
     except ValueError:
         print (f"\nValor inserido inválido! Apenas valor real.\nTente novamente!")
 
