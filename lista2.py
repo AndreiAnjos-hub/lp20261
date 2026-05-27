@@ -107,7 +107,6 @@ def questao_5():
 
     if (div_3 == 0) and (div_7 == 0):
         print(f"\nO número {num} é divisível por 3 e por 7")
-
         with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
             f_out.write(f"Questão 5\n\n")
             f_out.write(f"Resposta:\n\nO número {num} é divisível por 3 e por 7\n")
@@ -115,24 +114,23 @@ def questao_5():
 
     elif (div_3 == 0):
         print(f"\nO número {num} é divisível por 3")
-
         with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
             f_out.write(f"Questão 5\n\n")
-            f_out.write(f"Resposta:\n\nO número {num} não é divisível por 5\n")
+            f_out.write(f"Resposta:\n\nO número {num} é divisível por 3\n")
             f_out.write("_" * 50 + "\n\n")
+
     elif (div_7 == 0):
         print(f"\nO número {num} é divisível por 7")
-
         with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
             f_out.write(f"Questão 5\n\n")
-            f_out.write(f"Resposta:\n\nO número {num} não é divisível por 5\n")
+            f_out.write(f"Resposta:\n\nO número {num} é divisível por 7\n")
             f_out.write("_" * 50 + "\n\n")
+
     else:
         print(f"\nO número {num} não é divisível por 3 e por 7")
-
         with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
             f_out.write(f"Questão 5\n\n")
-            f_out.write(f"Resposta:\n\nO número {num} não é divisível por 5\n")
+            f_out.write(f"Resposta:\n\nO número {num} não é divisível por 3 e por 7\n")
             f_out.write("_" * 50 + "\n\n")
 
 #6. A prefeitura do Rio de Janeiro abriu uma linha de crédito para os funcionários
@@ -148,46 +146,104 @@ def questao_6():
         
     if (prestacao <= limite):
         print("\nEmpréstimo concedido!")
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 6\n\n")
+            f_out.write(f"Resposta:\n\nEmpréstimo concedido!\n")
+            f_out.write("_" * 50 + "\n\n")
+
     else:
         print("\nEmpréstimo não concedido!")
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"Questão 6\n\n")
+            f_out.write(f"Resposta:\n\nEmpréstimo não concedido!\n")
+            f_out.write("_" * 50 + "\n\n")
 
 #7. Faça um programa que leia um número e indique se o número está compreendido
 #   entre 20 e 50 ou não.
 
 def questao_7():
+    with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+        f_out.write(f"Questão 7\n\n")
+        f_out.write(f"Faça um programa que leia um número e indique se o número está compreendido entre 20 e 50 ou não.\n")
+
     num = random.randint(1,100)
+
+    with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+        f_out.write("_" * 50)
+        f_out.write(f"\n\nNúmero: {num}")
 
     if (num >= 20) and (num <= 50):
         print(f"\nO número {num} está entre 20 e 50")
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"\n\nResposta:\n\nO número {num} está entre 20 e 50\n")
+            f_out.write("_" * 50 + "\n\n")
     else:
         print(f"\nO número {num} não está entre 20 e 50")
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"\n\nResposta:\n\nO número {num} não está entre 20 e 50\n")
+            f_out.write("_" * 50 + "\n\n")
 
 #8. Faça um programa que leia um número e imprima uma das mensagens:
 #   "Maior do que 20", "Igual a 20"ou "Menor do que 20".
 
 def questao_8():
+    with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+        f_out.write(f"Questão 8\n\n")
+        f_out.write(f'Faça um programa que leia um número e imprima uma das mensagens: "Maior do que 20", "Igual a 20"ou "Menor do que 20".\n')
+
     num = random.randint(1,100)
+
+    with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+        f_out.write("_" * 50)
+        f_out.write(f"\n\nNúmero: {num}")
 
     if (num > 20):
         print(f"\nO número {num} é maior do que 20")
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"\n\nResposta:\n\nO número {num} é maior do que 20\n")
+            f_out.write("_" * 50 + "\n\n")
+
     elif (num == 20):
         print(f"\nO número é igual a 20")
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"\n\nResposta:\n\nO número é igual a 20\n")
+            f_out.write("_" * 50 + "\n\n")
+
     else:   
         print(f"\nO número {num} é menor do que 20")
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"\n\nResposta:\n\nO número {num} é menor do que 20\n")
+            f_out.write("_" * 50 + "\n\n")
 
 #9. Faça um programa que permita entrar com o ano de nascimento da pessoa e com o
 #   ano atual. O programa deve imprimir a idade da pessoa. Não se esqueça de
 #   verificar se o ano de nascimento informado é válido.
 
 def questao_9():
+    with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+        f_out.write(f"Questão 9\n\n")
+        f_out.write(f'Faça um programa que permita entrar com o ano de nascimento da pessoa e com o ano atual.\nO programa deve imprimir a idade da pessoa. Não se esqueça de verificar se o ano de nascimento informado é válido.\n')
+
     ano_nasc = inputint(msg="\nInforme o seu ano de nascimento: ", min=1900)
     ano_atual = datetime.now().year
+
+    with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+        f_out.write("_" * 50)
+        f_out.write(f"\n\nAno de nascimento: {ano_nasc}")
+        f_out.write(f"\nAno atual: {ano_atual}")
 
     if (ano_nasc < ano_atual):
         idade = ano_atual - ano_nasc
         print(f"\nVocê tem {idade} anos de idade!")
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"\n\nResposta:\n\nVocê tem {idade} anos de idade!\n")
+            f_out.write("_" * 50 + "\n\n")
+
     else:
         print(f"\nAno de nascimento inválido!")
+        with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+            f_out.write(f"\n\nResposta:\n\nAno de nascimento inválido!\n")
+            f_out.write("_" * 50 + "\n\n")
 
 #10. Faça um programa que leia três números inteiros e imprima os três em ordem
 #crescente.

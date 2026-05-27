@@ -12,21 +12,29 @@ with open(nome_arquivo_txt, "w", encoding="utf-8") as f_out:
 # 1. Faça um programa que imprima o seu nome.
 
 def questao_1():
-    nome = input("Digite seu nome: ").title().strip()
+    with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+        f_out.write(f"Questão 1.\n\n")
+        f_out.write(f"Faça um programa que imprima o seu nome.\n")
+        f_out.write("_" * 50)
+
+    nome = input("\nDigite seu nome: ").title().strip()
     print (f"\n{nome}")
 
     with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
-        f_out.write(f"Questão 1\n\n")
-        f_out.write(f"Resposta:\n\n{nome}\n")
+        f_out.write(f"\n\nResposta:\n\n{nome}\n")
         f_out.write("_" * 50 + "\n\n")
 
 # 2. Faça um programa que imprima o produto dos valores 30 e 27.
 
 def questao_2():
-    print(f"Produto dos valores 30 e 27: {30*27}")
     with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
         f_out.write(f"Questão 2\n\n")
-        f_out.write(f"=== Resposta: Produto dos valores 30 e 27: {30*27} ===\n")
+        f_out.write(f"Faça um programa que imprima o produto dos valores 30 e 27.\n")
+        f_out.write("_" * 50)
+
+    print(f"\nProduto dos valores 30 e 27: {30*27}")
+    with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+        f_out.write(f"\n\nResposta:\n\nProduto dos valores 30 e 27: {30*27}\n")
         f_out.write("_" * 50 + "\n\n")
 
 # 3. Faça um programa que imprima a média aritmética entre os números 5, 8, 12.
