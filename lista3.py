@@ -1,6 +1,6 @@
 import random
-import matplotlib.pyplot as plt
 from datetime import datetime
+import matplotlib.pyplot as plt
 from util import inputint, inputfloat, gerar_palavra
 
 '''
@@ -293,17 +293,17 @@ def questao_12():
     taxa_nat_B = 0.02
 
     while (pop_pais_A <= pop_pais_B):
-        xA.append(ano)
-        yA.append(paisA)
-        xB.append(ano)
-        yB.append(paisB)
+        xA.append(t_ano)
+        yA.append(pop_pais_A)
+        xB.append(t_ano)
+        yB.append(pop_pais_B)
 
         pop_pais_A += pop_pais_A * taxa_nat_A
         pop_pais_B += pop_pais_B * taxa_nat_B
 
-        t_anos += 1
+        t_ano += 1
 
-    print(f"\nSerão necessários {t_anos} anos para que a população do país A ultrapasse a do país B.")
+    print(f"\nSerão necessários {t_ano} anos para que a população do país A ultrapasse a do país B.")
     print(f"População final país A: {pop_pais_A:,.0f}")
     print(f"População final país B: {pop_pais_B:,.0f}")
 

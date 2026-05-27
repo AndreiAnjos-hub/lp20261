@@ -40,14 +40,18 @@ def questao_2():
 # 3. Faça um programa que imprima a média aritmética entre os números 5, 8, 12.
 
 def questao_3():
+    with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
+        f_out.write(f"Questão 3\n\n")
+        f_out.write(f"Faça um programa que imprima a média aritmética entre os números 5, 8, 12.\n")
+        f_out.write("_" * 50)
+
     soma = 5 + 8 + 12
     media = soma/3
 
-    print(f"Média entre 5, 8, 12: {media:.2f}")
+    print(f"\nMédia entre 5, 8, 12: {media:.2f}")
 
     with open(nome_arquivo_txt, "a", encoding="utf-8") as f_out:
-        f_out.write(f"Questão 3\n\n")
-        f_out.write(f"=== Resposta: Média entre 5, 8, 12: {media:.2f} ===\n")
+        f_out.write(f"\n\nResposta:\n\nMédia entre 5, 8, 12: {media:.2f}{30*27}\n")
         f_out.write("_" * 50 + "\n\n")
 
 # 4. Faça um programa que leia e imprima um número inteiro.
